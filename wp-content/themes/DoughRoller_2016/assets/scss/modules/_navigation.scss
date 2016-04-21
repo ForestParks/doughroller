@@ -1,0 +1,62 @@
+/* Navigation breakpoints */
+
+.desktop-menu, .top-bar-left {
+  @include show-for(medium);
+}
+
+#mobile-menu, .title-bar {
+  @include hide-for(medium);
+}
+
+/* Mobile menu */
+
+.off-canvas {
+  ul#menu-main-menu {
+    height: 100vh;
+    padding: 1rem;
+  }
+}
+
+.title-bar-title {
+  a {
+    font-size: 1rem;
+    color: #B9B9B9;
+  }
+}
+
+/* Tablet and desktop menu */
+.top-bar {
+
+  .menu .home a {
+    font-size: 1rem;
+    color: #B9B9B9;
+  }
+
+  .menu a {
+    height: 50px;
+    line-height: 50px;
+    color: #e6e6e6;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+    font-size: 0.8rem;
+    line-height: 1;
+
+    &:hover:not(.button) {
+      opacity:0.8;
+    }
+  }
+
+  .menu>li:not(.menu-text)>a { padding: 0 1rem 0 1rem; }
+  .menu li:not(:last-child) { }
+
+  .dropdown.menu .submenu {
+    background-color: #121212;
+    color: #e6e6e6;
+    border: 0;
+  }
+
+  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
+  .is-dropdown-submenu-parent.is-down-arrow > a::after { display: none; }
+}
