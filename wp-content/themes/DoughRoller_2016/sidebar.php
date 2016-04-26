@@ -8,6 +8,27 @@
 
 ?>
 <aside class="sidebar">
+
+	<div class="email_sidebar">
+		<h3>Newsletter header</h3>
+		<p>Some text before the button.
+		<a class="large expanded button" data-open="nlmodal">Sign up now!</a>
+		</div>
+
+		<div class="reveal" id="nlmodal" data-reveal>
+		  <h1>Awesome. I Have It.</h1>
+		  <p class="lead">Some text here</p>
+		  <p>We can put the email signup here...</p>
+		  <p></p>
+		  <button class="close-button" data-close aria-label="Close modal" type="button">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+	</div><!-- // email_sidebar -->
+		
+
+
+
+
 	<?php do_action( 'foundationpress_before_sidebar' ); ?>
 	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
 	<?php do_action( 'foundationpress_after_sidebar' ); ?>
