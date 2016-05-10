@@ -4,13 +4,14 @@ body {padding-top:85px;}
 /* SITE HEADER  STYLES */
 
 .site-header {
-  height: 60px;
-  border-bottom: 1px solid $primary-grey-lt;
   position:fixed;
   width: 100%;
   top:0px;
   background: #fff;
   z-index: 99999999;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
 
   .menu img {
       display: inline-block;
@@ -37,6 +38,7 @@ body {padding-top:85px;}
     width: 250px;
     overflow: hidden;
     padding: 10px;
+    height: 60px;
   }
   .menu a {
     color: $primary-blue;
@@ -46,6 +48,10 @@ body {padding-top:85px;}
 
   .top-bar-left .menu > li:not(.menu-text) > a {
     height: 50px;
+  }
+
+   .top-bar-right input {
+    padding-bottom: 11px;
   }
 
 

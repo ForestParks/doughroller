@@ -8,3 +8,29 @@
     margin-top: 1rem;
   }
 }
+
+.sidebar h6 {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: #34b446;
+    font-weight: bold;
+    border-bottom: 1px solid #34b446;
+}
+
+.sidebar ul {
+    list-style: none !important;
+}
+
+/* TEMPORARY */
+.wpp-thumbnail {
+    display: inline;
+    float: left;
+    margin: 0 5px 0 0;
+    border: none;
+    height: 50px;
+    width: auto;
+}
+
+.wpp-list li {
+    margin-bottom:10px;
+}
