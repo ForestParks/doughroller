@@ -12,7 +12,7 @@ $topbar-padding: 0.5rem !default;
 
 /// Background color for the top bar. This color also cascades to menus within the top bar.
 /// @type Color
-$topbar-background: $light-gray !default;
+$topbar-background: transparent;
 
 /// Spacing for the top bar title.
 /// @type Number
@@ -40,6 +40,7 @@ $topbar-input-width: 200px !default;
   // scss-lint:disable QualifyingElement
   input.button {
     width: auto;
+
   }
 }
 
@@ -52,6 +53,7 @@ $topbar-input-width: 200px !default;
 
   .top-bar-right {
     width: 100%;
+    height:59px;
   }
 
   .top-bar-left {

@@ -47,7 +47,7 @@
 				<ul class="menu">
 					<li class="home">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/DRLogo192.png">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/DoughRoller_Logo-600px.png">
 						</a>
 					</li>
 				</ul>

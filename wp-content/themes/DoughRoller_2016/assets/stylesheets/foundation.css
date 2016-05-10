@@ -5268,7 +5268,7 @@ table.hover tr:nth-of-type(even):hover {
     clear: both; }
   .top-bar,
   .top-bar ul {
-    background-color: #121212; }
+    background-color: transparent; }
   .top-bar input {
     width: 200px;
     margin-right: 1rem; }
@@ -5279,7 +5279,8 @@ table.hover tr:nth-of-type(even):hover {
   .stacked-for-small .top-bar-title {
     width: 100%; }
   .stacked-for-small .top-bar-right {
-    width: 100%; }
+    width: 100%;
+    height: 59px; }
   .stacked-for-small .top-bar-left {
     width: 100%; } }
 
@@ -5287,7 +5288,8 @@ table.hover tr:nth-of-type(even):hover {
   .stacked-for-medium .top-bar-title {
     width: 100%; }
   .stacked-for-medium .top-bar-right {
-    width: 100%; }
+    width: 100%;
+    height: 59px; }
   .stacked-for-medium .top-bar-left {
     width: 100%; } }
 
@@ -5295,7 +5297,8 @@ table.hover tr:nth-of-type(even):hover {
   .stacked-for-large .top-bar-title {
     width: 100%; }
   .stacked-for-large .top-bar-right {
-    width: 100%; }
+    width: 100%;
+    height: 59px; }
   .stacked-for-large .top-bar-left {
     width: 100%; } }
 
@@ -5303,7 +5306,8 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-title {
     width: 100%; }
   .top-bar-right {
-    width: 100%; }
+    width: 100%;
+    height: 59px; }
   .top-bar-left {
     width: 100%; } }
 
@@ -6605,19 +6609,27 @@ table.hover tr:nth-of-type(even):hover {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
 
+body {
+  padding-top: 85px; }
+
 /* SITE HEADER  STYLES */
 .site-header {
   height: 60px;
   border-bottom: 1px solid #4c4d4f;
-  overflow: hidden; }
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background: #fff;
+  z-index: 99999999; }
   .site-header .menu img {
     display: inline-block;
     margin-right: 0.25rem;
     max-height: 100%;
-    padding-bottom: 5px; }
+    padding-bottom: 5px;
+    max-width: 180px; }
 
 .top-bar {
-  background-color: #FFF; }
+  background-color: transparent; }
   .top-bar ul {
     background: none;
     float: left;
@@ -6630,7 +6642,8 @@ table.hover tr:nth-of-type(even):hover {
     padding: 10px; }
   .top-bar .menu a {
     color: #2296bc;
-    font-size: 0.9em; }
+    font-size: 0.9em;
+    line-height: 60px; }
   .top-bar .top-bar-left .menu > li:not(.menu-text) > a {
     height: 50px; }
 
