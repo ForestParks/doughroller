@@ -15,4 +15,32 @@
 			padding: 0;
 		}
 	}
+
+	h6 {
+	    font-size: 0.9em;
+	    text-transform: uppercase;
+	    color: #34b446;
+	    font-weight: bold;
+	    border-bottom: 1px solid #34b446;
+	}
+
+	.social-links li {
+	display: inline;
+    font-size: 2em;
+    padding-right: 0.5em;}
+
+    .copyright {
+    	margin: 10px 0 40px 0;
+    text-align: center;
+    opacity: 0.5;
+	}
+
+    .disclaimers {
+    opacity: 0.5;
+    font-size: .6em;
+    margin: 30px auto !important;
+    display: block;
+    float: none;
+    text-align: left;}
 }
+

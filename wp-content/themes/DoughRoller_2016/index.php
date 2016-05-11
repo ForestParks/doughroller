@@ -15,17 +15,6 @@
 
 get_header(); ?>
 
-	<section class="hero">
-		  <div class="row intro">
-		    <div class="small-centered medium-uncentered medium-6 large-7 columns">
-		      <h1>Truth? What truth?</h1>
-		      <p>Don't you want to take a leap of faith? Or become an old man, filled with regret, waiting to die alone!</p>
-		    </div>
-		    <div class="small-centered medium-uncentered medium-6 large-5 columns">
-		      <div class="tech-img"></div>
-		    </div>
-		  </div>
-	</section>
 
 <div id="page" role="main">
 	<article class="main-content">
