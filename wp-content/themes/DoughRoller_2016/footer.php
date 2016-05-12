@@ -102,24 +102,28 @@
             <div class="medium-4 columns footerColumn">
                 <h6>Featured On:</h6>
                 <div id="featuredOn">
-                	TEMP
-                	<img src="http://cyberbullying.org/wp-content/uploads/2014/11/featured-on21.png" />
+                	<p>TEMPORARY GRAPHIC</p>
+                	<img src="http://doughroller.wpengine.netdna-cdn.com/wp-content/uploads/2013/07/as-seen-in.jpg" />
 
                 </div>
             </div>
         </div>
 
        <div class="small-12 columns copyright">Copyright &copy; <?php echo date("Y") ?> Doughroller.net. All rights reserved.</div>
-       <div class="small-10 columns disclaimers">
 
-       		<div class="small-4 columns">
-			<p><strong>Advertiser Disclosure:</strong> Many of the savings offers appearing on this site are from advertisers from which this website receives compensation for being listed here. This compensation may impact how and where products appear on this site (including, for example, the order in which they appear). These offers do not represent all deposit accounts available.</p>
+       <div class="small-12 columns disclaimers">
+
+       		<div class="small-3 columns">
+			<p><strong>Advertiser Disclosure</strong>:  This site may be compensated in exchange for featured placement of certain sponsored products and services, or your clicking on links posted on this website.  The credit card offers that appear on this site are from credit card companies from which doughroller.net receives compensation.  This compensation may impact how and where products appear on this site (including, for example, the order in which they appear).  Doughroller.net does not include all credit card companies or all available credit card offers.</p>
 			</div>
-			<div class="small-4 columns">
-			<p><strong>Editorial Disclosure:</strong> This content is not provided or commissioned by the bank advertiser. Opinions expressed here are author’s alone, not those of the bank advertiser, and have not been reviewed, approved or otherwise endorsed by the bank advertiser. This site may be compensated through the bank advertiser Affiliate Program.</p>
+			<div class="small-3 columns">
+			<p><strong>Editorial Disclosure</strong>: This content is not provided or commissioned by the bank, credit card issuer, or other advertiser. Opinions expressed here are author's alone, not those of the bank, credit card issuer, or other advertiser, and have not been reviewed, approved or otherwise endorsed by the advertiser. This site may be compensated through the bank, credit card issuer, or other advertiser Affiliate Program</p>
 			</div>
-			<div class="small-4 columns">
-			<p><strong>User Generated Content Disclosure:</strong> These responses are not provided or commissioned by the bank advertiser. Responses have not been reviewed, approved or otherwise endorsed by the bank advertiser. It is not the bank advertiser's responsibility to ensure all posts and/or questions are answered.</p>
+			<div class="small-3 columns">
+			<p><strong>Disclaimer</strong>:  The content on this site is for informational and educational purposes only and should not be construed as professional financial advice.  Should you need such advice, consult a licensed financial or tax advisor.  References to products, offers, and rates from third party sites often change.  While we do our best to keep these updated, numbers stated on our site may differ from actual numbers.See our <a href="http://www.doughroller.net/terms-of-use-privacy-policy/">Privacy Policy &amp; Disclaimer</a> for more details.</p>
+            </div>
+            <div class="small-3 columns">
+            <p><strong>Archives</strong>:  You can explore the site through our <a href="http://www.doughroller.net/archives/">archives</a> dating back to 2007.</p>
 			</div>
        </div>
 

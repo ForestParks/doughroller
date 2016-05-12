@@ -21,6 +21,20 @@
     list-style: none !important;
 }
 
+.email_sidebar {
+    background: #eee;
+    border: 1px solid #0d72c7;
+    padding: 15px 15px 10px 15px;
+    margin: 0 0 20px 0;
+
+    h3 {
+    color: #0d72c7;
+    font-weight: bold;
+    line-height: 1em;
+    font-size: 1.4em;
+    }
+}
+
 /* TEMPORARY */
 .wpp-thumbnail {
     display: inline;

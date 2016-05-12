@@ -10,9 +10,9 @@
 <aside class="sidebar">
 
 	<div class="email_sidebar">
-		<h3>Newsletter header</h3>
-		<p>Some text before the button.
-		<a class="large expanded button" data-open="nlmodal">Sign up now!</a>
+		<h3>Make the most of your money</h3>
+		<p>Get my free weekly newsletter to improve your finances.</p>
+		<a class="large expanded button" data-open="nlmodal">Get It Now!</a>
 		</div>
 
 		<div class="reveal" id="nlmodal" data-reveal>

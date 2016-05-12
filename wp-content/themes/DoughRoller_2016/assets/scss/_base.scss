@@ -1,4 +1,4 @@
-body {padding-top:85px;}
+body.home {padding-top:85px;}
 
 
 /* SITE HEADER  STYLES */
@@ -113,3 +113,38 @@ body {padding-top:85px;}
     }
   }
 }
+
+/* Entry Meta */
+
+.article__author {
+    font-size: 14px;
+    color: #929292;
+    padding: 4px 0;
+    margin-bottom: 20px;
+  
+
+    .author__image {
+    float: left;
+    margin-right: 15px;
+    -webkit-border-radius: 100px; 
+    -moz-border-radius: 100px; 
+    border-radius: 100px;
+    overflow: hidden;
+    }
+
+    .author {
+    text-transform: uppercase;
+    display: block;
+    font-weight: 700;
+    line-height: 14px;
+    margin-top: 8px;
+    color: #464646;
+    }
+
+    .post-cat {margin-left:10px;}
+
+}
+
+.entry_meta_social {margin-bottom: 20px;}
+
+

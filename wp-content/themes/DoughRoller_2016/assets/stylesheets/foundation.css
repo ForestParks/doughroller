@@ -3261,7 +3261,7 @@ h6 {
   text-rendering: optimizeLegibility;
   margin-top: 0;
   margin-bottom: 0.5rem;
-  line-height: 1.4; }
+  line-height: 1.3; }
   h1 small,
   h2 small,
   h3 small,
@@ -3291,11 +3291,11 @@ h6 {
 
 @media screen and (min-width: 40em) {
   h1 {
-    font-size: 3rem; }
+    font-size: 2.125rem; }
   h2 {
-    font-size: 2.5rem; }
-  h3 {
     font-size: 1.9375rem; }
+  h3 {
+    font-size: 1.75rem; }
   h4 {
     font-size: 1.5625rem; }
   h5 {
@@ -6065,6 +6065,17 @@ table.hover tr:nth-of-type(even):hover {
 .sidebar ul {
   list-style: none !important; }
 
+.email_sidebar {
+  background: #eee;
+  border: 1px solid #0d72c7;
+  padding: 15px 15px 10px 15px;
+  margin: 0 0 20px 0; }
+  .email_sidebar h3 {
+    color: #0d72c7;
+    font-weight: bold;
+    line-height: 1em;
+    font-size: 1.4em; }
+
 /* TEMPORARY */
 .wpp-thumbnail {
   display: inline;
@@ -6652,7 +6663,20 @@ table.hover tr:nth-of-type(even):hover {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
 
-body {
+.wf-privacyico {
+  padding: 4px 0 0 20px !important;
+  background: url(/assets/images/lock.png) no-repeat left center !important; }
+
+.wf-privacy {
+  font-family: Arial !important;
+  font-size: 12px !important;
+  color: #303030 !important;
+  font-weight: normal !important;
+  font-style: italic !important;
+  text-decoration: none !important;
+  text-align: center !important; }
+
+body.home {
   padding-top: 85px; }
 
 /* SITE HEADER  STYLES */
@@ -6735,5 +6759,29 @@ body {
       font-size: 2.5rem; }
     .hero p {
       text-align: right; } }
+
+/* Entry Meta */
+.article__author {
+  font-size: 14px;
+  color: #929292;
+  padding: 4px 0;
+  margin-bottom: 20px; }
+  .article__author .author__image {
+    float: left;
+    margin-right: 15px;
+    border-radius: 100px;
+    overflow: hidden; }
+  .article__author .author {
+    text-transform: uppercase;
+    display: block;
+    font-weight: 700;
+    line-height: 14px;
+    margin-top: 8px;
+    color: #464646; }
+  .article__author .post-cat {
+    margin-left: 10px; }
+
+.entry_meta_social {
+  margin-bottom: 20px; }
 
 /*# sourceMappingURL=foundation.css.map */
