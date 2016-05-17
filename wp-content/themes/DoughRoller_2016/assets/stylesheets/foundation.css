@@ -6725,10 +6725,7 @@ body.home {
 
 /* HOME PAGE */
 .hero {
-  /*background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;*/
-  background-size: cover;
-  background-color: #0d72c7;
-  /*height: 100vh;*/
+  background-color: #fff;
   overflow: hidden; }
   .hero .intro {
     padding: 3rem 3rem 3rem 3rem;
@@ -6736,36 +6733,61 @@ body.home {
     /*top: 50%;*/
     /*transform: translateY(-50%);*/ }
   .hero h1 {
-    color: #fff;
+    color: #2bb673;
     font-size: 1.5rem;
     line-height: 1.5em;
     letter-spacing: -0.025em;
-    font-weight: 300;
+    font-weight: 800;
     text-align: center; }
   .hero p {
-    color: #fff;
+    color: #0d72c7;
     line-height: 1.75em;
     font-weight: 200;
     text-align: center;
     margin-bottom: 2rem; }
-  .hero .tech-img {
-    background: url("http://static.pexels.com/wp-content/uploads/2015/02/apple-hand-iphone-6-4322-525x350.jpg") no-repeat center center;
-    background-size: cover;
-    height: 9rem;
-    width: 9rem;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto; }
-  @media only screen and (min-width: 40.063em) {
-    .hero .tech-img {
-      height: 18rem;
-      width: 18rem; }
+
+@media only screen and (min-width: 40.063em) {
+  .hero {
+    background: url("../images/TEMP-Hero.jpg") no-repeat center right; }
     .hero h1 {
       padding-top: 4.5rem;
-      text-align: right;
+      text-align: left;
       font-size: 2.5rem; }
     .hero p {
-      text-align: right; } }
+      text-align: left; } }
+
+.key_pages {
+  background: #2bb673;
+  margin: 10px 0 10px 0;
+  padding: 50px 0 50px 0; }
+  .key_pages .key_link {
+    color: #fff;
+    text-align: center;
+    border-bottom: 3px solid #2bb673; }
+    .key_pages .key_link:hover {
+      border-bottom: 3px solid #fff; }
+    .key_pages .key_link .key_icon {
+      font-size: 3em; }
+    .key_pages .key_link h3 {
+      font-size: 1em;
+      font-weight: 800; }
+
+.latest-posts {
+  margin: 10px 0 10px 0;
+  padding: 50px 0 0px 0; }
+  .latest-posts h2 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 3em;
+    color: #2bb673;
+    margin-bottom: 1em; }
+  .latest-posts h4 {
+    font-size: 1em;
+    font-weight: 800;
+    margin-top: 10px; }
+  .latest-posts p a {
+    font-weight: bold;
+    color: #2bb673; }
 
 /* Entry Meta */
 .article__author {

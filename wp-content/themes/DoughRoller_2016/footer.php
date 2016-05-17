@@ -22,10 +22,10 @@
     <div class="contentArea">
 
         <div class="row">
-            <div class="medium-5 columns footerColumn">
+            <div class="medium-5 small-12 columns footerColumn">
 
                 
-                <div class="row first">
+                <div class="first">
                 <h6>Site Sections:</h6>
                     <div class="small-5 columns ">
                         <ul>
@@ -50,7 +50,7 @@
                 <p></p>
 
                 
-                <div class="row second">
+                <div class="second">
                 <h6>Company:</h6>
                     <div class="small-6 columns">
                         <ul>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="medium-3 columns footerColumn">
+            <div class="medium-3 small-12 columns footerColumn">
                
 					<div class="social-links-footer first">
 						<h6>Connect With Us</h6>  
@@ -101,7 +101,8 @@
 
 
             </div>
-            <div class="medium-4 columns footerColumn">
+
+            <div class="medium-4 small-12 columns footerColumn">
                 <h6>Featured On:</h6>
                 <div id="featuredOn">
                 	<p>TEMPORARY GRAPHIC</p>
@@ -110,6 +111,7 @@
                 </div>
             </div>
         </div>
+
 
        <div class="small-12 columns copyright">Copyright &copy; <?php echo date("Y") ?> Doughroller.net. All rights reserved.</div>
 

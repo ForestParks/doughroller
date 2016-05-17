@@ -62,57 +62,91 @@ body.home {padding-top:85px;}
 /* HOME PAGE */
 
 .hero {
-  /*background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;*/
-  background-size: cover;
-  background-color: $primary-blue;
-  /*height: 100vh;*/
-  overflow:hidden;
+    background-color: #fff;
+    overflow: hidden;
  
-  .intro {
-    padding: 3rem 3rem 3rem 3rem;
-    position: relative;
-    /*top: 50%;*/
-    /*transform: translateY(-50%);*/
-  }
-  h1 {
-    color: #fff;
-    font-size: 1.5rem;
-    line-height: 1.5em;
-    letter-spacing: -0.025em;
-    font-weight: 300;
-    text-align: center;
-  }
-  p {
-    color: #fff;
-    line-height: 1.75em;
-    font-weight: 200;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .tech-img {
-    background: url('http://static.pexels.com/wp-content/uploads/2015/02/apple-hand-iphone-6-4322-525x350.jpg') no-repeat center center;
-    background-size: cover;
-    height: 9rem;
-    width: 9rem;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-  }
-  @media only screen and (min-width: 40.063em) {
-    .tech-img {
-      height: 18rem;
-      width: 18rem;
+    .intro {
+      padding: 3rem 3rem 3rem 3rem;
+      position: relative;
+      /*top: 50%;*/
+      /*transform: translateY(-50%);*/
     }
     h1 {
-      padding-top: 4.5rem;
-      text-align: right;
-      font-size: 2.5rem;
+      color: $primary-green;
+      font-size: 1.5rem;
+      line-height: 1.5em;
+      letter-spacing: -0.025em;
+      font-weight: 800;
+      text-align: center;
     }
     p {
-      text-align: right;
+      color: $primary-blue;
+      line-height: 1.75em;
+      font-weight: 200;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+}
+ 
+
+@media only screen and (min-width: 40.063em) {
+
+  .hero {
+    background: url('../images/TEMP-Hero.jpg') no-repeat center right;
+
+  h1 {
+      padding-top: 4.5rem;
+      text-align: left;
+      font-size: 2.5rem;
+    }
+  
+  p {
+      text-align: left;
     }
   }
 }
+
+
+
+.key_pages {
+    background: $primary-green;
+    margin: 10px 0 10px 0;
+    padding: 50px 0 50px 0;
+
+  .key_link {
+    color:#fff;
+    text-align:center;
+    border-bottom:3px solid $primary-green;
+
+    &:hover {border-bottom:3px solid #fff}
+
+    .key_icon { font-size:3em; }
+
+    h3{ font-size: 1em; font-weight: 800; }
+  }
+
+
+}
+
+
+.latest-posts {
+  margin: 10px 0 10px 0;
+  padding: 50px 0 0px 0;
+  
+  h2{text-align:center; font-weight:800; font-size:3em; color:$primary-green; margin-bottom:1em;}
+
+  h4 {font-size:1em; font-weight:800; margin-top:10px;}
+
+  p a{font-weight:bold; color:$primary-green;}
+
+
+
+}
+
+
+
+
+
 
 /* Entry Meta */
 
