@@ -31,7 +31,3 @@ if ( ! function_exists( 'foundationpress_entry_meta' ) ) :
 endif;
 
 ?>
-
-
-
-

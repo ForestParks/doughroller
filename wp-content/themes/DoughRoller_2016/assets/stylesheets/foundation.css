@@ -6013,6 +6013,8 @@ table.hover tr:nth-of-type(even):hover {
     color: #34b446;
     font-weight: bold;
     border-bottom: 1px solid #34b446; }
+  #footer-container .footerColumn .first {
+    min-height: 160px; }
   #footer-container .social-links li {
     display: inline;
     font-size: 2em;
@@ -6662,6 +6664,11 @@ table.hover tr:nth-of-type(even):hover {
     @media screen and (min-width: 40em) {
         #single-post .main-content:last-child:not(:first-child) {
           float: right; } }
+
+#single-post.no-sidebar .main-content {
+  margin: 0px auto;
+  display: block;
+  float: none; }
 
 .wf-privacyico {
   padding: 4px 0 0 20px !important;

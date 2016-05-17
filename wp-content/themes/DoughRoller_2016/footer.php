@@ -24,9 +24,10 @@
         <div class="row">
             <div class="medium-5 columns footerColumn">
 
+                
+                <div class="row first">
                 <h6>Site Sections:</h6>
-                <div class="row">
-                    <div class="small-5 columns">
+                    <div class="small-5 columns ">
                         <ul>
                             <li><a href="/blog/">Blog</a></li>
                             <li><a href="/community/">Forum</a></li>
@@ -48,8 +49,9 @@
 
                 <p></p>
 
+                
+                <div class="row second">
                 <h6>Company:</h6>
-                <div class="row">
                     <div class="small-6 columns">
                         <ul>
                             <li><a href="/about/">About Us</a></li>
@@ -67,9 +69,9 @@
 
             <div class="medium-3 columns footerColumn">
                
-					<div class="social-links-footer">
+					<div class="social-links-footer first">
 						<h6>Connect With Us</h6>  
-						<ul class="social-links">
+						<ul class="social-links ">
 							<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li class="facebook"><a href="#"><i class="fa fa-twitter"></i></a></li>
 							<li class="facebook"><a href="#"><i class="fa fa-pinterest"></i></a></li>
@@ -79,7 +81,7 @@
 
 					<p></p>
 
-					<div class="join-newsletter newsletter"> 
+					<div class="join-newsletter newsletter second"> 
 						<h6>Join Our Newsletter</h6>
 						
 						<div id="newsletter-form-cont">

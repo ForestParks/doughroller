@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<div id="single-post" role="main">
+<div id="single-post" <?php if( get_field('remove_sidebar') ){echo 'class="no-sidebar"';} else {}?> role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
@@ -54,6 +54,13 @@ get_header(); ?>
 <?php endwhile;?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
-<?php get_sidebar(); ?>
+
+<?php 
+	if( get_field('remove_sidebar') )
+	{}
+	else
+	{get_sidebar();}
+?>
+
 </div>
 <?php get_footer();
