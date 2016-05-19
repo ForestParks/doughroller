@@ -25,10 +25,9 @@ get_header(); ?>
 				<a class="large expanded button" data-open="nlmodal" aria-controls="nlmodal" id="k0uzl3-reveal" aria-haspopup="true" tabindex="0">Get It Now!</a>
 				</div>
 
-
-		    </div>
 		  </div>
 	</section>
+
 
 	<section class="key_pages">
 		  <div class="row">
@@ -70,17 +69,18 @@ get_header(); ?>
 
 <section class="latest-posts">
 
-	<h2><i class="fa fa-pencil" aria-hidden="true"></i> Latest Posts</h2>
-
 	<div class="row">
+
+		<div class="small-12 columns"><h2><i class="fa fa-pencil" aria-hidden="true"></i> Latest Posts</h2></div>
+
 
         <?php $query = new WP_Query( array(
             'post_type' => 'post',
-            'posts_per_page' => 6
+            'posts_per_page' => 4
         ) );
         while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="small-4 medium-2 columns">
-        	<?php the_post_thumbnail( 'medium' ); ?>
+        <div class="small-4 medium-3 columns">
+        	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
 	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 	      	<p><a href="<?php the_permalink(); ?>">Read more...</a></p>
         </div>
@@ -92,39 +92,25 @@ get_header(); ?>
 </section>
 
 
-	<section class="key_pages">
+	<section class="home_signup">
 		  <div class="row">
+		  <div class="small-8 medium-8 columns center">
 
-		    <a class="key_link small-2 columns" href="#">
-			    <span class="key_icon"><i class="fa fa-credit-card" aria-hidden="true"></i></span>
-			    <h3>Credit Cards</h3>
-		    </a>
+		  <h3><strong>Make the most of your money</strong></h3> <h4>Get my free weekly newsletter to improve your finances.</h4>
+		  					<div id="newsletter-form-cont">
+								<form action="#" method="post" id="subForm" style="margin-top:20px">
+							        <div class="row collapse">
+							          <div class="small-8 medium-8 columns">
+							            <input id="fieldEmail" name="cm-xlitlu-xlitlu" type="email" placeholder="signup@example.com">
+							          </div>
+							          <div class="small-4 medium-4 columns">
+							            <input type="submit" href="#" class="postfix button" value="Sign Up">
+							          </div>
+							        </div>
+							    </form>
+							 </div>
 
-		    <a class="key_link small-2 columns" href="#">
-			    <span class="key_icon"><i class="fa fa-money" aria-hidden="true"></i></span>
-			    <h3>Savings Accounts</h3>
-		    </a>
-
-		    <a class="key_link small-2 columns" href="#">
-			    <span class="key_icon"><i class="fa fa-university" aria-hidden="true"></i></span>
-			    <h3>Checking Accounts</h3>
-		    </a>
-
-		    <a class="key_link small-2 columns" href="#">
-			    <span class="key_icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
-			    <h3>CDs</h3>
-		    </a>
-
-		    <a class="key_link small-2 columns" href="#">
-			    <span class="key_icon"><i class="fa fa-home" aria-hidden="true"></i></span>
-			    <h3>Mortgages</h3>
-		    </a>
-
-		    <a class="key_link small-2 columns" href="#">
-			    <span class="key_icon"><i class="fa fa-wrench" aria-hidden="true"></i></span>
-			    <h3>Tools</h3>
-		    </a>
-
+		  </div>
 		  </div>
 
 	</section>
@@ -132,18 +118,46 @@ get_header(); ?>
 
 <section class="latest-posts podcast">
 
-	<h2><i class="fa fa-microphone" aria-hidden="true"></i> Latest From The Podcast</h2>
 
 	<div class="row">
 
+		<div class="small-12 columns"><h2><i class="fa fa-microphone" aria-hidden="true"></i> Latest From The Podcast</h2></div>
+
+
         <?php $query = new WP_Query( array(
             'post_type' => 'post',
-            'posts_per_page' => 6,
+            'posts_per_page' => 4,
             'category_name' => 'podcast'
         ) );
         while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="small-4 medium-2 columns">
-        	<?php the_post_thumbnail( 'medium' ); ?>
+        <div class="small-4 medium-3 columns">
+        	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+	      	<p><a href="<?php the_permalink(); ?>">Read more...</a></p>
+        </div>
+        <?php endwhile; ?>
+
+ 	</div>
+
+
+</section>
+
+<section class="latest-posts podcast">
+
+
+	<div class="row">
+
+		<div class="small-12 columns"><h2><i class="fa fa-microphone" aria-hidden="true"></i> Latest From The Podcast</h2></div>
+
+
+        <?php $query = new WP_Query( array(
+            'post_type' => 'post',
+            'posts_per_page' => 4,
+            'category_name' => 'podcast'
+        ) );
+        while ($query->have_posts()) : $query->the_post(); ?>
+        <div class="small-4 medium-3 columns">
+        	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
 	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 	      	<p><a href="<?php the_permalink(); ?>">Read more...</a></p>
         </div>

@@ -12,9 +12,10 @@
 .sidebar h6 {
     font-size: 0.9em;
     text-transform: uppercase;
-    color: #34b446;
+    /*color: #34b446;*/
+    color: $primary-grey;
     font-weight: bold;
-    border-bottom: 1px solid #34b446;
+    border-bottom: 1px solid $primary-grey;
 }
 
 .sidebar ul {

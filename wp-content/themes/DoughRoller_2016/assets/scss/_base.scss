@@ -1,3 +1,4 @@
+body {padding-top:30px;}
 body.home {padding-top:85px;}
 
 
@@ -72,7 +73,7 @@ body.home {padding-top:85px;}
       /*transform: translateY(-50%);*/
     }
     h1 {
-      color: $primary-green;
+      color: #fff;
       font-size: 1.5rem;
       line-height: 1.5em;
       letter-spacing: -0.025em;
@@ -80,9 +81,9 @@ body.home {padding-top:85px;}
       text-align: center;
     }
     p {
-      color: $primary-blue;
-      line-height: 1.75em;
-      font-weight: 200;
+      color: #fff;
+      line-height: 2.5em;
+      font-weight: 800;
       text-align: center;
       margin-bottom: 2rem;
     }
@@ -93,36 +94,33 @@ body.home {padding-top:85px;}
 
   .hero {
     background: url('../images/TEMP-Hero.jpg') no-repeat center right;
+    background-size: cover;
 
   h1 {
-      padding-top: 4.5rem;
-      text-align: left;
-      font-size: 2.5rem;
+      font-size: 4.5rem;
+      line-height: 1em;
     }
   
-  p {
-      text-align: left;
-    }
+  p {}
   }
 }
 
 
 
 .key_pages {
-    background: $primary-green;
     margin: 10px 0 10px 0;
-    padding: 50px 0 50px 0;
+    padding: 25px 0 25px 0;
 
   .key_link {
-    color:#fff;
+    color:$primary-grey;
     text-align:center;
-    border-bottom:3px solid $primary-green;
+    border-bottom:3px solid #fff;
 
-    &:hover {border-bottom:3px solid #fff}
+    &:hover {border-bottom:3px solid $primary-grey}
 
     .key_icon { font-size:3em; }
 
-    h3{ font-size: 1em; font-weight: 800; }
+    h3{ font-size: 1em; }
   }
 
 
@@ -131,14 +129,45 @@ body.home {padding-top:85px;}
 
 .latest-posts {
   margin: 10px 0 10px 0;
-  padding: 50px 0 0px 0;
+  padding: 25px 0 0px 0;
+
+  .columns {}
   
-  h2{text-align:center; font-weight:800; font-size:3em; color:$primary-green; margin-bottom:1em;}
+  h2{
+    font-size: 1em;
+    color: $primary-blue;
+    border-bottom: 2px solid $primary-blue;
+    border-right: 1em solid $primary-blue;
+    margin-bottom: 1em;
+  }
 
-  h4 {font-size:1em; font-weight:800; margin-top:10px;}
+  h4 {
+    font-size:1em;
+    margin-top:10px;
 
-  p a{font-weight:bold; color:$primary-green;}
+    a {color:$primary-grey;}
 
+  }
+
+  p a{font-weight:bold; color:$primary-blue;}
+
+  .home_thumb {
+    overflow: hidden;
+    height: 150px;
+
+    img {width:100%;}
+  }
+}
+
+
+.home_signup {
+    background: $primary-blue-lt;
+    color: #fff;
+    text-align:center;
+
+    .center {display:block; margin: 2em auto; float:none;}
+
+    input {width: 100%;}
 
 
 }

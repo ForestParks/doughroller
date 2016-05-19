@@ -5958,11 +5958,11 @@ table.hover tr:nth-of-type(even):hover {
 /* Tablet and desktop menu */
 .top-bar .menu .home a {
   font-size: 1rem;
-  color: #3a3a3c; }
+  color: #6d6e72; }
 
 .top-bar .menu a {
   line-height: 60px !important;
-  color: #3a3a3c;
+  color: #6d6e72;
   padding-top: 0;
   padding-bottom: 0;
   font-weight: normal;
@@ -5992,7 +5992,8 @@ table.hover tr:nth-of-type(even):hover {
   width: 100%;
   margin: 0 auto;
   border-top: 1px solid #ccc;
-  margin-top: 3.75rem; }
+  margin-top: 3.75rem;
+  background: #5ca6c6; }
   #footer-container #footer {
     max-width: 75rem;
     margin-left: auto;
@@ -6007,12 +6008,18 @@ table.hover tr:nth-of-type(even):hover {
       list-style-type: none;
       margin: 0;
       padding: 0; }
+  #footer-container p {
+    color: #fff; }
+  #footer-container a {
+    color: #fff; }
   #footer-container h6 {
     font-size: 0.9em;
     text-transform: uppercase;
-    color: #34b446;
+    /*color: #34b446;*/
+    color: #fff;
     font-weight: bold;
-    border-bottom: 1px solid #34b446; }
+    /*border-bottom: 1px solid #34b446;*/
+    border-bottom: 1px solid #fff; }
   #footer-container .footerColumn .first {
     min-height: 160px; }
   #footer-container .social-links li {
@@ -6020,11 +6027,10 @@ table.hover tr:nth-of-type(even):hover {
     font-size: 2em;
     padding-right: 0.5em; }
   #footer-container .copyright {
+    color: #fff;
     margin: 10px 0 40px 0;
-    text-align: center;
-    opacity: 0.5; }
+    text-align: center; }
   #footer-container .disclaimers {
-    opacity: 0.5;
     font-size: .6em;
     margin: 30px auto !important;
     display: block;
@@ -6060,9 +6066,10 @@ table.hover tr:nth-of-type(even):hover {
 .sidebar h6 {
   font-size: 0.9em;
   text-transform: uppercase;
-  color: #34b446;
+  /*color: #34b446;*/
+  color: #6d6e72;
   font-weight: bold;
-  border-bottom: 1px solid #34b446; }
+  border-bottom: 1px solid #6d6e72; }
 
 .sidebar ul {
   list-style: none !important; }
@@ -6683,6 +6690,9 @@ table.hover tr:nth-of-type(even):hover {
   text-decoration: none !important;
   text-align: center !important; }
 
+body {
+  padding-top: 30px; }
+
 body.home {
   padding-top: 85px; }
 
@@ -6733,61 +6743,74 @@ body.home {
     /*top: 50%;*/
     /*transform: translateY(-50%);*/ }
   .hero h1 {
-    color: #2bb673;
+    color: #fff;
     font-size: 1.5rem;
     line-height: 1.5em;
     letter-spacing: -0.025em;
     font-weight: 800;
     text-align: center; }
   .hero p {
-    color: #0d72c7;
-    line-height: 1.75em;
-    font-weight: 200;
+    color: #fff;
+    line-height: 2.5em;
+    font-weight: 800;
     text-align: center;
     margin-bottom: 2rem; }
 
 @media only screen and (min-width: 40.063em) {
   .hero {
-    background: url("../images/TEMP-Hero.jpg") no-repeat center right; }
+    background: url("../images/TEMP-Hero.jpg") no-repeat center right;
+    background-size: cover; }
     .hero h1 {
-      padding-top: 4.5rem;
-      text-align: left;
-      font-size: 2.5rem; }
-    .hero p {
-      text-align: left; } }
+      font-size: 4.5rem;
+      line-height: 1em; } }
 
 .key_pages {
-  background: #2bb673;
   margin: 10px 0 10px 0;
-  padding: 50px 0 50px 0; }
+  padding: 25px 0 25px 0; }
   .key_pages .key_link {
-    color: #fff;
+    color: #6d6e72;
     text-align: center;
-    border-bottom: 3px solid #2bb673; }
+    border-bottom: 3px solid #fff; }
     .key_pages .key_link:hover {
-      border-bottom: 3px solid #fff; }
+      border-bottom: 3px solid #6d6e72; }
     .key_pages .key_link .key_icon {
       font-size: 3em; }
     .key_pages .key_link h3 {
-      font-size: 1em;
-      font-weight: 800; }
+      font-size: 1em; }
 
 .latest-posts {
   margin: 10px 0 10px 0;
-  padding: 50px 0 0px 0; }
+  padding: 25px 0 0px 0; }
   .latest-posts h2 {
-    text-align: center;
-    font-weight: 800;
-    font-size: 3em;
-    color: #2bb673;
+    font-size: 1em;
+    color: #0d72c7;
+    border-bottom: 2px solid #0d72c7;
+    border-right: 1em solid #0d72c7;
     margin-bottom: 1em; }
   .latest-posts h4 {
     font-size: 1em;
-    font-weight: 800;
     margin-top: 10px; }
+    .latest-posts h4 a {
+      color: #6d6e72; }
   .latest-posts p a {
     font-weight: bold;
-    color: #2bb673; }
+    color: #0d72c7; }
+  .latest-posts .home_thumb {
+    overflow: hidden;
+    height: 150px; }
+    .latest-posts .home_thumb img {
+      width: 100%; }
+
+.home_signup {
+  background: #5ca6c6;
+  color: #fff;
+  text-align: center; }
+  .home_signup .center {
+    display: block;
+    margin: 2em auto;
+    float: none; }
+  .home_signup input {
+    width: 100%; }
 
 /* Entry Meta */
 .article__author {
