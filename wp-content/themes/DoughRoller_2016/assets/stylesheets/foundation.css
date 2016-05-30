@@ -6844,10 +6844,8 @@ body.home {
   .entry_meta_social .facebook.ems {
     width: auto;
     max-width: 250px; }
-  .entry_meta_social .pinterest.ems {
-    margin-top: -4px; }
   .entry_meta_social .email.ems {
-    margin-top: -7px;
+    margin-top: -6px;
     font-size: 1.4em; }
 
 /*# sourceMappingURL=foundation.css.map */
