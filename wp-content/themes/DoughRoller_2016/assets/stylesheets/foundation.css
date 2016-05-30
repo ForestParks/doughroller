@@ -6830,10 +6830,24 @@ body.home {
     line-height: 14px;
     margin-top: 8px;
     color: #464646; }
-  .article__author .post-cat {
-    margin-left: 10px; }
+  .article__author .time_cat_spacer {
+    padding: 0; }
 
 .entry_meta_social {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  display: block;
+  overflow: hidden; }
+  .entry_meta_social .ems {
+    display: block;
+    float: left;
+    margin-right: 10px; }
+  .entry_meta_social .facebook.ems {
+    width: auto;
+    max-width: 250px; }
+  .entry_meta_social .pinterest.ems {
+    margin-top: -4px; }
+  .entry_meta_social .email.ems {
+    margin-top: -7px;
+    font-size: 1.4em; }
 
 /*# sourceMappingURL=foundation.css.map */

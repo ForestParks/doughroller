@@ -204,10 +204,31 @@ body.home {padding-top:85px;}
     color: #464646;
     }
 
-    .post-cat {margin-left:10px;}
+    .time_cat_spacer {padding: 0}
+
+    .post-cat {}
 
 }
 
-.entry_meta_social {margin-bottom: 20px;}
+.entry_meta_social {
+            margin-bottom: 20px;
+          display: block;
+           overflow: hidden;
+
+        .ems {display: block;
+              float: left;
+              margin-right: 10px;
+             }
+
+        .facebook.ems {width: auto; max-width: 250px;}
+
+        .pinterest.ems {margin-top:-4px;}
+
+        .email.ems { margin-top: -7px; font-size: 1.4em;}
+
+
+
+
+}
 
 
