@@ -93,16 +93,21 @@ body.home {padding-top:85px;}
 @media only screen and (min-width: 40.063em) {
 
   .hero {
-    background: url('../images/TEMP-Hero.jpg') no-repeat center right;
+    background: url('../images/herodesktop.jpg') no-repeat center right;
     background-size: cover;
+
+  .small-centered.medium-uncentered.medium-7.large-8.columns {float:right;}
 
   h1 {
       font-size: 4.5rem;
       line-height: 1em;
+      text-shadow: 3px 3px 4px #888888;
     }
   
-  p {}
+  p {text-shadow: 1px 1px 2px #888888;}
   }
+
+  .button {border-bottom:1px solid #000;}
 }
 
 
@@ -149,7 +154,7 @@ body.home {padding-top:85px;}
 
   }
 
-  p a{font-weight:bold; color:$primary-blue;}
+  p a.button{background: #36B348;}
 
   .home_thumb {
     overflow: hidden;
@@ -215,16 +220,32 @@ body.home {padding-top:85px;}
           display: block;
            overflow: hidden;
 
-        .ems {display: block;
-              float: left;
-              margin-right: 10px;
+        .ems{
+          background: $primary-blue;
+          text-align: center;
+          border-radius: 200px;
+          display: block;
+          float: left;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          padding: 0 0 0 0;
+          margin-right: 5px;
+
+          a {color: #fff;  padding: 0 0 0 0;}
+
              }
 
-        .facebook.ems {width: auto; max-width: 250px;}
 
-        .pinterest.ems {}
+        .facebook.ems {background: #3b5998;}
 
-        .email.ems { margin-top: -6px; font-size: 1.4em;}
+        .twitter.ems {background: #4099FF;}
+
+        .pinterest.ems {background: #C92228;}
+
+        .linkedin.ems {background: #007bb5;}
+
+        .email.ems {}
 
 
 

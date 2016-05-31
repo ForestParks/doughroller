@@ -28,33 +28,28 @@ if ( ! function_exists( 'foundationpress_entry_meta' ) ) :
 
 
                 <div class="facebook ems">
-                <div id="fb-root"></div>
-                        <script>(function(d, s, id) {
-                          var js, fjs = d.getElementsByTagName(s)[0];
-                          if (d.getElementById(id)) return;
-                          js = d.createElement(s); js.id = id;
-                          js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=123830554341895";
-                          fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));</script>
 
-                        <div class="fb-like" data-href="<?php echo urlencode(get_permalink($post->ID)); ?>" data-width="50px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+                <a href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&title=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                
                 </div>
 
                 <div class="twitter ems">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo urlencode(get_permalink($post->ID)); ?>" data-via="doughroller" data-related="doughroller">Tweet</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+                    <a href="http://twitter.com/intent/tweet?status=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>+<?php echo urlencode(get_permalink($post->ID)); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
                 </div>
 
                 <div class="pinterest ems">
 
-                    <a data-pin-do="buttonPin" data-pin-count="beside" href="https://www.pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink($post->ID)); ?>&media=&description=Next%20stop%3A%20Pinterest"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+                     <a href="http://pinterest.com/pin/create/bookmarklet/?media=&url=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>&is_video=false&description=<?php echo urlencode(get_permalink($post->ID)); ?>" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
 
-                    <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
                 </div>
 
                 <div class="linkedin ems">
-                    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-                    <script type="IN/Share" data-url="<?php echo urlencode(get_permalink($post->ID)); ?>" data-counter="right"></script>
+                    
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink($post->ID)); ?>&title=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>&source=Doughroller" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
                 </div>
         
 

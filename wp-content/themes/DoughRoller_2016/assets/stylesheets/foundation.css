@@ -6758,11 +6758,18 @@ body.home {
 
 @media only screen and (min-width: 40.063em) {
   .hero {
-    background: url("../images/TEMP-Hero.jpg") no-repeat center right;
+    background: url("../images/herodesktop.jpg") no-repeat center right;
     background-size: cover; }
+    .hero .small-centered.medium-uncentered.medium-7.large-8.columns {
+      float: right; }
     .hero h1 {
       font-size: 4.5rem;
-      line-height: 1em; } }
+      line-height: 1em;
+      text-shadow: 3px 3px 4px #888888; }
+    .hero p {
+      text-shadow: 1px 1px 2px #888888; }
+  .button {
+    border-bottom: 1px solid #000; } }
 
 .key_pages {
   margin: 10px 0 10px 0;
@@ -6792,9 +6799,8 @@ body.home {
     margin-top: 10px; }
     .latest-posts h4 a {
       color: #6d6e72; }
-  .latest-posts p a {
-    font-weight: bold;
-    color: #0d72c7; }
+  .latest-posts p a.button {
+    background: #36B348; }
   .latest-posts .home_thumb {
     overflow: hidden;
     height: 150px; }
@@ -6838,14 +6844,26 @@ body.home {
   display: block;
   overflow: hidden; }
   .entry_meta_social .ems {
+    background: #0d72c7;
+    text-align: center;
+    border-radius: 200px;
     display: block;
     float: left;
-    margin-right: 10px; }
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 0 0 0;
+    margin-right: 5px; }
+    .entry_meta_social .ems a {
+      color: #fff;
+      padding: 0 0 0 0; }
   .entry_meta_social .facebook.ems {
-    width: auto;
-    max-width: 250px; }
-  .entry_meta_social .email.ems {
-    margin-top: -6px;
-    font-size: 1.4em; }
+    background: #3b5998; }
+  .entry_meta_social .twitter.ems {
+    background: #4099FF; }
+  .entry_meta_social .pinterest.ems {
+    background: #C92228; }
+  .entry_meta_social .linkedin.ems {
+    background: #007bb5; }
 
 /*# sourceMappingURL=foundation.css.map */

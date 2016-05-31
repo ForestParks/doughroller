@@ -76,13 +76,13 @@ get_header(); ?>
 
         <?php $query = new WP_Query( array(
             'post_type' => 'post',
-            'posts_per_page' => 4
+            'posts_per_page' => 3
         ) );
         while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="small-4 medium-3 columns">
+        <div class="small-4 medium-4 columns">
         	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
 	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	      	<p><a href="<?php the_permalink(); ?>">Read more...</a></p>
+	      	<p><a href="<?php the_permalink(); ?>" class="button small">Read more...</a></p>
         </div>
         <?php endwhile; ?>
 
@@ -133,7 +133,7 @@ get_header(); ?>
         <div class="small-4 medium-3 columns">
         	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
 	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	      	<p><a href="<?php the_permalink(); ?>">Read more...</a></p>
+	      	<p><a href="<?php the_permalink(); ?>" class="button small">Read more...</a></p>
         </div>
         <?php endwhile; ?>
 
@@ -149,21 +149,31 @@ get_header(); ?>
 
 		<div class="small-12 columns"><h2><i class="fa fa-microphone" aria-hidden="true"></i> Latest From The Podcast</h2></div>
 
+		<?php $first = true; ?>
 
         <?php $query = new WP_Query( array(
             'post_type' => 'post',
-            'posts_per_page' => 4,
+            'posts_per_page' => 7,
             'category_name' => 'podcast'
         ) );
         while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="small-4 medium-3 columns">
-        	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+        <div class="small-6 medium-6 columns">
+
+        	<?php if ( $first ): ?>
+        		<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+		    <?php $first = false; ?><?php endif; ?>
+
 	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	      	<p><a href="<?php the_permalink(); ?>">Read more...</a></p>
+
+        		<p><a href="<?php the_permalink(); ?>" class="button small">Read more...</a></p>
+
         </div>
         <?php endwhile; ?>
 
  	</div>
+
+
+
 
 
 </section>
