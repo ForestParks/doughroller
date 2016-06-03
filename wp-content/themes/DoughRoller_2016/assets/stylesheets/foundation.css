@@ -6818,9 +6818,9 @@ body.logged-in {
     position: relative; }
   .latest-posts .columns .home_thumb {
     overflow: hidden;
-    height: 250px; }
+    height: 150px; }
     .latest-posts .columns .home_thumb img {
-      width: 100%; }
+      min-height: 100%; }
 
 .podcast .columns.blocks h4 {
   min-height: 5px;

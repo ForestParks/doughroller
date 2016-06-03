@@ -6,7 +6,7 @@ body.home {padding-top:85px;}
 
 body.logged-in {
   padding-top: 70px;
-  
+
   .site-header {top:32px;}
 
 }
@@ -178,9 +178,9 @@ body.logged-in {
 
           .home_thumb {
             overflow: hidden;
-            height: 250px;
+            height: 150px;
 
-            img {width:100%;}
+            img {min-height:100%;}
           }
     }
     
