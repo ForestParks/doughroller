@@ -6826,6 +6826,10 @@ body.logged-in {
   min-height: 5px;
   padding-bottom: 5px; }
 
+.podcast .columns.blocks .home_thumb {
+  overflow: hidden;
+  height: 250px; }
+
 .podcast .columns.blocks.podright h4 {
   border-bottom: 1px dotted lightgrey;
   min-height: 5px;

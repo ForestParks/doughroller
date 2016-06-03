@@ -189,6 +189,11 @@ body.logged-in {
 .podcast .columns.blocks {
 
       h4 {min-height: 5px; padding-bottom:5px;}
+
+      .home_thumb {
+            overflow: hidden;
+            height: 250px;
+          }
 }
 
 .podcast .columns.blocks.podright {
