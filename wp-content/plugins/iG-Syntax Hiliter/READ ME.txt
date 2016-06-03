@@ -1,0 +1,48 @@
+iG:Syntax Hiliter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Version: 3.5
+Author: Amit Gupta
+License: GNU GPL
+License URL: http://www.gnu.org/copyleft/gpl.html
+
+This plugin is a Syntax Hiliter for various programming/scripting
+languages.
+I know that there is already a syntax highlighter plugin available at
+http://scott.yang.id.au/2004/05/syntax-hilight-enscript/
+but I had problems with that plugin, it didn't work on my Windows machine as
+it requires GNU Enscript which I think is only available for Unix/Linux. So I
+thought of making this plugin. This plugin uses GeSHi(v1.0.7.6) for
+hiliting the code. You can find GeSHi at http://qbnz.com/highlighter/
+
+If you haven't already, then you might want to checkout the official
+announcement of this plugin at
+http://blog.igeek.info/still-fresh/2006/02/25/code-for-fun/
+for more stuff that I might've missed out in the MANUAL & here(I doubt
+that I missed any though).
+
+I'm also aware of other syntax hiliting plugins(for WP) & copycats
+which use GeSHi for colourising the code, but then the original thing is
+ORIGINAL afterall, copycats will always be behind as they copy, they are
+not innovative. As I know of it, none of the other plugins(at the time of
+writing this) are as easy to use or as feature packed as this plugin, be it
+that they CLAIM to have just few lines of code(anyone heard of 15 line
+plugin??).
+
+Its you who have to decide, whether you want a 15 line plugin
+with no feature except it returns un-controlled colourised code and which
+doesn't implement the GeSHi engine well, or you want a 400+ line powerhouse
+with all sorts of features & ease of use that none other offers!!
+
+
+Read the accompanying MANUAL for installation/upgrade/usage instructions
+and other important stuff.
+
+If you find any bugs or issues with this plugin, you can always contact me via
+my website http://www.igeek.info/
+To contact me, go to the URL
+http://www.igeek.info/contact.php
+
+The WordPress support thread for this plugin is at
+http://wordpress.org/support/topic/10533
+
+

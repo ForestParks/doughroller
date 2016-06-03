@@ -1,0 +1,296 @@
+@import url("../popreset.css");
+
+#popdom-inline-container {
+	background-color: transparent;
+	margin-bottom: 1.5em;
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper {
+	display: block !important;
+}
+
+#popdom-inline-container .lightbox-grey-panel {
+	background-color: #ddd;
+	text-align: center;
+	padding: 1.5em;
+	color: #fff;
+	
+	background-color: #252525;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(37, 37, 37)), to(rgb(10, 10, 10)));
+	background-image: -webkit-linear-gradient(top, rgb(37, 37, 37), rgb(10, 10, 10));
+	background-image: -moz-linear-gradient(top, rgb(37, 37, 37), rgb(10, 10, 10));
+	background-image: -o-linear-gradient(top, rgb(37, 37, 37), rgb(10, 10, 10));
+	background-image: -ms-linear-gradient(top, rgb(37, 37, 37), rgb(10, 10, 10));
+	background-image: linear-gradient(top, rgb(37, 37, 37), rgb(10, 10, 10));
+	
+	-webkit-box-shadow: inset 0 0 3px #999; 
+	-moz-box-shadow: inset 0 0 3px #999;
+	-o-box-shadow: inset 0 0 3px #999;
+	box-shadow: inset 0 0 3px #999;
+}
+
+#popdom-inline-container .lightbox-grey-panel .heading {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-main .lightbox-grey-panel .bullet-listx {
+	text-align: left;
+	width: 100%;
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-main .lightbox-grey-panel .bullet-listx p {
+	margin-bottom: 1.5em;
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-main .lightbox-grey-panel ul.bullet-list {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.popup-dom-lightbox-wrapper .lightbox-main .lightbox-grey-panel ul.bullet-list li {
+	background: url('images/bullet.png') no-repeat -2px top;
+	margin-bottom: 0.375em;
+	line-height: 1.5em;
+	padding-left: 35px;
+	min-height: 27px;
+	font-size: 1em;	
+	color: #fff;
+	list-style-type: none;
+}
+
+#popdom-inline-container .lightbox-signup-panel {
+	border: 1px solid #E0E0E0;
+	background-color: #eee;
+	margin-bottom: 0.375em;
+	text-align: center;
+	border-top: none;
+	padding: 1em;
+	
+	-webkit-box-shadow: inset 0 0 3px #fff; 
+	-moz-box-shadow: inset 0 0 3px #fff;
+	-o-box-shadow: inset 0 0 3px #fff;
+	box-shadow: inset 0 0 3px #fff;
+	
+	background-color: #f2f2f2;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(242, 242, 242)), to(rgb(230, 230, 230)));
+	background-image: -webkit-linear-gradient(top, rgb(242, 242, 242), rgb(230, 230, 230));
+	background-image: -moz-linear-gradient(top, rgb(242, 242, 242), rgb(230, 230, 230));
+	background-image: -o-linear-gradient(top, rgb(242, 242, 242), rgb(230, 230, 230));
+	background-image: -ms-linear-gradient(top, rgb(242, 242, 242), rgb(230, 230, 230));
+	background-image: linear-gradient(top, rgb(242, 242, 242), rgb(230, 230, 230));
+}
+
+#popdom-inline-container .lightbox-signup-panel .heading {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+#popdom-inline-container form {
+	margin: 0.75em 0 0 0;
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="text"] {
+	margin-bottom: 5px;
+	line-height: 20px;
+	padding: 12px 10px;
+	font-size: 1.125em;
+	background-color: #fff;
+	background-position: left center;
+	outline: none;
+	background-image: url('images/icons.png');
+	background-repeat: no-repeat;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+    width: 85%;
+}
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="text"].name {
+  background-position: right 16px;
+}
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="text"].email {
+  background-position: right -38px;
+}
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"] {
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 47px;
+	padding: 0px;
+	margin-bottom: 0.75em;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: transparent;
+    background-position: center top;
+	border: none;
+	font-size: 19px;
+	color: #fff;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	text-shadow: 1px 1px 0px #000;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	line-height: 45px;
+	text-align: center;
+    -webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"]:hover {
+	background-position: center center;
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"]:active {
+	background-position: center bottom;
+}
+
+#popdom-inline-container .secure {
+	font-size: 1em;
+}
+
+#popdom-inline-container .powered {
+	font-size: 0.8125em;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+#popdom-inline-container .lightbox-main.lightbox-color-black .lightbox-grey-panel {
+  background-color: #2e2f32;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(0, 0, 0)), to(rgb(46, 47, 50)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(46, 47, 50), rgb(0, 0, 0));
+  background-image: -moz-radial-gradient(50% 50%, rgb(46, 47, 50), rgb(0, 0, 0));
+  background-image: -o-radial-gradient(50% 50%, rgb(46, 47, 50), rgb(0, 0, 0));
+  background-image: -ms-radial-gradient(50% 50%, rgb(46, 47, 50), rgb(0, 0, 0));
+  background-image: radial-gradient(50% 50%, rgb(46, 47, 50), rgb(0, 0, 0));
+}
+
+#popdom-inline-container .lightbox-main.lightbox-color-sunset .lightbox-grey-panel {
+  background-color: #812808;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(105, 13, 4)), to(rgb(129, 40, 8)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(129, 40, 8), rgb(105, 13, 4));
+  background-image: -moz-radial-gradient(50% 50%, rgb(129, 40, 8), rgb(105, 13, 4));
+  background-image: -o-radial-gradient(50% 50%, rgb(129, 40, 8), rgb(105, 13, 4));
+  background-image: -ms-radial-gradient(50% 50%, rgb(129, 40, 8), rgb(105, 13, 4));
+  background-image: radial-gradient(50% 50%, rgb(129, 40, 8), rgb(105, 13, 4));
+}
+#popdom-inline-container .lightbox-main.lightbox-color-neon-pink .lightbox-grey-panel {
+  background-color: #ff98f5;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(255, 115, 253)), to(rgb(255, 152, 245)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(255, 152, 245), rgb(255, 115, 253));
+  background-image: -moz-radial-gradient(50% 50%, rgb(255, 152, 245), rgb(255, 115, 253));
+  background-image: -o-radial-gradient(50% 50%, rgb(255, 152, 245), rgb(255, 115, 253));
+  background-image: -ms-radial-gradient(50% 50%, rgb(255, 152, 245), rgb(255, 115, 253));
+  background-image: radial-gradient(50% 50%, rgb(255, 152, 245), rgb(255, 115, 253));
+}
+#popdom-inline-container .lightbox-main.lightbox-color-yellow .lightbox-grey-panel { 
+  background-color: #ffe481;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(255, 212, 45)), to(rgb(255, 228, 129)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(255, 228, 129), rgb(255, 212, 45));
+  background-image: -moz-radial-gradient(50% 50%, rgb(255, 228, 129), rgb(255, 212, 45));
+  background-image: -o-radial-gradient(50% 50%, rgb(255, 228, 129), rgb(255, 212, 45));
+  background-image: -ms-radial-gradient(50% 50%, rgb(255, 228, 129), rgb(255, 212, 45));
+  background-image: radial-gradient(50% 50%, rgb(255, 228, 129), rgb(255, 212, 45));
+  color: black !important;
+}
+#popdom-inline-container .lightbox-main.lightbox-color-dark-green .lightbox-grey-panel { 
+  background-color: #216626;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(0, 82, 7)), to(rgb(33, 102, 38)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(33, 102, 38), rgb(0, 82, 7));
+  background-image: -moz-radial-gradient(50% 50%, rgb(33, 102, 38), rgb(0, 82, 7));
+  background-image: -o-radial-gradient(50% 50%, rgb(33, 102, 38), rgb(0, 82, 7));
+  background-image: -ms-radial-gradient(50% 50%, rgb(33, 102, 38), rgb(0, 82, 7));
+  background-image: radial-gradient(50% 50%, rgb(33, 102, 38), rgb(0, 82, 7));
+}
+#popdom-inline-container .lightbox-main.lightbox-color-blue .lightbox-grey-panel { 
+  background-color: #135390;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(5, 26, 110)), to(rgb(19, 83, 144)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(19, 83, 144), rgb(5, 26, 110));
+  background-image: -moz-radial-gradient(50% 50%, rgb(19, 83, 144), rgb(5, 26, 110));
+  background-image: -o-radial-gradient(50% 50%, rgb(19, 83, 144), rgb(5, 26, 110));
+  background-image: -ms-radial-gradient(50% 50%, rgb(19, 83, 144), rgb(5, 26, 110));
+  background-image: radial-gradient(50% 50%, rgb(19, 83, 144), rgb(5, 26, 110));
+}
+#popdom-inline-container .lightbox-main.lightbox-color-purple .lightbox-grey-panel { 
+  background-color: #623390;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(60, 25, 110)), to(rgb(98, 51, 144)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(98, 51, 144), rgb(60, 25, 110));
+  background-image: -moz-radial-gradient(50% 50%, rgb(98, 51, 144), rgb(60, 25, 110));
+  background-image: -o-radial-gradient(50% 50%, rgb(98, 51, 144), rgb(60, 25, 110));
+  background-image: -ms-radial-gradient(50% 50%, rgb(98, 51, 144), rgb(60, 25, 110));
+  background-image: radial-gradient(50% 50%, rgb(98, 51, 144), rgb(60, 25, 110));
+}
+#popdom-inline-container .lightbox-main.lightbox-color-aqua .lightbox-grey-panel { 
+  background-color: #c2f1ff;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(2, 253, 252)), to(rgb(194, 241, 255)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(194, 241, 255), rgb(2, 253, 252));
+  background-image: -moz-radial-gradient(50% 50%, rgb(194, 241, 255), rgb(2, 253, 252));
+  background-image: -o-radial-gradient(50% 50%, rgb(194, 241, 255), rgb(2, 253, 252));
+  background-image: -ms-radial-gradient(50% 50%, rgb(194, 241, 255), rgb(2, 253, 252));
+  background-image: radial-gradient(50% 50%, rgb(194, 241, 255), rgb(2, 253, 252));
+  color: black !important;
+}
+#popdom-inline-container .lightbox-main.lightbox-color-citrus .lightbox-grey-panel { 
+  background-color: #d0f939;
+  background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(1, 247, 43)), to(rgb(208, 249, 57)));
+  background-image: -webkit-radial-gradient(50% 50%, rgb(208, 249, 57), rgb(1, 247, 43));
+  background-image: -moz-radial-gradient(50% 50%, rgb(208, 249, 57), rgb(1, 247, 43));
+  background-image: -o-radial-gradient(50% 50%, rgb(208, 249, 57), rgb(1, 247, 43));
+  background-image: -ms-radial-gradient(50% 50%, rgb(208, 249, 57), rgb(1, 247, 43));
+  background-image: radial-gradient(50% 50%, rgb(208, 249, 57), rgb(1, 247, 43));
+  color: black !important;
+}
+#popdom-inline-container .lightbox-main.lightbox-color-orange .lightbox-grey-panel { 
+background-color: #ff9f25;
+background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgb(255, 120, 32)), to(rgb(255, 159, 37)));
+background-image: -webkit-radial-gradient(50% 50%, rgb(255, 159, 37), rgb(255, 120, 32));
+background-image: -moz-radial-gradient(50% 50%, rgb(255, 159, 37), rgb(255, 120, 32));
+background-image: -o-radial-gradient(50% 50%, rgb(255, 159, 37), rgb(255, 120, 32));
+background-image: -ms-radial-gradient(50% 50%, rgb(255, 159, 37), rgb(255, 120, 32));
+background-image: radial-gradient(50% 50%, rgb(255, 159, 37), rgb(255, 120, 32));
+}
+
+#popdom-inline-container .lightbox-main.lightbox-color-yellow .lightbox-grey-panel li,
+#popdom-inline-container .lightbox-main.lightbox-color-aqua .lightbox-grey-panel li,
+#popdom-inline-container .lightbox-main.lightbox-color-citrus .lightbox-grey-panel li
+{ 
+  color: black !important;
+}
+
+/*
+  The Button Designs
+=======================
+*/
+
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"].red-button {
+	background-image: url('images/buttons/red-button.png');
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"].dark-red-button {
+	background-image: url('images/buttons/dark-red-button.png');
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"].orange-button {
+	background-image: url('images/buttons/orange-button.png');
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"].dark-orange-button {
+	background-image: url('images/buttons/dark-orange-button.png');
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"].green-button {
+	background-image: url('images/buttons/green-button.png');
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"].dark-green-button {
+	background-image: url('images/buttons/dark-green-button.png');
+}
+
+#popdom-inline-container .popup-dom-lightbox-wrapper .lightbox-signup-panel input[type="submit"].blue-button {
+	background-image: url('images/buttons/blue-button.png');
+}
+

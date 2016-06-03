@@ -1,0 +1,6 @@
+FEED_URL = "http://feeds.cardsynergy.com/datafeed/?aid=127788&v=2"
+SITE_URL = http://www.doughroller.net
+WEBSITE_ID = 17248
+IMAGE_PREFIX = http://www.imgsynergy.com/cccom/
+IMAGE_PREFIX_LARGE = http://www.imgsynergy.com/standard/
+FEED_URL2 = "https://affiliate.creditkarma.com/api/v1/offers-xml?pubKey=G2GH0IOKFU4UNJD9&reviews=1&chartdata=1"

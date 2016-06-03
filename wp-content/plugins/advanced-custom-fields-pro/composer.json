@@ -1,0 +1,12 @@
+{
+    "name": "thefold/advanced-custom-fields-pro",
+    "description": "ACF Pro for composer",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Tim Field",
+            "email": "tim@thefold.co.nz"
+        }
+    ],
+    "require": {}
+}

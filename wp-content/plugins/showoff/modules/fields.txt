@@ -1,0 +1,144 @@
+#
+# doughroller.net
+#
+# Blank lines and lines that start with a hash are ignored.
+#
+# All other lines must contain a comma-separated list of values:
+#
+# 1: the field id that can be used in templates.
+#
+# 2: the field name that appears on the offer edit form.
+#
+# 3: the field type, which must be one of:
+#    text_short
+#    text_long
+#    text_area
+#    display -- shows the field, does not allow editing
+#
+
+name, Name, text_long
+issuer, Issuer, text_short
+short_description, Short Description, text_short
+bullets, Bullets, text_area
+overview, Overview, text_area
+pros, Pros, text_area
+cons, Cons, text_area
+rewards_type, Rewards Type, text_short
+intro_purchase_rate, Intro Purchase Rate, text_long
+intro_purchase_period, Intro Purchase Period, text_long
+intro_transfer_rate, Intro Transfer Rate, text_long
+intro_transfer_period, Intro Transfer Period, text_long
+purchase_rate, Purchase Rate, text_long
+transfers, Transfers Allowed, text_short
+transfers_value, Transfers Allowed Value, text_short
+transfer_rate, Transfer Rate, text_long
+transfer_fee, Transfer Fee, text_long
+cash_adv_rate, Cash Advance Rate, text_short
+cash_adv_fee, Cash Advance Fee, text_short
+exchange_fee, Currency Exchange Fee, text_short
+advance_rate, Cash Advance Rate, text_short
+advance_fee, Cash Advance Fee, text_short
+penalty_rate, Penalty Rate, text_short
+transaction_fee_pin, PIN Transaction Fee, text_short
+transaction_fee_sign, Signature Transaction Feep, text_short
+load_fee, Load Fee, text_short
+atm_fee, ATM Fee, text_short
+activation_fee, Activation Fee, text_short
+points_1, Points 1, text_long
+points_1_desc, Points 1 Desc, text_long
+points_2, Points 2, text_long
+points_2_desc, Points 2 Desc, text_long
+points_3, Points 3, text_long
+points_3_desc, Points 3 Desc, text_long
+points_4, Points 4, text_long
+points_4_desc, Points 4 Desc, text_long
+bonus_points_1, Bonus Points 1, text_long
+bonus_points_1_desc, Bonus Points 1 Desc, text_long
+bonus_points_2, Bonus Points 2, text_long
+bonus_points_2_desc, Bonus Points 2 Desc, text_long
+bonus_points_3, Bonus Points 3, text_long
+bonus_points_3_desc, Bonus Points 3 Desc, text_long
+miles_1, Miles 1, text_long
+miles_1_desc, Miles 1 Desc, text_long
+miles_2, Miles 2, text_long
+miles_2_desc, Miles 2 Desc, text_long
+miles_3, Miles 3, text_long
+miles_3_desc, Miles 3 Desc, text_long
+miles_4, Miles 4, text_long
+miles_4_desc, Miles 4 Desc, text_long
+bonus_miles_1, Bonus Miles 1, text_long
+bonus_miles_1_desc, Bonus Miles 1 Desc, text_long
+bonus_miles_2, Bonus Miles 2, text_long
+bonus_miles_2_desc, Bonus Miles 2 Desc, text_long
+bonus_miles_3, Bonus Miles 3, text_long
+bonus_miles_3_desc, Bonus Miles 3 Desc, text_long
+cash_1, Cash 1, text_long
+cash_1_desc, Cash 1 Desc, text_long
+cash_2, Cash 2, text_long
+cash_2_desc, Cash 2 Desc, text_long
+cash_3, Cash 3, text_long
+cash_3_desc, Cash 3 Desc, text_long
+cash_4, Cash 4, text_long
+cash_4_desc, Cash 4 Desc, text_long
+bonus_cash_1, Bonus Cash 1, text_long
+bonus_cash_1_desc, Bonus Cash 1 Desc, text_long
+annual_fee, Annual Fee, text_long
+foreign_transaction_fee, Foreign Transaction Fee, text_long
+application_fee, Application Fee, text_long
+late_fee, Late Fee, text_long
+over_limit_fee, Over-limit Fee, text_long
+returned_payment_fee, Returned Payment Fee, text_long
+minimum_finance_charge, Minimum Finance Charge, text_long
+grace_period, Grace Period, text_long
+minimum_payment, Minimum Payment, text_long
+credit_rating, Credit Rating, text_long
+points, Points, text_long
+car_rental_insurance, Car Rental Insurance, text_long
+emergency_help, Emergency Help, text_long
+flight_insurance, Flight Insurance, text_long
+lost_luggage_insurance, Lost Luggage Insurance, text_long
+travel_insurance, Travel Insurance, text_long
+extended_warranty, Extended Warranty, text_long
+damage_protection, Damage Protection, text_long
+return_protection, Return Protection, text_long
+fraud_liability, Fraud Liability, text_long
+image_url, Image URL, text_long
+image_url_large, Large Image URL, text_long
+offer_url, Offer URL, text_long
+alias, Alias, text_long
+article_path, Article Path, text_long
+alternate_url, Alternate URL, text_long
+lowest_credit_score, Lowest Credit Score, text_short
+average_credit_score, Average Credit Score, text_short
+networks_category, Networks Category, text_short
+title, Title, text_short
+headline, Headline, text_short
+networks_category, Networks Category, text_short
+issuers_category, Issuers Category, text_short
+user_types_category, User Types Category, text_short
+credit_category, Credit Category, text_short
+custom_category, Custom Category, text_short
+all_category, All Category, text_short
+monthly_fee, Monthly Fee, text_short
+rewards_type, Rewards Type, text_short
+rewards_per_dollar_base_value, Rewards/Dollar Base Value, text_short
+rewards_per_dollar_base_display, Rewards/Dollar Base Display, text_short
+rewards_per_dollar_max_value, Rewards/Dollar Max Value, text_short
+rewards_per_dollar_max_display, Rewards/Dollar Max Display, text_short
+points_bonus_value, Points Bonus Value, text_short
+points_bonus_display, Points Bonus Display, text_short
+per_dollar_gas, Per Dollar Gas, text_short
+per_dollar_groceries, Per Dollar Groceries, text_short 
+per_dollar_restaurants, Per Dollar Restaurants, text_short
+per_dollar_airfare, Per Dollar Airfare, text_short
+minimum_deposit, Minimum Deposit, text_short
+card_art_vertical, Card Art Vertical, text_long
+chart_data, Chart Data, text_long
+reviews_rating, Reviews Rating, text_short
+most_popular_comment, Most Popular Comment, text_area
+comment_screenname, Comment Screen Name, text_short
+
+goto_url, Goto URL, display
+intro_rate, Intro APR, display
+intro_period, Intro Period, display
+intro_for_transfer, Intro For Transfer, display

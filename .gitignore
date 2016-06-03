@@ -7,7 +7,6 @@
 *.swp
 Thumbs.db
 
-
 xmlrpc.php
 WzLqzZA2C8BDOBb.zip
 test
@@ -32,7 +31,6 @@ KlATeqv2Zf7O59j.zip
 insurance.com.qs.js
 ING-Direct.php
 img
-images
 IberiaBank.php
 hosting.php
 googlefaf4734696cff237.html
@@ -63,9 +61,7 @@ ways-to-save.php
 # wordpress specific
 wp-config.php
 wp-content/uploads/
-wp-content/plugins/
 /wp-content/uploads/
-/wp-content/plugins/
 wp-content/mu-plugins/
 wp-content/blogs.dir/
 wp-content/upgrade/*
@@ -124,8 +120,6 @@ wp-content/tablepress-custom.css
 wp-content/tablepress-combined.min.css
 wp-content/infinitewp
 wp-content/index.php
-
-
 
 # large/disallowed file types
 # a CDN should be used for these

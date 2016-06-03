@@ -1,0 +1,91 @@
+version 1.0.1.6
+  * Fixed Reviews Settings not saved (due upgrade to WordPress Version 3.5.2) 
+
+version 1.0.1.5
+  * Added Review Disclaimer
+  * Added more Custom Post Type support
+  * Fixed invalid header in review list
+  * Fixed review meta box conflict in tabs with themes and other plugins
+
+version 1.0.1.4
+  * Added check for the WP Reviews plugin (can't run at the same time)
+  * Remove IonCube loader check
+  * Fixed empty space issue in email when validating the plugin
+
+version 1.0.1.3
+  * Fixed some styles in the rating box and the after post box
+
+version 1.0.1.2
+  * Added itemtype Thing and itemprop="name" to the body to solve an issue in the rating
+
+
+version 1.0.1.1
+  * Fixed a bug in review template
+
+version 1.0.1.0
+  * Added global option to set "More Details" button value
+
+version 1.0.0.9
+  * Fixed a little empty extra space in widget links
+  * Added link to review image in widget and shortcode
+  * Add support for custom post types
+
+version 1.0.0.8
+  * Fixed review class in reiew template
+  * Downgraded ioncube loader to version to 3.+
+
+version 1.0.0.7
+  * Removed the beta tester menu link
+  * Added menu link to documentation page
+  * Added menu link to support forums
+  * Added a link to testimonials form under the settings page
+  * remove some unused styles and images
+  * Marked as first stable version of the plugin
+
+version 1.0.0.6
+  * Added shortcode [related_reviews num=5 images=yes] to display related reviews by tags
+  * Added shortcode [recent_reviews num=5 images=yes] to display list of recent reviews  
+  * Changed the way we added review class, now the plugin use post class filter
+  * Fix issue with custom meta box prefix, renamed to avoid conflict
+  * Changed the way we save plugin default options
+  * Added option to disable loading of stylesheet in plugin settings
+  * Changed file name style_front.css to style.css
+  * Added new option set hide/show modified date on review box
+  * Fixes review date style
+  * Removed title class in product name due a conflict with some themes
+  * Fix issue with rating box template styles (bold labels)
+  * Fix overlapped image in the below post rating box
+  * Added alt="Product Name" for images
+  * Fixed some php notices
+
+version 1.0.0.5
+  * Fix CSS issue in the light rating box style.
+  * Added option to choose rating box template to specific review in the meta box
+  * Added an option to add meta itemprop to head via the plugin settings page
+
+version 1.0.0.4
+  * Added a link in (reviews post list) to easily open in G rich snippets test tool
+  * Added buton alignment
+  * Added image alignment
+
+version 1.0.0.3
+  * Removed option (hide) button in meta box, make it based on link
+  * Added shortcode to display rating box [ratingbox]
+  * Added new template for the shortcode to avoid duplicate snippets for reviewed item
+  * Fix issue with meta box preview image style
+  * Changed rating box display in templates files and css
+
+version 1.0.0.2
+  * Added missing js update
+
+version 1.0.0.1
+  * Fix rating box css
+  * Fix include template files
+  * Fix post editor preview button style (Thanks to Andy Bailey)
+  * Fix admin color style load (Thanks to Andy Bailey)
+  * Fix meta box upload image js (Thanks to Andy Bailey)
+
+
+version 1.0
+- The first release
+    * enhancements are in progress!

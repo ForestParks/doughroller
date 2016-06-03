@@ -1,0 +1,304 @@
+version 3.5.4.8
+- Additional push for broken build which may have been installed by automatic-plugin installers
+
+version 3.5.4.7
+- Fixed JS issue on IE7 mode of IE10 relating to placeholders on some sites using old versions of jQuery. (May have prevented closing popups)
+- Fixed box-sizing issue with submit buttons
+- Fixed close button using wrong image in IE7/8
+- Fixed bug where sometimes the centering and scaling code wouldn't run on certain sites
+- Fixed bug where a closed A/B test would prevent a regular campaign from showing
+- Added cursor:pointer to close button for themes with that missing form their CSS
+- Fixed issue where A/B campaign wouldn't show on site under some conditions
+- Fixed JS errors in mailing manager for updated jQuery versions
+
+version 3.5.4.6
+- Fixed jQuery version issue where some sites were throwing an easing (fadeout/fadein) error preventing the popups from closing
+- Added jQuery CDN inclusion to preview window
+- Fixed 404 on "wait.gif" for sites with wordpress not at site root
+- Fixed bug where popup was showing during the cookie time in cases where no mailing list had been attached
+- Added call to include jQuery migrate if required (for jQuery versions 1.9 and over)
+- Updated 'reset' CSS to ensure box-sizing is set correctly in the popups
+- Fixed 'missing close button' issue for older internet explorers on smaller displays
+- Fixed plugin conflict with shared campaign monitor API wrappers
+- Fixed compatibility issues related to latest jQuery in admin area including main dashboard and campaign pages
+- Fixed bug where A/B tests were not showing
+
+version 3.5.4.5
+- Fixed Constant Contact API auth bug requiring lowercase usernames
+- Removed all references to "no javascript installed" as it caused more issues than it solved
+- Fixed bug with AWeber/HTML formcode submissions
+- Fixed AWeber bug with "tab" display
+- Fixed technical on/live detection bug for form submissions and link-click targetting
+
+version 3.5.4.4
+- Added shortcode support to in-post templates
+- Altered code of in-post template to make more dynamic in respect of containers
+- Added code that allows shortcode to run in the sidebar widgets, placing popdom shortcode in a sidebar text widget will allow the campaign to show in the sidebar
+- Added API failure feedback to campaigns, eg. invalid email addresses etc
+- Added handling of more than one shortcode campaign appearing on the same page
+- Updated preview code to create a generic window using the site's own template settings to better reflect CSS and layout
+- Fixed bug with tab "closes" removing video from video templates
+- Added option to configure height of tab display
+- Fixed bug where some HTML form code mailng lists wouldn't submit properly
+
+version 3.5.4.3
+- Altered mobile detection to use screen sizes rather than a list of devices
+- Fixed fadeOut closing bug with certain jQuery versions
+- Fixed layout bug in theme installer area
+- Fixed bug where button colour choice wasn't being saved
+- Added Theme Removal system
+- Added menu link to help users find the upgrade page in response to customer requests
+
+version 3.5.4.2
+- Fixed authentication bug with Constant Contact API form submissions
+- Fixed bug affecting Wordpress "posts" admin area pagination
+- Fixed issue with GetResponse API on certain servers
+- Fixed bug with showing popups on category pages / by category
+- Fixed bug with A/B tests showing on category pages / pages in categories
+- Altered animations to use CSS transitions rather than JS for smoothness (not supported in IE9 and lower - JS fallback still in place)
+- Added "tab" trigger for display - can open popup from a little tab on the side of the page(visitors using IE9 and lower fall back to "on page load" settings)
+- Altered animation options to dropdown box as individual radio buttons were becoming unwieldy as more animations are added
+
+version 3.5.4.1
+- Fixed validation errors in mailing list admin area
+- Fixed legacy button toggle for A/B campaigns
+- Fixed 404 on images when toggling product on/off at master switch from 'inside' the menus
+- Fixed bug with redirect themes not redirecting
+- Fixed bug where Facebook connections would occasionally return an error
+- Added functionality to use any template as a redirect
+- Fixed "false negative" check in theme uploader
+- Added "Esc" key to close popup for improved accessibility for those who have difficulty using a mouse to click
+- Altered code so that PopUp Domination code will only be included on pages where a campaign is active
+- Fixed bug where Chrome browser wouldn't save HTML Form code mailing lists properly
+- Updated scaling algorithm for smaller screens so they better fit
+- Fixed Constant Contact API submission error
+- Added Slide in from left, right and bottom animation options
+
+version 3.5.4.0
+- Fixed Constant Contact OAuth bug
+- Removed un-needed "password" field from Constant Contact connection window
+- Improved flow for connecting to Constant Contact API
+- Fixed bug relating to centring of popups on certain jQueryUI versions (http://stackoverflow.com/a/12718376/438089)
+- Fixed bug relating to undefined value when plugin turned ON but no popups selected
+- Fixed bug where in-post template wasn't disappearing after successful submission so looked like it was hanging
+- Fixed theme uploader "no such folder" bug
+- Added better error reporting for failed theme uploads
+
+version 3.5.3.9
+- Fixed IE placeholder support bug
+- Changed update checker frequency to 12 hours
+- Fixed bug with submitting to new window using AWeber API
+- Removed "click on background" from closing lightbox
+- Fixed bug where some themes wouldn't submit properly
+- Updated HTML Form submission code to close the popup quicker
+- Updated code to ensure all lightboxes get the "waiting" image while submitting
+- Added scaling support to popups so they fit smaller screens better
+- Fixed bug in preview window where popup appeared behind dark overlay
+- Added option to show popups to mobile devices on a per-popup basis
+- Added better form submission checking
+- Added cookie tied to mailing list to prevent those who have opted in to a particular mailing list from seeing popups tied to that mailing list
+- Removed "junk" output from theme installer when theme is unable to be installed automatically due to server settings
+- Brought "Clear Cookies" button outside of non-expanded Help area for convenience
+- Fixed bug where submit to new window opened the window but didn't submit / handle redirects within it for API submissions
+- Re-wrote blog feed dashboard widget code to use core wordpress functions for better support
+- Added new updater script support
+
+version 3.5.3.8
+- Added image path to fix broken template secure icons
+- Fixed bonus template file layouts
+- Fixed bug on undeclared var related to animations
+- Fixed bug where getresponse not accepting submissions when name filed turned off
+- Altered "mouseout" code to no longer activate on right of window to allow scrolling using the scrollbar
+- Fixed "Wordpress 404" AWeber bug when saving mailing lists for some servers
+
+version 3.5.3.7
+- Altered analytics to show opt-in bar even when flooring out to 0% if any opt-in has happened (shows bar to 1% minimum - counter remains accurate)
+- Fixed iContact API "wrong api key" bug
+
+version 3.5.3.6
+- Fixed API provider bug
+
+version 3.5.3.5
+- Fixed "phantom" autoplay videos from playing with cookied popups
+- Fixed email notifications bug with form code
+- Altered email to use wordpress wp_mail function
+- Incorporated opt-in to email and mail notifications(bcc'd)
+
+version 3.5.3.4
+- Fixed bug that caused slow loading for 'campaign' and 'anlaytics' menus
+- Added browser 'popup blocker' workarounds for submit to new window
+- Fixed AWeber form bug for in-post forms
+
+version 3.5.3.3
+- Added in-post themes
+- Fixed analytics (new Year) bug
+- Fixed bug with custom fields not being recorded
+- Fixed Campaign Monitor custom field 1 missing data error
+- Fixed Facebook submission and redirect error
+- Removed mobile check from back end - this is all handled on the front end now
+- Fixed broken images with toggling on/off master switch
+- Fixed "disabled" bug when changing saved campaign display settings
+- Added ABP avoider plugin support
+- Changed ON | OFF toggle switch
+
+version 3.5.3.2
+- Added AWeber code to redirect to landing page when opt-in exists on list already
+- Fixed bug with saving new campaigns on certain MS hosts rejecting for blank analytics data
+- Added pdref=1 query string check for appending to links and not have the popups showing to visitors with that URL
+- Added automatic installation of themes and direct theme purchase links
+- Fixed image upload bug on some wordpress (language) versions
+- Changed menu order to better reflect flow of the plugin
+- Altered menu item labels
+
+version 3.5.3.1
+- Rewrite of theme backup system to use less resources and only copy missing files
+
+version 3.5.3
+- Added option to notify to email address on opt-in
+- Now closes lighbox on mailchimp already subscribed error
+- Changed toggle links to ON/OFF "buttons"
+- Removed legacy database code that displayed errors on installs with WP_DEBUG turned on
+- Added mobile device detection to front-end as fallback for WP-Super-Cached pages etc
+- Altered A/B testing cookies to hide lightbox if any of A/B test had been shown
+- Added option to clear this A/B cookie for testing
+- Added which popup was submitted to opt-in to email message
+- Added ability to toggle all checkboxes in display settings to easier enable those with lots of pages to deselect a few
+- Added toggling of help boxes - default closed
+- Added UX prompt to toggle new campaigns ON
+- Added UX prompt to direct to mailing list manager from within campaign mailing list tab
+- Added animation options to display popup
+- Disabled theme backups - too inefficient
+
+version 3.5.2.1
+- Opt-in to email redirect bug fixed
+
+version 3.5.2
+- Lightbox close issue with email opt-in bug fixed
+- AWeber redirect bug 404 resolved
+- Constant Contact blank connect box bug resolved
+
+version 3.5.1
+- API connection bug resolved
+- AWeber invalid email address bug resolved
+- Aweber disable name bug resolved
+- Analytics bug resolved
+- version 3.5 installation bug resolved
+- view Analytics button added
+
+version 3.5
+- Dashboard URL File-access error resolved - users given static blog details instead
+- Mailing Manager redesigned
+- Improved Mailing Manager support
+- IE appear bug resolved
+- Multiple Mailing lists added
+- Opt ins no longer see pop up
+- Failed opt ins do not halt pop up and prevent content being shown
+- Analytics refer to id rather than name
+- Multiple campaigns with same name now possible
+- HTTPS sign out bug resolved
+- Analytics panel maintenance improved
+- A/B panels maintenance improved
+- PopUp shows on selected link
+- Campaign selector bug resolved
+- A/B thank you URL removed
+
+version 3.3.4.4.6.6
+- Mailing Manager save error resolved
+
+version 3.3.4.4.6.5
+- Save error resolved
+
+version 3.3.4.4.6
+- Save button error resolved
+
+version 3.3.4.4.5
+- Changes made to structure
+- Changes made to Mailing Manager
+- Mobiles devices added
+- Scripts not imported on 404's
+- A/B allows campaign's with apostrophies
+- Authentication procedure modified
+
+version 3.3.4.4.3
+- Stopped division by 0 in analytics panel
+- Backward Placeholder and IE support created
+- Change to directory structure
+- logout issues during installation sorted
+
+version 3.3.4.4.2
+- Revisions made to redirect support
+
+version 3.3.4.4.1
+- Redirect pop up support added
+
+version 3.3.4.4
+- Dashboard widget added
+- All API's updated to allow multiple connections
+- A/B analytics sorted for Aweber, HTML and Email
+
+version 3.3.4.3
+- preview function sorted
+- pop ups now stay in middle of screen
+- check name bug on html form fixed
+- Log out issues are now resolved
+- Custom fields are fully implemented
+- Currently connected to feature corrected
+- Multi-lingual support added
+- New feature added - disable user exit
+- Stop video code added to handle other video players
+
+version 3.3.4.2.5
+- removed permissions error
+
+version 3.3.4.2
+- required security updates
+- Disable name bug fixed
+- Analytics for campaigns now resolved
+- Analytics for A/B testing now resolved
+- Check name problems resolved
+
+version 3.3.4.1
+- fixes 6XX line error on front end
+- cleans up analytics database for deleting and re-creating campaigns
+
+version 3.3.3.5
+- Small bug fixed that stopped themes from being transfer over after backup
+
+version 3.3.3
+- Multi Fields now fully configurable
+- Check Name filter updated
+- Facebook API and Video video framework embedded into plugin
+
+version 3.3.2
+- Theme Back-up fully working (stops updater overwriting themes)
+- Theme uploader updated to reduce failed upload
+
+version 3.3.1
+- Theme Back-up Prototype launched
+
+version 3.3
+- All IE 8 & & Bugs fixed
+
+version 3.2.8
+- Posts/Page Bug - Now will appear when selected both pages and posts
+
+version 3.2.5
+- A/B Split problems
+
+version 3.2.2
+- Aweber api reconfigured (url re-direct instead of lightbox connection to aweber)
+
+version 3.2
+- Plugin updated to run with Wordpress 3.3
+
+version 3.1.7
+- Aweber Api - Changed and bugs fixed (no more ajax for form loading)
+- IE 9 All bugs fixed (check your browsers not running in Compatibility Mode)
+- Categories & Post - All bugs fixed
+
+version 3.1
+- Install Bug fixed
+- Permissions when creating a campaign fixed
+
+version 3.0
+- Original version

@@ -1,0 +1,2 @@
+* Add review criteria
+* Add option to display rating box at the bottom of post
