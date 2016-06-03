@@ -31,6 +31,44 @@
 	    border-bottom: 1px solid #fff;
 	}
 
+	#featuredOn {
+
+			.huff {display: block;width: 100%; background: url('../images/asseen/huff.jpg'); background-size:100%;
+			display:block; float:left;
+			}
+			.forbes {display: block; margin-top:10px; width: 100%; background: url('../images/asseen/forbes.jpg'); background-size:100%;
+			display:block; float:left;
+			}
+			.usn {display: block;width: 50%; background: url('../images/asseen/usn.jpg'); background-size:100%;
+			display:block; float:left;
+			}
+			.df {display: block;width: 50%; background: url('../images/asseen/df.jpg'); background-size:100%;
+			display:block; float:left;
+			}
+
+			.huff img,
+			.forbes img,
+			.usn img,
+			.df img
+			{opacity:0;
+			    -webkit-transition: all 1s ease;
+   				-moz-transition: all 1s ease;
+   				-o-transition: all 1s ease;
+    			transition: all 1s ease;}
+			
+			.huff img:hover,
+			.forbes img:hover,
+			.usn img:hover,
+			.df img:hover
+			{opacity:1;
+				-webkit-transition: all 1s ease;
+   				-moz-transition: all 1s ease;
+   				-o-transition: all 1s ease;
+    			transition: all 1s ease;}
+
+
+		}
+
 	.footerColumn .first {    min-height: 160px;}
 
 	.social-links li {

@@ -105,8 +105,10 @@
             <div class="medium-4 small-12 columns footerColumn">
                 <h6>Featured On:</h6>
                 <div id="featuredOn">
-                	<p>TEMPORARY GRAPHIC</p>
-                	<img src="http://doughroller.wpengine.netdna-cdn.com/wp-content/uploads/2013/07/as-seen-in.jpg" />
+                	<a class="huff" href=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/asseen/huff-hov.jpg" /></a>
+                    <a class="forbes" href=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/asseen/forbes-hov.jpg" /></a>
+                    <a class="usn" href=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/asseen/usn-hov.jpg" /></a>
+                    <a class="df" href=""><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/asseen/df-hov.jpg" /></a>
 
                 </div>
             </div>

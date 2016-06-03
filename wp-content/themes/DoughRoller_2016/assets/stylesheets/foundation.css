@@ -6020,6 +6020,47 @@ table.hover tr:nth-of-type(even):hover {
     font-weight: bold;
     /*border-bottom: 1px solid #34b446;*/
     border-bottom: 1px solid #fff; }
+  #footer-container #featuredOn .huff {
+    display: block;
+    width: 100%;
+    background: url("../images/asseen/huff.jpg");
+    background-size: 100%;
+    display: block;
+    float: left; }
+  #footer-container #featuredOn .forbes {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    background: url("../images/asseen/forbes.jpg");
+    background-size: 100%;
+    display: block;
+    float: left; }
+  #footer-container #featuredOn .usn {
+    display: block;
+    width: 50%;
+    background: url("../images/asseen/usn.jpg");
+    background-size: 100%;
+    display: block;
+    float: left; }
+  #footer-container #featuredOn .df {
+    display: block;
+    width: 50%;
+    background: url("../images/asseen/df.jpg");
+    background-size: 100%;
+    display: block;
+    float: left; }
+  #footer-container #featuredOn .huff img,
+  #footer-container #featuredOn .forbes img,
+  #footer-container #featuredOn .usn img,
+  #footer-container #featuredOn .df img {
+    opacity: 0;
+    transition: all 1s ease; }
+  #footer-container #featuredOn .huff img:hover,
+  #footer-container #featuredOn .forbes img:hover,
+  #footer-container #featuredOn .usn img:hover,
+  #footer-container #featuredOn .df img:hover {
+    opacity: 1;
+    transition: all 1s ease; }
   #footer-container .footerColumn .first {
     min-height: 160px; }
   #footer-container .social-links li {
