@@ -32,32 +32,32 @@ get_header(); ?>
 	<section class="key_pages">
 		  <div class="row">
 
-		    <a class="key_link small-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="#">
 			    <span class="key_icon"><i class="fa fa-credit-card" aria-hidden="true"></i></span>
 			    <h3>Credit Cards</h3>
 		    </a>
 
-		    <a class="key_link small-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="#">
 			    <span class="key_icon"><i class="fa fa-money" aria-hidden="true"></i></span>
 			    <h3>Savings Accounts</h3>
 		    </a>
 
-		    <a class="key_link small-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="#">
 			    <span class="key_icon"><i class="fa fa-university" aria-hidden="true"></i></span>
 			    <h3>Checking Accounts</h3>
 		    </a>
 
-		    <a class="key_link small-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="#">
 			    <span class="key_icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
 			    <h3>CDs</h3>
 		    </a>
 
-		    <a class="key_link small-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="#">
 			    <span class="key_icon"><i class="fa fa-home" aria-hidden="true"></i></span>
 			    <h3>Mortgages</h3>
 		    </a>
 
-		    <a class="key_link small-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="#">
 			    <span class="key_icon"><i class="fa fa-wrench" aria-hidden="true"></i></span>
 			    <h3>Tools</h3>
 		    </a>
@@ -79,7 +79,7 @@ get_header(); ?>
             'posts_per_page' => 3
         ) );
         while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="small-4 medium-4 columns blocks">
+        <div class="small-12 medium-4 columns blocks">
         <div class="inner">
         	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
 	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
@@ -132,7 +132,7 @@ get_header(); ?>
             'category_name' => 'home-featured'
         ) );
         while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="small-4 medium-3 columns blocks">
+        <div class="small-6 medium-3 columns blocks">
         <div class="inner">
         	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
 	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
