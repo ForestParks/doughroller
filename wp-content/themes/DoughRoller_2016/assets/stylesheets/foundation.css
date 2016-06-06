@@ -6929,6 +6929,8 @@ body.logged-in {
     float: none; }
   .home_signup input {
     width: 100%; }
+  .home_signup input[type="submit"] {
+    width: 100%; }
 
 @media only screen and (max-width: 40em) {
   .latest-posts.popular .columns.blocks {
@@ -7026,7 +7028,11 @@ body.logged-in {
   .card_box .button {
     width: 100%; }
   .card_box .col.card {
-    padding-right: 15px !important; }
+    padding: 0 15px 15px 0 !important; }
+  @media only screen and (max-width: 40em) {
+    .card_box .col.card {
+      padding-right: 0px !important;
+      text-align: center; } }
   .card_box .col_top {
     margin-bottom: 10px; }
   .card_box .featured {
@@ -7044,10 +7050,19 @@ body.logged-in {
     color: gold; }
     .card_box .rating .blank_star {
       color: lightgrey; }
+  .card_box #more, .card_box #less {
+    text-align: center;
+    background: lightgrey;
+    height: 30px;
+    width: 100px;
+    overflow: hidden;
+    line-height: 30px;
+    color: #fff;
+    font-weight: bold;
+    margin: 0px auto -10px auto; }
 
 .card_half {
-  width: 50%;
-  max-width: 500px;
+  max-width: 600px;
   float: left !important;
   font-size: 1em; }
   .card_half .deets {
@@ -7057,5 +7072,52 @@ body.logged-in {
       display: block;
       text-align: right;
       line-height: 1em; }
+
+/* EMAIL POPUP */
+.email_popup {
+  border: 5px solid #0d72c7;
+  background: #fff url(../images/DR-coin-315px.png) no-repeat -50px -50px; }
+  .email_popup .right_side {
+    background: rgba(255, 255, 255, 0.8);
+    float: right;
+    width: 370px;
+    padding: 0px 15px 0px 15px;
+    display: block;
+    overflow: hidden; }
+  .email_popup h1 {
+    color: #0d72c7;
+    font-size: 1.8em;
+    line-height: 1em;
+    font-weight: bold; }
+  .email_popup .free {
+    color: #5ca6c6;
+    text-transform: uppercase; }
+  .email_popup li {
+    text-indent: -25px;
+    margin-left: 5px;
+    list-style: none; }
+  .email_popup li:before {
+    content: ">> ";
+    font-weight: bold;
+    color: #0d72c7; }
+  .email_popup input {
+    width: 48%;
+    margin-right: 1%;
+    float: left;
+    display: inline; }
+  .email_popup input[type=submit] {
+    width: 99%; }
+  .email_popup #featuredOn {
+    width: 100%;
+    background: #0d72c7;
+    display: block;
+    overflow: hidden; }
+    .email_popup #featuredOn img {
+      max-height: 10px; }
+
+@media only screen and (min-width: 700px) {
+  .email_popup {
+    width: 650px !important;
+    max-width: 650px; } }
 
 /*# sourceMappingURL=foundation.css.map */

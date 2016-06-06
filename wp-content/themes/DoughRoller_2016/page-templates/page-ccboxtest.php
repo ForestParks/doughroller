@@ -26,7 +26,7 @@ get_header(); ?>
 
 <div class="card_box card_full small-12 columns">
 
-                <div class="col card small-3 columns">
+                <div class="col card small-12 medium-3 columns">
                   <div class="img-wrap">
                     <a href="http://www.comparecards.com/redirect/slate-from-chase" target="_blank" rel="nofollow">
                       <img src="http://cdn.comparecards.com/uploads/images/items/1495.gif" border="0" id="snapshot-card-img-426" alt="Low Interest Credit Card: Chase Slate">
@@ -34,10 +34,11 @@ get_header(); ?>
                   </div>
                 </div><!-- /col -->
 
-                <div class="wrap small-9 columns">
+                <div class="wrap small-12 medium-9 columns">
 
                   <div class="wrap small-12 columns">
-                        <div class="col_top small-4 columns">
+
+                        <div class="col_top small-7 medium-8 columns">
                               <p class="featured">Featured</p>
                               <h3><a class="detail-tog" href="#">Chase Slate<sup>®</sup> </a></h3>
                               <div class="rating">
@@ -45,17 +46,13 @@ get_header(); ?>
                               </div>
                         </div><!-- /col -->
 
-                        <div class="col_top small-4 columns spacer">
-                            -
-                        </div><!-- /col -->
-
-                        <div class="col_top small-4 columns">
+                        <div class="col_top small-5 medium-4 columns">
                                <a href="http://www.comparecards.com/redirect/slate-from-chase" class="button" target="_blank" rel="nofollow">Apply Now</a>
                         </div><!-- /col -->
                     </div>
 
                     <div class="wrap small-12 columns">
-                        <div class="col small-4 columns">
+                        <div class="col small-12 medium-4 columns">
                               <div class="col_block">
                                 <h4>Intro APR</h4>
                                 <p>0% for 15 Months*</p>
@@ -68,7 +65,7 @@ get_header(); ?>
 
                         </div><!-- /col -->
 
-                        <div class="col_top small-4 columns">
+                        <div class="col_top small-12 medium-4 columns">
                               <div class="col_block">
                                 <h4>Rates &amp; Fees</h4>
                                 <p>No Annual Fee &amp; Intro No Balance Transfer Fee*</p>
@@ -80,7 +77,7 @@ get_header(); ?>
                               </div>
                         </div><!-- /col -->
 
-                        <div class="col_top small-4 columns">
+                        <div class="col_top small-12 medium-4 columns">
                               <div class="col_block">
                                 <h4>Regular Purchase APR</h4>
                                 <p>13.24%-23.24% Variable</p>
@@ -90,9 +87,9 @@ get_header(); ?>
 
                 </div><!-- wrap 9 columns -->           
                     
-                <div class="wrap small-12 columns">
+                <div class="wrap small-12 columns" id="moredeets" style="display:none">
                   <h4>Highlights</h4>
-                  <div class="small-6 columns">
+                  <div class="small-12 medium-6 columns">
                     <ul>
                       <li>Click "<a href="http://www.comparecards.com/redirect/slate-from-chase" target="_blank">APPLY NOW</a>" to apply online</li>
                       <li>Chase Slate named "Best Credit Card for Balance Transfers" three years in a row by MONEY Magazine</li>
@@ -101,7 +98,7 @@ get_header(); ?>
                     </ul>
                   </div>
 
-                  <div class="small-6 columns">
+                  <div class="small-12 medium-6 columns">
                     <ul>
                       <li>Monthly FICO® Score and Credit Dashboard for free</li>  
                       <li>No Penalty APR - Paying late won't raise your interest rate (APR). All other account pricing and terms apply</li>
@@ -109,13 +106,15 @@ get_header(); ?>
                     </ul>
                   </div>
                  
-                </div><!-- // wrap hide -->
+                </div><!-- // wrap -->
+
+            <a href="#" onclick="toggle_visibility('moredeets');toggle_visibility('more');toggle_visibility('less');"><span id="more" style="display:block">More Details</span><span id="less" style="display:none">Less Details</span></a>
                   
 </div><!-- //card-full -->
 
 
 
-<div class="card_box card_half small-12 columns">
+<div class="card_box card_half small-12 medium-6 columns">
 
 
       <div class="col_top small-12 columns">
@@ -123,7 +122,7 @@ get_header(); ?>
         <h3><a class="detail-tog" href="#">Chase Slate<sup>®</sup> </a></h3>
       </div><!-- /col -->
 
-      <div class="col card small-6 columns">
+      <div class="col card small-12 medium-6 columns">
                   <div class="img-wrap">
                     <a href="http://www.comparecards.com/redirect/slate-from-chase" target="_blank" rel="nofollow">
                       <img src="http://cdn.comparecards.com/uploads/images/items/1495.gif" border="0" id="snapshot-card-img-426" alt="Low Interest Credit Card: Chase Slate">
@@ -131,7 +130,7 @@ get_header(); ?>
                   </div>
       </div><!-- /col -->
 
-      <div class="small-6 columns">
+      <div class=" small-12 medium-6 columns">
           <a href="http://www.comparecards.com/redirect/slate-from-chase" class="button" target="_blank" rel="nofollow">Apply Now</a>
       </div><!-- /col -->
 

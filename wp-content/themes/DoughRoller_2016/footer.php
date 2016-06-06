@@ -87,12 +87,30 @@
 						<div id="newsletter-form-cont">
 							<form action="#" method="post" id="subForm">
 							        <div class="row collapse margintop-20px">
-							          <div class="small-8 medium-8 columns">
-							            <input id="fieldEmail" name="cm-xlitlu-xlitlu" type="email" placeholder="signup@example.com">
-							          </div>
-							          <div class="small-4 medium-4 columns">
-							            <input type="submit" href="#" class="postfix button" value="Sign Up">
-							          </div>
+     
+                               <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+
+            <div class="small-12 medium-6 columns">
+            <input style="width:95%"  type="text" name="name" value="Name"
+  onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
+  onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#BBB';}"
+  style="color:#BBB;" />
+                        </div>
+
+                         <div class="small-12 medium-6 columns">
+                        <input type="text" name="email" value="Email"
+  onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
+  onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#BBB';}"
+  style="color:#BBB;" />
+  </div>
+
+            <input type="hidden" name="campaign_token" value="TAZ6"/>
+<div class="small-12 columns">
+            <input type="submit" class="button" style="width:100%" value="Let's Roll"/>
+            </div>
+            </form>
+
+							     
 							        </div>
 							      </form>
 							 </div>
@@ -153,6 +171,20 @@
 
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
+
+
+/* ALLOW SHOW / HIDE on ccbox*/
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
 
 <script type='text/javascript' id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace("HOST", location.hostname));

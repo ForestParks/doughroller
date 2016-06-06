@@ -22,11 +22,53 @@ get_header(); ?>
 
 				<h1>Make the most of your money</h1>
 				<p>Get my free weekly newsletter to improve your finances.</p>
-				<a class="large expanded button" data-open="nlmodal" aria-controls="nlmodal" id="k0uzl3-reveal" aria-haspopup="true" tabindex="0">Get It Now!</a>
+
+
+				<a class="large expanded button" data-open="nlmodalhome" aria-controls="nlmodal" id="reveal" aria-haspopup="true" tabindex="0">Get It Now!</a>
 				</div>
 
+
+				
 		  </div>
 	</section>
+
+
+	<div class="reveal email_popup" id="nlmodalhome" data-reveal>
+
+				            <div class="right_side">
+				          <h1>Get our <span class="free">free</span> weekly newsletter packed with</h1>
+				          
+				          <ul>
+				            <li>Links to our latest articles</li>
+				            <li>Money saving tips</li>
+				            <li>Tools, resources, and guides to improve your finances</li>
+				          </ul>
+
+				          <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+
+				            <input type="text" name="name" value="Name"
+				  onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
+				  onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}"
+				  style="color:#BBB;" />
+
+
+				                        <input type="text" name="email" value="Email"
+				  onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
+				  onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}"
+				  style="color:#BBB;" /><br/>
+
+				            <input type="hidden" name="campaign_token" value="TAZ6"/>
+
+				            <input type="submit" class="button" value="Let's Roll"/>
+				            </form>
+				        </div>
+
+				          <button class="close-button" data-close aria-label="Close modal" type="button">
+				            <span aria-hidden="true">&times;</span>
+				          </button>
+				          
+    </div><!-- // email_popup -->
+
 
 
 	<section class="key_pages">
@@ -100,16 +142,28 @@ get_header(); ?>
 
 		  <h3><strong>Make the most of your money</strong></h3> <h4>Get my free weekly newsletter to improve your finances.</h4>
 		  					<div id="newsletter-form-cont">
-								<form action="#" method="post" id="subForm" style="margin-top:20px">
-							        <div class="row collapse">
-							          <div class="small-8 medium-8 columns">
-							            <input id="fieldEmail" name="cm-xlitlu-xlitlu" type="email" placeholder="signup@example.com">
-							          </div>
-							          <div class="small-4 medium-4 columns">
-							            <input type="submit" href="#" class="postfix button" value="Sign Up">
-							          </div>
-							        </div>
-							    </form>
+					
+
+		  							</br>
+							    	 <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+
+							    	 	<div class="small-12 medium-4 columns">
+								<input type="text" name="name" value="Name" onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}" onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}" style="color:#BBB;" />
+										</div>
+
+										<div class="small-12 medium-4 columns">
+								<input type="text" name="email" value="Email" onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}" onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}" style="color:#BBB;" />
+										</div>
+
+											<input type="hidden" name="campaign_token" value="TAZ6"/>
+
+										<div class="small-12 medium-4 columns">
+								<input type="submit" class="button" value="Let's Roll"/>
+										</div>
+									
+									</form>
+
+
 							 </div>
 
 		  </div>

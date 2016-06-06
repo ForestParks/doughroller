@@ -28,11 +28,48 @@ get_header(); ?>
 		<p>Our 31-Day Money Challenge will help you get out of debt, save more, and take back control of your life.</p>
 		<p><strong>Bonus:</strong> You'll also get instant access to my interview of a husband and father who retired at the ripe old age of . . . 30. Seriously!</p>
 		<p><strong>What others are saying:</strong> "Hi Rob.  I'm at Day 26 in your 31 day money challenge podcast. Thank you, thank you, thank you!  I've been looking for a comprehensive guide to all-things-money and this has been so informative." --Danielle</p>
-		<a class="large expanded button">Get Instant Access!</a>
+		<a class="large expanded button" data-open="nlmodal31">Get Instant Access!</a>
+
 
 		<div><a class="wf-privacy wf-privacyico" href="http://www.getresponse.com/permission-seal?lang=en" target="_blank" style="height: 18px !important; display: inline !important;">We hate spam as much as you do.</a></div>
 
 		</div>
+
+		<div class="reveal email_popup" id="nlmodal31" data-reveal>
+
+				            <div class="right_side">
+				          <h1>Get our <span class="free">free</span> weekly newsletter packed with</h1>
+				          
+				          <ul>
+				            <li>Links to our latest articles</li>
+				            <li>Money saving tips</li>
+				            <li>Tools, resources, and guides to improve your finances</li>
+				          </ul>
+
+				          <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+
+				            <input type="text" name="name" value="Name"
+				  onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
+				  onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}"
+				  style="color:#BBB;" />
+
+
+				                        <input type="text" name="email" value="Email"
+				  onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
+				  onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}"
+				  style="color:#BBB;" /><br/>
+
+				            <input type="hidden" name="campaign_token" value="PaQV"/>
+
+				            <input type="submit" class="button" value="Let's Roll"/>
+				            </form>
+				        </div>
+
+				          <button class="close-button" data-close aria-label="Close modal" type="button">
+				            <span aria-hidden="true">&times;</span>
+				          </button>
+				          
+    </div><!-- // email_popup -->
 
 
 		<footer>
