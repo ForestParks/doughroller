@@ -38,13 +38,8 @@ get_header(); ?>
 		<div class="reveal email_popup" id="nlmodal31" data-reveal>
 
 				            <div class="right_side">
-				          <h1>Get our <span class="free">free</span> weekly newsletter packed with</h1>
-				          
-				          <ul>
-				            <li>Links to our latest articles</li>
-				            <li>Money saving tips</li>
-				            <li>Tools, resources, and guides to improve your finances</li>
-				          </ul>
+				          <h1>Start the 31-day money challenge!</h1>		          
+		
 
 				          <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
 

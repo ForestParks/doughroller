@@ -6753,12 +6753,7 @@ body.logged-in {
   body {
     padding-top: 100px !important; }
   body.logged-in {
-    padding-top: 120px !important; }
-  .top-bar .menu a {
-    color: #0d72c7;
-    font-size: 0.8em !important;
-    line-height: 1em !important;
-    margin-bottom: 10px; } }
+    padding-top: 120px !important; } }
 
 .site-header {
   position: fixed;
@@ -6774,6 +6769,42 @@ body.logged-in {
     padding-bottom: 5px;
     max-width: 180px; }
 
+/* MEDIA QUERIES TO STOP HEADER BREAKING */
+@media only screen and (max-width: 1195px) {
+  .site-header .menu img {
+    max-width: 150px; }
+  .site-header .top-bar form {
+    width: 200px; } }
+
+@media only screen and (max-width: 1115px) {
+  .site-header .menu img {
+    max-width: 140px; }
+  .site-header .top-bar .menu > li:not(.menu-text) > a {
+    padding: 0 .5rem 0 .5rem; } }
+
+@media only screen and (max-width: 975px) {
+  .site-header .menu img {
+    max-width: 130px; }
+  .site-header .top-bar .menu > li:not(.menu-text) > a {
+    padding: 0 .3rem 0 .3rem;
+    font-size: 0.8em; }
+  .site-header .top-bar form {
+    width: 160px; }
+  .site-header .top-bar .top-bar-right .small-8.columns {
+    max-width: 50px; }
+  .site-header .top-bar .top-bar-right .small-4.columns {
+    min-width: 65px; } }
+
+@media only screen and (max-width: 796px) {
+  .site-header .top-bar .menu > li:not(.menu-text) > a {
+    padding: 0 .3rem 0 .3rem;
+    font-size: 0.6em; } }
+
+@media only screen and (max-width: 796px) {
+  .site-header .top-bar form {
+    display: none; } }
+
+/* //// MEDIA QUERIES TO STOP HEADER BREAKING */
 .top-bar {
   background-color: transparent; }
   .top-bar ul {
@@ -7051,13 +7082,13 @@ body.logged-in {
     .card_box .rating .blank_star {
       color: lightgrey; }
   .card_box #more, .card_box #less {
-    text-align: center;
-    background: lightgrey;
-    height: 30px;
-    width: 100px;
-    overflow: hidden;
+    /* text-align: center; */
+    /* background: lightgrey; */
+    /* height: 30px; */
+    /* width: 100px; */
+    /* overflow: hidden; */
     line-height: 30px;
-    color: #fff;
+    /* color: #fff; */
     font-weight: bold;
     margin: 0px auto -10px auto; }
 
