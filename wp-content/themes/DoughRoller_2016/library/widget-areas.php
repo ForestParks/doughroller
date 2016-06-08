@@ -27,7 +27,26 @@ function foundationpress_sidebar_widgets() {
 	  'before_title' => '<h6>',
 	  'after_title' => '</h6>',
 	));
+	register_sidebar(array(
+	  'id' => 'resources-guides-left',
+	  'name' => __( 'Resources and Guides Left', 'foundationpress' ),
+	  'description' => __( 'Resources and Guide On Home Page - Left', 'foundationpress' ),
+	  'before_widget' => '<div class="small-12 medium-6 columns blocks resources-guides">',
+	  'after_widget' => '</div>',
+	  'before_title' => '',
+	  'after_title' => '',
+	));
+	register_sidebar(array(
+	  'id' => 'resources-guides-right',
+	  'name' => __( 'Resources and Guides Left', 'foundationpress' ),
+	  'description' => __( 'Resources and Guide On Home Page - Right', 'foundationpress' ),
+	  'before_widget' => '<div class="small-12 medium-6 columns blocks resources-guides">',
+	  'after_widget' => '</div>',
+	  'before_title' => '',
+	  'after_title' => '',
+	));
 }
+
 
 add_action( 'widgets_init', 'foundationpress_sidebar_widgets' );
 endif;

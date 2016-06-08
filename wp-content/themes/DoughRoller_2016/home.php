@@ -247,13 +247,29 @@ get_header(); ?>
  	</div>
 
 
+</section>
 
 
+<section class="latest-posts resources-guides">
 
 
+	<div class="row">
+
+		<div class="small-12 columns"><h2><i class="fa fa-wrench" aria-hidden="true"></i> Resources And Guides</h2></div>
+
+<?php dynamic_sidebar( 'resources-guides-left' ); ?>
+<?php dynamic_sidebar( 'resources-guides-right' ); ?>
+
+ 	</div>
 
 
 </section>
+
+
+
+
+
+<?php dynamic_sidebar( 'custom' ); ?>
 
 
 
