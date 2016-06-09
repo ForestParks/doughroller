@@ -35,7 +35,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="row"><div class="small-12 column">
 
-		<div class="title-bar" data-responsive-toggle="site-navigation">
+		<div class="title-bar" data-responsive-toggle="site-navigation" data-hide-for="large">
 			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
 			<div class="title-bar-title">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/DoughRoller_Logo-600px.png">

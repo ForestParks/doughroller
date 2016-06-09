@@ -38,7 +38,7 @@ function foundationpress_sidebar_widgets() {
 	));
 	register_sidebar(array(
 	  'id' => 'resources-guides-right',
-	  'name' => __( 'Resources and Guides Left', 'foundationpress' ),
+	  'name' => __( 'Resources and Guides Right', 'foundationpress' ),
 	  'description' => __( 'Resources and Guide On Home Page - Right', 'foundationpress' ),
 	  'before_widget' => '<div class="small-12 medium-6 columns blocks resources-guides">',
 	  'after_widget' => '</div>',

@@ -34,7 +34,7 @@ body.logged-in {
   position:fixed;
   width: 100%;
   top:0px;
-  background: rgba(255,255,255,.8);
+  background: rgba(255,255,255,.9);
   z-index: 99999999;
   -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.25);
   -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.25);
@@ -55,10 +55,12 @@ body.logged-in {
   .site-header {
       .menu img {
       max-width: 150px;
+      padding-top: 3px;
       }
-      .top-bar form {
-      width: 200px;
+  .top-bar .menu > li:not(.menu-text) > a {
+      padding: 0 .7rem 0 .7rem;
       }
+     
   }
 }
 
@@ -73,7 +75,15 @@ body.logged-in {
   }
 }
 
-@media only screen and (max-width: 975px) {
+@media only screen and (max-width: 1030px) {
+  .site-header {
+      .top-bar .menu > li:not(.menu-text) > a {
+      padding: 0 .4rem 0 .4rem;
+      }
+  }
+}
+
+/*@media only screen and (max-width: 975px) {
   .site-header {
       .menu img {
       max-width: 130px;
@@ -140,8 +150,16 @@ body.logged-in {
     padding-bottom: 11px;
   }
 
-
 }
+
+@media only screen and (max-width: 63.9em) {
+
+  .top-bar-right {
+      width: 100%;
+      height:59px;
+    }
+  }
+
 
 .title-bar {
     background-color: transparent;

@@ -5938,11 +5938,11 @@ table.hover tr:nth-of-type(even):hover {
   Add your scss files below to structure your project styles
 */
 /* Navigation breakpoints */
-@media screen and (max-width: 39.9375em) {
+@media screen and (max-width: 63.9375em) {
   .desktop-menu, .top-bar-left {
     display: none !important; } }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 64em) {
   #mobile-menu, .title-bar {
     display: none !important; } }
 
@@ -6759,7 +6759,7 @@ body.logged-in {
   position: fixed;
   width: 100%;
   top: 0px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   z-index: 99999999;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); }
   .site-header .menu img {
@@ -6772,9 +6772,10 @@ body.logged-in {
 /* MEDIA QUERIES TO STOP HEADER BREAKING */
 @media only screen and (max-width: 1195px) {
   .site-header .menu img {
-    max-width: 150px; }
-  .site-header .top-bar form {
-    width: 200px; } }
+    max-width: 150px;
+    padding-top: 3px; }
+  .site-header .top-bar .menu > li:not(.menu-text) > a {
+    padding: 0 .7rem 0 .7rem; } }
 
 @media only screen and (max-width: 1115px) {
   .site-header .menu img {
@@ -6782,27 +6783,43 @@ body.logged-in {
   .site-header .top-bar .menu > li:not(.menu-text) > a {
     padding: 0 .5rem 0 .5rem; } }
 
-@media only screen and (max-width: 975px) {
-  .site-header .menu img {
-    max-width: 130px; }
+@media only screen and (max-width: 1030px) {
   .site-header .top-bar .menu > li:not(.menu-text) > a {
-    padding: 0 .3rem 0 .3rem;
-    font-size: 0.8em; }
-  .site-header .top-bar form {
-    width: 160px; }
-  .site-header .top-bar .top-bar-right .small-8.columns {
-    max-width: 50px; }
-  .site-header .top-bar .top-bar-right .small-4.columns {
-    min-width: 65px; } }
+    padding: 0 .4rem 0 .4rem; } }
+
+/*@media only screen and (max-width: 975px) {
+  .site-header {
+      .menu img {
+      max-width: 130px;
+      }
+      .top-bar .menu > li:not(.menu-text) > a {
+      padding: 0 .3rem 0 .3rem;
+      font-size: 0.8em;
+      }
+      .top-bar form {width: 160px;}
+      .top-bar .top-bar-right .small-8.columns {max-width:50px;}
+      .top-bar .top-bar-right .small-4.columns {min-width:65px;}
+
+  }
+
+}
 
 @media only screen and (max-width: 796px) {
-  .site-header .top-bar .menu > li:not(.menu-text) > a {
-    padding: 0 .3rem 0 .3rem;
-    font-size: 0.6em; } }
+  .site-header {
+      .top-bar .menu > li:not(.menu-text) > a {
+      padding: 0 .3rem 0 .3rem;
+      font-size: 0.6em;
+      }
+
+  }
+}
 
 @media only screen and (max-width: 796px) {
   .site-header .top-bar form {
-    display: none; } }
+    display:none;
+  }
+}
+
 
 /* //// MEDIA QUERIES TO STOP HEADER BREAKING */
 .top-bar {
@@ -6826,6 +6843,11 @@ body.logged-in {
     height: 50px; }
   .top-bar .top-bar-right input {
     padding-bottom: 11px; }
+
+@media only screen and (max-width: 63.9em) {
+  .top-bar-right {
+    width: 100%;
+    height: 59px; } }
 
 .title-bar {
   background-color: transparent;
