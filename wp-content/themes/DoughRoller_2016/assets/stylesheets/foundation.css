@@ -7089,6 +7089,21 @@ body.logged-in {
     background: #C92228; }
   .entry_meta_social .linkedin.ems {
     background: #007bb5; }
+  .entry_meta_social .disclosure.ems {
+    background: none !important;
+    text-align: left;
+    border-radius: 0px;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 0 0 0;
+    margin: 10px 5px; }
+    .entry_meta_social .disclosure.ems a {
+      color: #0d72c7;
+      font-size: 14px; }
+
+.reveal.ad_disclosure {
+  padding: 30px; }
 
 .entry-content {
   display: block;

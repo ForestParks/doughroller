@@ -61,6 +61,19 @@ if ( ! function_exists( 'foundationpress_entry_meta' ) ) :
                 </a>
                 </div>
 
+                <?php if( is_single() OR is_pae() ) { ?>
+                    <div class="disclosure ems">
+                    <a data-open="nlmodaldis" aria-controls="nlmodal" id="reveal" aria-haspopup="true" tabindex="0">Advertising Disclosure</a>
+                    </div>
+
+                    <div class="reveal ad_disclosure" id="nlmodaldis" data-reveal>
+                        <p>DoughRoller receives compensation from some companies issuing financial products, like credit cards and bank accounts, that appear on this site. Unless a post is clearly marked "Sponsored", however, products mentioned in editorial articles and reviews are based on the author's subjective assessment of their value to readers, not compensation. Compensation may impact how and where products appear on non-editorial pages (e.g., comparison or "marketplace" pages). That said, our standard is that we will never accept advertising from a product which we wouldn't use ourselves.</p>
+                    <button class="close-button" data-close="" aria-label="Close reveal" type="button">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    </div>
+                <?php } ?>
+
         </div>
 	
 	<?
