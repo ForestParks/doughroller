@@ -5,6 +5,10 @@ table tbody{
     border: 0px
 }
 
+.tablepress th {
+border: 0px solid #FFF; 
+}
+
 /**
  * 8.0 - Alignments
  */
@@ -292,8 +296,9 @@ body.logged-in {
     color:$primary-grey;
     text-align:center;
     border-bottom:3px solid #fff;
+    transition: all 0.5s ease;
 
-    &:hover {border-bottom:3px solid $primary-grey}
+    &:hover {border-bottom:3px solid $primary-blue; color:$primary-blue;}
 
     .key_icon { font-size:3em; }
 
@@ -312,8 +317,13 @@ body.logged-in {
 
           .inner {
           border: 1px solid lightgrey;
-             padding: 10px 10px 0px 10px;
-        overflow: hidden;
+          padding: 10px 10px 0px 10px;
+          overflow: hidden;
+          transition: all 0.5s ease;
+
+            &:hover {border: 1px solid $primary-blue; background:$primary-blue;}
+            &:hover h4{color:#fff;}
+
           }
     
           h2{
@@ -328,8 +338,11 @@ body.logged-in {
             font-size:1em;
             margin-top:10px;
             min-height: 70px;
+            transition: all 0.5s ease;
 
             a {color:$primary-grey;}
+
+            &:hover {color:#fff;}
 
           }
 

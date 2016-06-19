@@ -121,13 +121,16 @@ get_header(); ?>
             'posts_per_page' => 3
         ) );
         while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="small-12 medium-4 columns blocks">
-        <div class="inner">
-        	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	      	<p><a href="<?php the_permalink(); ?>" class="button small">Read more...</a></p>
-	    </div>  	
-        </div>
+        
+        	<div class="small-12 medium-4 columns blocks">
+        		<a href="<?php the_permalink(); ?>">
+        		<div class="inner">
+        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+	        		<h4><?php the_title(); ?></h4>
+	    		</div>  
+	    		</a>	
+        	</div>
+        
         <?php endwhile; ?>
 
  	</div>
@@ -136,7 +139,86 @@ get_header(); ?>
 </section>
 
 
-	<section class="home_signup">
+<section class="latest-posts popular">
+
+
+	<div class="row">
+
+		<div class="small-12 columns"><h2><i class="fa fa-microphone" aria-hidden="true"></i> Most Popular</h2></div>
+
+
+        <?php $query = new WP_Query( array(
+            'post_type' => 'post',
+            'posts_per_page' => 4,
+            'category_name' => 'home-featured'
+        ) );
+        while ($query->have_posts()) : $query->the_post(); ?>
+		    <div class="small-6 medium-3 columns blocks">
+        		<a href="<?php the_permalink(); ?>">
+        		<div class="inner">
+        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+	        		<h4><?php the_title(); ?></h4>
+	    		</div>  
+	    		</a>	
+        	</div>
+        <?php endwhile; ?>
+
+ 	</div>
+
+
+</section>
+
+<section class="latest-posts podcast">
+
+
+	<div class="row">
+
+		<div class="small-12 columns"><h2><i class="fa fa-microphone" aria-hidden="true"></i> Latest From The Podcast</h2></div>
+
+
+   <?php
+
+  // The Query
+  $query = new WP_Query( array(
+            'post_type' => 'post',
+            'posts_per_page' => 7,
+            'category_name' => 'podcast'
+        ) );
+
+  // The Loop
+  while ($query->have_posts()) : $query->the_post();
+
+     if ( $query->current_post == 0 ) {  // first post ?>
+
+        <div class="small-12 medium-6 columns blocks">
+        		<a href="<?php the_permalink(); ?>">
+        		<div class="inner">
+        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+	        		<h4><?php the_title(); ?></h4>
+	    		</div>  
+	    		</a>	
+        </div>
+
+       <?php 
+     } else { ?>
+
+	        <div class="small-12 medium-6 columns blocks podright">
+	        <h4><a href="<?php the_permalink(); ?>"><i class="fa fa-microphone" aria-hidden="true"></i><?php the_title(); ?></a></h4>
+        </div>
+
+       <?php 
+     }
+
+     endwhile;
+
+  	 ?>
+
+ 	</div>
+
+
+</section>
+
+<section class="home_signup">
 		  <div class="row">
 		  <div class="small-8 medium-8 columns center">
 
@@ -170,84 +252,6 @@ get_header(); ?>
 		  </div>
 
 	</section>
-
-
-<section class="latest-posts popular">
-
-
-	<div class="row">
-
-		<div class="small-12 columns"><h2><i class="fa fa-microphone" aria-hidden="true"></i> Most Popular</h2></div>
-
-
-        <?php $query = new WP_Query( array(
-            'post_type' => 'post',
-            'posts_per_page' => 4,
-            'category_name' => 'home-featured'
-        ) );
-        while ($query->have_posts()) : $query->the_post(); ?>
-        <div class="small-6 medium-3 columns blocks">
-        <div class="inner">
-        	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	      	<p><a href="<?php the_permalink(); ?>" class="button small">Read more...</a></p>
-	    </div>
-        </div>
-        <?php endwhile; ?>
-
- 	</div>
-
-
-</section>
-
-<section class="latest-posts podcast">
-
-
-	<div class="row">
-
-		<div class="small-12 columns"><h2><i class="fa fa-microphone" aria-hidden="true"></i> Latest From The Podcast</h2></div>
-
-
-   <?php
-
-  // The Query
-  $query = new WP_Query( array(
-            'post_type' => 'post',
-            'posts_per_page' => 9,
-            'category_name' => 'podcast'
-        ) );
-
-  // The Loop
-  while ($query->have_posts()) : $query->the_post();
-
-     if ( $query->current_post == 0 ) {  // first post ?>
-
-      	<div class="small-12 medium-6 columns blocks">
-        <div class="inner">
-        	<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-	        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	      	<p><a href="<?php the_permalink(); ?>" class="button small">Read more...</a></p>
-	    </div>
-        </div>
-
-       <?php 
-     } else { ?>
-
-	        <div class="small-12 medium-6 columns blocks podright">
-	        <h4><a href="<?php the_permalink(); ?>"><i class="fa fa-microphone" aria-hidden="true"></i><?php the_title(); ?></a></h4>
-        </div>
-
-       <?php 
-     }
-
-     endwhile;
-
-  	 ?>
-
- 	</div>
-
-
-</section>
 
 
 <section class="latest-posts resources-guides">

@@ -23,17 +23,22 @@
 }
 
 .email_sidebar {
-    background: #eee;
-    border: 1px solid #0d72c7;
+    /*background: #eee;*/
+    background: $primary-blue;
+    border: 1px solid $primary-blue;
+    color: #fff;
     padding: 15px 15px 10px 15px;
     margin: 0 0 20px 0;
 
     h3 {
-    color: #0d72c7;
+    color: #fff;
     font-weight: bold;
     line-height: 1em;
     font-size: 1.4em;
     }
+
+    .button {background:#0b61a9; font-weight:bold;}
+    .button:hover {color:$primary-blue; background:#fff;}
 }
 
 /* TEMPORARY */

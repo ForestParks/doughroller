@@ -24,14 +24,11 @@ get_header(); ?>
 		</div>
 
 		<div class="email_sidebar">
-		<h3>Take Back Control of Your Money Today</h3>
+		<h3>Take the 31-Day Money Challenge</h3>
 		<p>Our 31-Day Money Challenge will help you get out of debt, save more, and take back control of your life.</p>
 		<p><strong>Bonus:</strong> You'll also get instant access to my interview of a husband and father who retired at the ripe old age of . . . 30. Seriously!</p>
 		<p><strong>What others are saying:</strong> "Hi Rob.  I'm at Day 26 in your 31 day money challenge podcast. Thank you, thank you, thank you!  I've been looking for a comprehensive guide to all-things-money and this has been so informative." --Danielle</p>
 		<a class="large expanded button" data-open="nlmodal31">Get Instant Access!</a>
-
-
-		<div><a class="wf-privacy wf-privacyico" href="http://www.getresponse.com/permission-seal?lang=en" target="_blank" style="height: 18px !important; display: inline !important;">We hate spam as much as you do.</a></div>
 
 		</div>
 
