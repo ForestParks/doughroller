@@ -7179,4 +7179,30 @@ body.logged-in {
     width: 650px !important;
     max-width: 650px; } }
 
+/* COMMENTS ON POSTS */
+#comments ol.comment-list {
+  list-style: none;
+  margin: 0 0 0 0; }
+
+#comments li.comment {
+  background: #eee;
+  padding: 20px;
+  margin: 0 0 10px 0; }
+
+#comments .comment-author {
+  font-size: 0.9em; }
+
+#comments .reply {
+  font-size: 0.9em; }
+
+#comments ul.children {
+  list-style: none; }
+
+#comments .children .comment.parent {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.5); }
+
+#comments .children .children {
+  margin-top: 10px; }
+
 /*# sourceMappingURL=foundation.css.map */

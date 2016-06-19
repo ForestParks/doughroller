@@ -578,3 +578,23 @@ body.logged-in {
   }
 }
 
+/* COMMENTS ON POSTS */
+
+#comments {
+
+  ol.comment-list {list-style:none; margin: 0 0 0 0}
+
+  li.comment {background:#eee; padding: 20px; margin: 0 0 10px 0}
+
+  .comment-author {font-size: 0.9em;}
+
+  .reply {font-size: 0.9em;}
+
+  ul.children {list-style:none}
+
+  .children .comment.parent {margin-top: 10px; background: rgba(255,255,255,0.5)}
+
+  .children .children {margin-top:10px}
+
+}
+
