@@ -6978,11 +6978,13 @@ body.logged-in {
     .latest-posts .columns .inner:hover h4 {
       color: #fff; }
   .latest-posts .columns h2 {
-    font-size: 1em;
+    font-size: 2em;
+    line-height: 2em;
     color: #0d72c7;
     border-bottom: 2px solid #0d72c7;
-    border-right: 1em solid #0d72c7;
-    margin-bottom: 1em; }
+    /* border-right: 1em solid #0d72c7; */
+    margin-bottom: 1em;
+    text-align: center; }
   .latest-posts .columns h4 {
     font-size: 1em;
     margin-top: 10px;
