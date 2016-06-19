@@ -61,7 +61,7 @@ if ( ! function_exists( 'foundationpress_entry_meta' ) ) :
                 </a>
                 </div>
 
-                <?php if( is_single() OR is_pae() ) { ?>
+                <?php if( is_single() OR is_page() ) { ?>
                     <div class="disclosure ems">
                     <a data-open="nlmodaldis" aria-controls="nlmodal" id="reveal" aria-haspopup="true" tabindex="0">Advertising Disclosure</a>
                     </div>

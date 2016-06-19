@@ -23,45 +23,43 @@
 
         <div class="row">
             <div class="medium-5 small-12 columns footerColumn">
-
                 
                 <div class="first">
                 <h6>Site Sections:</h6>
                     <div class="small-5 columns ">
                         <ul>
-                            <li><a href="/blog/">Blog</a></li>
-                            <li><a href="/community/">Forum</a></li>
-                            <li><a href="/banks/reviews.aspx">Bank Reviews</a></li>
-                            <li><a href="/banks/health.aspx">Bank Health Ratings</a></li>
-                            <li><a href="/tools/">Calculators and Tools</a></li>                            
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>bank-rates/">Bank Rates</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>credit-cards/">Credit Cards</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>category/investing/">Investing</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>category/credit/">Credit & Debt</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>tools-resources/money-toolbox/">Resources</a></li>                            
                         </ul>
                     </div>
                     <div class="small-6 columns">
                         <ul>
-                            <li><a href="/cd/">CD Rates</a></li>
-                            <li><a href="/ira/">IRA Rates</a></li>
-                            <li><a href="/moneymarket/">Money Market</a></li>
-                            <li><a href="/savings/">Savings Accounts</a></li>
-                            <li><a href="/checking/">Checking Accounts</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>thepodcast/">Podcast</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>category/insurance">Insurance</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>category/taxes/">Taxes</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>category/retirement-planning/">Retirement</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>category/personal-finance/">Personal Finance</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <p></p>
 
-                
                 <div class="second">
                 <h6>Company:</h6>
                     <div class="small-6 columns">
                         <ul>
-                            <li><a href="/about/">About Us</a></li>
-                            <li><a href="/about/media/">Media Page</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>about/">About Us</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>contact/">Contact</a></li>
                         </ul>
                     </div>
                     <div class="small-6 columns">
                         <ul>
-                            <li><a href="/about/advertising/">Advertising</a></li>
-                            <li><a href="/content/disclaimer.html">Disclaimer</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>archives/">Archives</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>terms-of-use-privacy-policy/">Privacy Policy & Disclaimer</a></li>
                         </ul>
                     </div>
                 </div>
@@ -72,10 +70,10 @@
 					<div class="social-links-footer first">
 						<h6>Connect With Us</h6>  
 						<ul class="social-links ">
-							<li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li class="facebook"><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li class="facebook"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-							<li class="facebook"><a href="#"><i class="fa fa-youtube"></i></a></li>
+							<li class="facebook"><a href="https://www.facebook.com/groups/1649504642004285/?ref=bookmarks"><i class="fa fa-facebook"></i></a></li>
+							<li class="twitter"><a href="https://twitter.com/doughroller"><i class="fa fa-twitter"></i></a></li>
+							<li class="pinterest"><a href="https://www.pinterest.com/doughroller"><i class="fa fa-pinterest"></i></a></li>
+							<li class="newsletter"><a href="<?php echo esc_url( home_url( '/' ) ); ?>newsletter"><i class="fa fa-envelope"></i></a></li>
 						</ul>
 					</div>
 
@@ -144,10 +142,10 @@
 			<p><strong>Editorial Disclosure</strong>: This content is not provided or commissioned by the bank, credit card issuer, or other advertiser. Opinions expressed here are author's alone, not those of the bank, credit card issuer, or other advertiser, and have not been reviewed, approved or otherwise endorsed by the advertiser. This site may be compensated through the bank, credit card issuer, or other advertiser Affiliate Program</p>
 			</div>
 			<div class="small-12 medium-3 columns">
-			<p><strong>Disclaimer</strong>:  The content on this site is for informational and educational purposes only and should not be construed as professional financial advice.  Should you need such advice, consult a licensed financial or tax advisor.  References to products, offers, and rates from third party sites often change.  While we do our best to keep these updated, numbers stated on our site may differ from actual numbers.See our <a href="http://www.doughroller.net/terms-of-use-privacy-policy/">Privacy Policy &amp; Disclaimer</a> for more details.</p>
+			<p><strong>Disclaimer</strong>:  The content on this site is for informational and educational purposes only and should not be construed as professional financial advice.  Should you need such advice, consult a licensed financial or tax advisor.  References to products, offers, and rates from third party sites often change.  While we do our best to keep these updated, numbers stated on our site may differ from actual numbers.See our <a href="<?php echo esc_url( home_url( '/' ) ); ?>terms-of-use-privacy-policy/">Privacy Policy &amp; Disclaimer</a> for more details.</p>
             </div>
             <div class="small-12 medium-3 columns">
-            <p><strong>Archives</strong>:  You can explore the site through our <a href="http://www.doughroller.net/archives/">archives</a> dating back to 2007.</p>
+            <p><strong>Archives</strong>:  You can explore the site through our <a href="<?php echo esc_url( home_url( '/' ) ); ?>archives/">archives</a> dating back to 2007.</p>
 			</div>
        </div>
 
