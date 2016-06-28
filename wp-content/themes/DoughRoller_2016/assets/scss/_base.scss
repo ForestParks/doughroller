@@ -527,7 +527,12 @@ body.logged-in {
 
 .reveal.ad_disclosure {padding: 30px;}
 
-.entry-content {display: block; clear: left;}
+.entry-content {
+    display: block;
+    clear: left;
+    max-width: 620px;
+    margin: 0px auto;
+}
 
 .post .email_sidebar {margin-top:30px;}
 

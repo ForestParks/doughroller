@@ -144,7 +144,7 @@ get_header(); ?>
 
 	<div class="row">
 
-		<div class="small-12 columns"><h2><i class="fa fa-microphone" aria-hidden="true"></i> Most Popular</h2></div>
+		<div class="small-12 columns"><h2><i class="fa fa-star" aria-hidden="true"></i> Most Popular</h2></div>
 
 
         <?php $query = new WP_Query( array(

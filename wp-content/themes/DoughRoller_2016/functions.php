@@ -14,6 +14,15 @@
  * @since FoundationPress 1.0.0
  */
 
+function remove_redirect_guess_404_permalink( $redirect_url ) {
+	if ( is_404() && !isset($_GET['p']) )
+		return false;
+	return $redirect_url;
+}
+add_filter( 'redirect_canonical', 'remove_redirect_guess_404_permalink' );
+
+
+
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
 

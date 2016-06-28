@@ -18,13 +18,21 @@
     border-bottom: 1px solid $primary-grey;
 }
 
-.sidebar ul {
-    list-style: none !important;
+.sidebar {
+
+    ul {
+    list-style: disc !important;
+    color: $primary-grey
+    }
+
+    li {    line-height: 1.5em;
+    margin-bottom: .5em;
+    }
 }
 
 .email_sidebar {
     /*background: #eee;*/
-    background: $primary-blue;
+    background: $primary-blue-lt;
     border: 1px solid $primary-blue;
     color: #fff;
     padding: 15px 15px 10px 15px;
@@ -37,9 +45,25 @@
     font-size: 1.4em;
     }
 
-    .button {background:#0b61a9; font-weight:bold;}
-    .button:hover {color:$primary-blue; background:#fff;}
+    .button {background:#0b61a9; font-weight:bold; border: 2px solid $primary-blue;}
+    .button:hover {color:$primary-blue; background:#fff; border: 2px solid $primary-blue;}
 }
+
+.email_sidebar.two, .email_sidebar.three {
+    background: #fff;
+    border: 2px solid $primary-blue;
+
+    h3 {
+    color: $primary-blue;
+    }
+
+    p {color: $primary-blue;}
+}
+
+.email_sidebar.three {
+    h3 {color: $primary-green}
+}
+
 
 /* TEMPORARY */
 .wpp-thumbnail {

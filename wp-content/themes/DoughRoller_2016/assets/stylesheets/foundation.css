@@ -6113,11 +6113,16 @@ table.hover tr:nth-of-type(even):hover {
   border-bottom: 1px solid #6d6e72; }
 
 .sidebar ul {
-  list-style: none !important; }
+  list-style: disc !important;
+  color: #6d6e72; }
+
+.sidebar li {
+  line-height: 1.5em;
+  margin-bottom: .5em; }
 
 .email_sidebar {
   /*background: #eee;*/
-  background: #0d72c7;
+  background: #5ca6c6;
   border: 1px solid #0d72c7;
   color: #fff;
   padding: 15px 15px 10px 15px;
@@ -6129,10 +6134,23 @@ table.hover tr:nth-of-type(even):hover {
     font-size: 1.4em; }
   .email_sidebar .button {
     background: #0b61a9;
-    font-weight: bold; }
+    font-weight: bold;
+    border: 2px solid #0d72c7; }
   .email_sidebar .button:hover {
     color: #0d72c7;
-    background: #fff; }
+    background: #fff;
+    border: 2px solid #0d72c7; }
+
+.email_sidebar.two, .email_sidebar.three {
+  background: #fff;
+  border: 2px solid #0d72c7; }
+  .email_sidebar.two h3, .email_sidebar.three h3 {
+    color: #0d72c7; }
+  .email_sidebar.two p, .email_sidebar.three p {
+    color: #0d72c7; }
+
+.email_sidebar.three h3 {
+  color: #2bb673; }
 
 /* TEMPORARY */
 .wpp-thumbnail {
@@ -7131,7 +7149,9 @@ body.logged-in {
 
 .entry-content {
   display: block;
-  clear: left; }
+  clear: left;
+  max-width: 620px;
+  margin: 0px auto; }
 
 .post .email_sidebar {
   margin-top: 30px; }
