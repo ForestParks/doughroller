@@ -1,6 +1,15 @@
 body {padding-top:30px;}
 body.home {padding-top:85px;}
 
+/* GENERAL STYLES */
+
+a:hover, a:focus {
+    text-decoration:underline
+
+}
+
+/* // General styles */
+
 table tbody{
     border: 0px
 }
@@ -366,6 +375,11 @@ body.logged-in {
     
 }
 
+.blocks a:hover {
+    text-decoration:none
+
+}
+
 .podcast .columns.blocks {
 
       h4 {min-height: 5px; padding-bottom:5px;}
@@ -386,6 +400,11 @@ body.logged-in {
     }
 
     .fa {margin-right:10px;}
+}
+
+.podcast .columns.blocks.podright a:hover {
+    text-decoration:underline
+
 }
 
 .resources-guides .columns.blocks {
@@ -672,3 +691,7 @@ body.logged-in {
 
 }
 
+
+/* SHOW OFF PLUGIN */
+
+a.card {@include button; width: 100%}

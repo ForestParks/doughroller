@@ -6121,17 +6121,18 @@ table.hover tr:nth-of-type(even):hover {
   margin-bottom: .5em; }
 
 .email_sidebar {
-  /*background: #eee;*/
-  background: #5ca6c6;
-  border: 1px solid #0d72c7;
   color: #fff;
   padding: 15px 15px 10px 15px;
-  margin: 0 0 20px 0; }
+  margin: 0 0 20px 0;
+  background: #fff;
+  border: 2px solid #0d72c7; }
   .email_sidebar h3 {
-    color: #fff;
+    color: #2bb673;
     font-weight: bold;
     line-height: 1em;
     font-size: 1.4em; }
+  .email_sidebar p {
+    color: #0d72c7; }
   .email_sidebar .button {
     background: #0b61a9;
     font-weight: bold;
@@ -6141,28 +6142,9 @@ table.hover tr:nth-of-type(even):hover {
     background: #fff;
     border: 2px solid #0d72c7; }
 
-.email_sidebar.two, .email_sidebar.three {
-  background: #fff;
-  border: 2px solid #0d72c7; }
-  .email_sidebar.two h3, .email_sidebar.three h3 {
-    color: #0d72c7; }
-  .email_sidebar.two p, .email_sidebar.three p {
-    color: #0d72c7; }
-
-.email_sidebar.three h3 {
-  color: #2bb673; }
-
-/* TEMPORARY */
-.wpp-thumbnail {
-  display: inline;
-  float: left;
-  margin: 0 5px 0 0;
-  border: none;
-  height: 50px;
-  width: auto; }
-
-.wpp-list li {
-  margin-bottom: 10px; }
+.main-content .email_sidebar h3 {
+  font-size: 2em;
+  margin: .1em 0em 1em 0em; }
 
 .sites-button {
   background: #FF6908;
@@ -6763,6 +6745,11 @@ body {
 body.home {
   padding-top: 85px; }
 
+/* GENERAL STYLES */
+a:hover, a:focus {
+  text-decoration: underline; }
+
+/* // General styles */
 table tbody {
   border: 0px; }
 
@@ -7025,6 +7012,9 @@ body.logged-in {
     .latest-posts .columns .home_thumb img {
       min-height: 100%; }
 
+.blocks a:hover {
+  text-decoration: none; }
+
 .podcast .columns.blocks h4 {
   min-height: 5px;
   padding-bottom: 5px; }
@@ -7041,6 +7031,9 @@ body.logged-in {
 
 .podcast .columns.blocks.podright .fa {
   margin-right: 10px; }
+
+.podcast .columns.blocks.podright a:hover {
+  text-decoration: underline; }
 
 .resources-guides .columns.blocks h4 {
   border-bottom: 1px dotted lightgrey;
@@ -7291,5 +7284,28 @@ body.logged-in {
 
 #comments .children .children {
   margin-top: 10px; }
+
+/* SHOW OFF PLUGIN */
+a.card {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  background-color: #0d72c7;
+  color: #fff;
+  width: 100%; }
+  [data-whatinput='mouse'] a.card {
+    outline: 0; }
+  a.card:hover, a.card:focus {
+    background-color: #0b61a9;
+    color: #fff; }
 
 /*# sourceMappingURL=foundation.css.map */
