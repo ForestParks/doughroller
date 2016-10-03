@@ -16,6 +16,7 @@
 get_header(); ?>
 
 	<section class="hero">
+	TEST
 		  <div class="row intro">
 		    <div class="small-centered medium-uncentered medium-7 large-8 columns">
 
