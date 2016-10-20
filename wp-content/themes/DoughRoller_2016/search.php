@@ -8,14 +8,19 @@
 
 get_header(); ?>
 
-<div class="row">
-	<div class="small-12 large-8 columns" role="main">
+ <div id="page" role="main">
+
 
 		<?php do_action( 'foundationpress_before_content' ); ?>
 
-		<h2><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h2>
+		<div <?php post_class('main-content') ?> >
 
-	<?php if ( have_posts() ) : ?>
+
+		<h2 class="results_header"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h2>
+
+		<?php if ( have_posts() ) : ?>
+
+
 
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
@@ -35,10 +40,11 @@ get_header(); ?>
 			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
 		</nav>
 	<?php } ?>
+	</div>
 
 	<?php do_action( 'foundationpress_after_content' ); ?>
-
-	</div>
 	<?php get_sidebar(); ?>
+
 </div>
+
 <?php get_footer();

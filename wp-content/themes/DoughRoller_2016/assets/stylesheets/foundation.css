@@ -7143,7 +7143,7 @@ body.logged-in {
 .entry-content {
   display: block;
   clear: left;
-  max-width: 620px;
+  max-width: 660px;
   margin: 0px auto; }
 
 .post .email_sidebar {
@@ -7307,5 +7307,9 @@ a.card {
   a.card:hover, a.card:focus {
     background-color: #0b61a9;
     color: #fff; }
+
+/* SEARCH RESULTS PAGE */
+.results_header {
+  padding: 0 0 30px 0; }
 
 /*# sourceMappingURL=foundation.css.map */

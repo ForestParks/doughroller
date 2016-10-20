@@ -549,7 +549,7 @@ body.logged-in {
 .entry-content {
     display: block;
     clear: left;
-    max-width: 620px;
+    max-width: 660px;
     margin: 0px auto;
 }
 
@@ -695,3 +695,8 @@ body.logged-in {
 /* SHOW OFF PLUGIN */
 
 a.card {@include button; width: 100%}
+
+
+
+/* SEARCH RESULTS PAGE */
+.results_header {padding: 0 0 30px 0;}
