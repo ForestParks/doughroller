@@ -544,6 +544,25 @@ body.logged-in {
 
 }
 
+
+.entry_meta_social.floating {
+    position: fixed;
+    top: 110px;
+    width: 40px;
+    opacity:0;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+
+    .ems {
+    margin: 0 0 5px 0;
+    }
+
+}
+
+.entry_meta_social.floating.viewable {opacity:1}
+
 .reveal.ad_disclosure {padding: 30px;}
 
 .entry-content {
@@ -556,6 +575,28 @@ body.logged-in {
 .post .email_sidebar {margin-top:30px;}
 
 .pagination .current a {color: #fff;}
+
+
+/* TABLE OF CONTENTS IN POSTS*/
+.post_toc {
+      /*background: #5ca6c6;*/
+      color: #0d72c7;
+      padding: 0 0 00px 0;
+      margin: 0 0 20px 0;
+      border-bottom: 2px solid #0d72c7;
+
+  a{color: #0d72c7; }
+
+  ul {
+
+    li {
+      
+    }
+
+  }
+  
+
+}
 
 
 /* CREDIT CARD BOXES */

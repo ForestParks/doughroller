@@ -170,6 +170,18 @@
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
 
+<script type="text/javascript">
+        $(window).scroll(function() {    
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 300) {
+                $(".entry_meta_social.floating").addClass("viewable");
+            } else {
+                $(".entry_meta_social.floating").removeClass("viewable");
+            }
+        });
+</script>
+
 
 /* ALLOW SHOW / HIDE on ccbox*/
 <script type="text/javascript">
@@ -187,6 +199,23 @@
 <script type='text/javascript' id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.11.1.js'><\/script>".replace("HOST", location.hostname));
 //]]></script>
+
+<script type="text/javascript">
+  // The function actually applying the offset for jumplinks
+  function offsetAnchor() {
+      if(location.hash.length !== 0) {
+          window.scrollTo(window.scrollX, window.scrollY - 100);
+      }
+  }
+
+  // This will capture hash changes while on the page
+  window.addEventListener("hashchange", offsetAnchor);
+
+  // This is here so that when you enter the page with a hash,
+  // it can provide the offset in that case too. Having a timeout
+  // seems necessary to allow the browser to jump to the anchor first.
+  window.setTimeout(offsetAnchor, 1); // The delay of 1 is arbitrary and may not always work right (although it did in my testing).
+</script>
 
 </body>
 </html>
