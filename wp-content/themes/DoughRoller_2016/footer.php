@@ -83,10 +83,9 @@
 						<h6>Join Our Newsletter</h6>
 						
 						<div id="newsletter-form-cont">
-							<form action="#" method="post" id="subForm">
+                <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" id="subForm">
 							        <div class="row collapse margintop-20px">
      
-                               <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
 
             <div class="small-12 medium-6 columns">
             <input style="width:95%"  type="text" name="name" value="Name"
@@ -106,7 +105,6 @@
 <div class="small-12 columns">
             <input type="submit" class="button" style="width:100%" value="Let's Roll"/>
             </div>
-            </form>
 
 							     
 							        </div>

@@ -3295,9 +3295,9 @@ h6 {
   h2 {
     font-size: 1.9375rem; }
   h3 {
-    font-size: 1.75rem; }
-  h4 {
     font-size: 1.5625rem; }
+  h4 {
+    font-size: 1.4375rem; }
   h5 {
     font-size: 1.25rem; }
   h6 {
@@ -6105,12 +6105,12 @@ table.hover tr:nth-of-type(even):hover {
         float: right; } }
 
 .sidebar h6 {
-  font-size: 0.9em;
+  font-size: 1.3em;
+  padding: 0 0 5px 0;
   text-transform: uppercase;
-  /*color: #34b446;*/
   color: #6d6e72;
   font-weight: bold;
-  border-bottom: 1px solid #6d6e72; }
+  border-bottom: 2px solid #2bb673; }
 
 .sidebar ul {
   list-style: disc !important;
@@ -6118,7 +6118,8 @@ table.hover tr:nth-of-type(even):hover {
 
 .sidebar li {
   line-height: 1.5em;
-  margin-bottom: .5em; }
+  margin-bottom: .5em;
+  list-style: none; }
 
 .email_sidebar {
   color: #fff;
@@ -6939,7 +6940,8 @@ body.logged-in {
     line-height: 1.5em;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    font-size: 1.5em; }
 
 @media only screen and (min-width: 40.063em) {
   .hero .small-centered.medium-uncentered.medium-7.large-8.columns {
@@ -6954,8 +6956,10 @@ body.logged-in {
     border-bottom: 1px solid #000; } }
 
 .key_pages {
-  margin: 10px 0 10px 0;
-  padding: 25px 0 25px 0; }
+  /*margin: 10px 0 10px 0;
+    padding: 25px 0 25px 0;*/
+  margin: 10px 0 -20px 0;
+  padding: 25px 0 0px 0; }
   .key_pages .key_link {
     color: #6d6e72;
     text-align: center;
@@ -7026,8 +7030,8 @@ body.logged-in {
 .podcast .columns.blocks.podright h4 {
   border-bottom: 1px dotted lightgrey;
   min-height: 5px;
-  text-indent: -10px;
-  padding: 0 0 5px 20px; }
+  /*text-indent: -10px;
+    padding: 0 0 5px 20px;*/ }
 
 .podcast .columns.blocks.podright .fa {
   margin-right: 10px; }
@@ -7310,6 +7314,11 @@ body.logged-in {
 #comments .children .children {
   margin-top: 10px; }
 
+/* SEARCH RESULTS PAGE */
+.results_header {
+  padding: 0 0 30px 0; }
+
+/* CREDIT CARD BOXES STYLING */
 /* SHOW OFF PLUGIN */
 a.card {
   display: inline-block;
@@ -7333,8 +7342,317 @@ a.card {
     background-color: #0b61a9;
     color: #fff; }
 
-/* SEARCH RESULTS PAGE */
-.results_header {
-  padding: 0 0 30px 0; }
+a.blue_button, a.card {
+  padding: 6px 7px 5px 7px !important; }
+
+/* CC TABLE */
+table.cctable {
+  width: 100%;
+  border: 3px #cccccc solid;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  margin-left: 2px; }
+
+table.cctable th {
+  text-align: center;
+  background-color: #9ec36d;
+  font-weight: bold;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-bottom: 1px #666 solid; }
+
+td.ccimage {
+  text-align: center;
+  img-align: center;
+  border-right: 1px #666 solid;
+  width: 175px; }
+
+td.ccbullets {
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 2px; }
+
+td.ccbullets ul li {
+  font-size: 14px; }
+
+table.rate-rc {
+  width: 100%; }
+
+td.rate-top {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  background-color: #d7d7d7;
+  padding: 0, 1px, 0, 1px; }
+
+td.rate-top-purchases {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  background-color: #d7d7d7;
+  padding: 0, 1px, 0, 1px;
+  width: 30%; }
+
+td.rate-top-intro-apr {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  background-color: #d7d7d7;
+  padding: 0, 1px, 0, 1px;
+  width: 70px; }
+
+td.rates-bottom {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  text-align: center;
+  background-color: #f2f2f2; }
+
+ul#cards li.low_interest {
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none; }
+
+ul#cards img {
+  float: left;
+  padding-right: 5px; }
+
+.card_art_left {
+  vertical-align: top;
+  width: 150px; }
+
+td.apprAvrg {
+  font-size: 20px;
+  padding-left: 25px;
+  padding-top: 3px;
+  vertical-align: top; }
+
+td.apprDesc {
+  line-height: 16px;
+  padding-bottom: 0;
+  padding-right: 15px;
+  padding-top: 0;
+  font-size: 12px; }
+
+td.apprLow {
+  font-size: 20px;
+  padding-left: 55px;
+  padding-top: 3px;
+  vertical-align: top; }
+
+/* BUTTON STYLING */
+a.card:link, a.card:visited {
+  /* background: #e43500; */
+  /* background-image: linear-gradient(#f75300, #e43500); */
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 15px 0;
+  padding: 10px 10px 10px !important; }
+
+a.card:hover {
+  text-decoration: none;
+  background: #111; }
+
+/* END BUTTON STYLING */
+/* CSS BROUGHT OVER FROM DYNAMIK BUILDER (OLD THEME, MAYBE SORT THIS TO APPROPRIATE PLACES)*/
+.circle {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%; }
+
+.EOP_Credit_Card {
+  border: 1px solid #e2e2e2;
+  padding: 8px 15px; }
+
+.EOPgetresponse {
+  text-align: left !important; }
+
+.ccoffers {
+  font: 100 12px "Helvetica", Arial;
+  border-collapse: collapse;
+  width: 100%;
+  color: #464646;
+  line-height: 125%; }
+
+td.ccoffers_image {
+  margin-right: 10px;
+  width: 70px;
+  padding-left: 5px;
+  border-bottom: 1px solid #D6D6D6; }
+
+td.ccoffers_name_buttons {
+  width: 200px;
+  padding-left: 10px;
+  border-bottom: 1px solid #D6D6D6; }
+
+td.ccoffers_intro_apr {
+  height: 48px;
+  width: 92px;
+  text-align: center;
+  padding: 20px 4px 4px 4px;
+  border-bottom: 1px solid #D6D6D6; }
+
+td.ccoffers_apr {
+  height: 48px;
+  width: 102px;
+  text-align: center;
+  padding: 20px 4px 4px 4px;
+  border-bottom: 1px solid #D6D6D6; }
+
+td.ccoffers_rewards {
+  height: 48px;
+  width: 52px;
+  text-align: center;
+  padding: 20px 4px 4px 4px;
+  border-bottom: 1px solid #D6D6D6; }
+
+td.ccoffers_fee {
+  height: 48px;
+  width: 12px;
+  text-align: center;
+  padding: 20px 14px 4px 4px;
+  border-bottom: 1px solid #D6D6D6; }
+
+.drop_cap {
+  /*color: #41A50F;*/
+  color: #0d72c7;
+  float: left;
+  /*  font-family: "museo-slab-1","museo-slab-2",serif;*/
+  font-size: 74px;
+  margin: -5px 10px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  line-height: 105%; }
+
+/* WP-TABLE RELOADED */
+.wp-table-reloaded {
+  background-color: #CDCDCD;
+  margin: 10px 0px 15px 0px;
+  font-size: 8pt;
+  width: 100%;
+  text-align: left; }
+
+.wp-table-reloaded th {
+  background-color: #E6EEEE;
+  border: 1px solid #FFFFFF;
+  padding: 4px;
+  text-align: center; }
+
+.wp-table-reloaded td {
+  color: #3D3D3D;
+  padding: 4px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  text-align: center; }
+
+.wp-table-reloaded-id-7 td {
+  text-align: left; }
+
+.wp-table-reloaded-id-32 td {
+  text-align: left; }
+
+.wp-table-reloaded .even td {
+  background-color: #FFFFFF; }
+
+.wp-table-reloaded .odd td {
+  background-color: #F0F0F6; }
+
+.wp-table-reloaded .header {
+  background-image: url(http://doughroller.wpengine.netdna-cdn.com/wp-content/plugins/wp-table-reloaded/img/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer; }
+
+.wp-table-reloaded .headerSortUp {
+  background-color: #8DBDD8;
+  background-image: url(http://doughroller.wpengine.netdna-cdn.com/wp-content/plugins/wp-table-reloaded/img/asc.gif); }
+
+.wp-table-reloaded .headerSortDown {
+  background-color: #8DBDD8;
+  background-image: url(http://doughroller.wpengine.netdna-cdn.com/wp-content/plugins/wp-table-reloaded/img/desc.gif); }
+
+.wp-table-reloaded-id-42 td {
+  text-align: left; }
+
+/* END WP-TABLE RELOADED */
+/* BLUE BUTTON */
+a.blue_button:link, a.blue_button:visited {
+  background: #00a4f7;
+  background-image: linear-gradient(#00a4f7, #00a4f7);
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 15px 0;
+  padding: 6px 10px 5px; }
+
+a.blue_button:hover {
+  text-decoration: none;
+  background: #111; }
+
+/* END BLUE BUTTON */
+/* INTERVIEW TRANSCRIPT STYLING */
+.transcript {
+  width: 600px;
+  height: 500px;
+  overflow-y: scroll;
+  scrollbar-arrow-color: blue;
+  scrollbar-face-color: #e7e7e7;
+  scrollbar-3dlight-color: #a0a0a0;
+  scrollbar-darkshadow-color: #888888;
+  border: solid 1px #000000;
+  padding: 5px 5px 5px 5px; }
+
+/* INTERVIEW TRANSCRIPT STYLING END*/
+/* CREDIT CARD BOXES */
+.large_card_art_left {
+  float: left;
+  height: 150px; }
+
+.card_art_left {
+  float: left; }
+  .card_art_left img {
+    width: 100% !important; }
+
+.apply_now_left {
+  float: left;
+  padding-left: 30px; }
+
+/* AMEX DISCLAIMER */
+.amex_popup_outer, .amex_popup_outer_post {
+  display: none; }
+
+.amex_popup_outer, .amex_popup_outer_post {
+  position: absolute;
+  z-index: 9999999;
+  width: 360px;
+  max-width: 100%;
+  background: lightgrey;
+  padding: 20px;
+  left: 50% !important;
+  margin-left: -200px !important;
+  top: 25%;
+  position: fixed; }
+
+.amex_close, .amex_close_post {
+  cursor: pointer;
+  font-size: 0.7em;
+  margin-top: 1em;
+  display: block;
+  float: right; }
+
+.amex_disclaimer {
+  cursor: pointer;
+  /*display:none;*/ }
+
+.disclaimer .amex_disclaimer {
+  display: block; }
+
+#header .menu {
+  width: 330px !important;
+  text-align: right !important; }
+
+/* ////AMEX DISCLAIMER */
 
 /*# sourceMappingURL=foundation.css.map */

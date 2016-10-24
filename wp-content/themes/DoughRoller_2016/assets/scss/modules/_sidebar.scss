@@ -10,12 +10,12 @@
 }
 
 .sidebar h6 {
-    font-size: 0.9em;
+    font-size: 1.3em;
+    padding: 0 0 5px 0;
     text-transform: uppercase;
-    /*color: #34b446;*/
-    color: $primary-grey;
+    color: #6d6e72;
     font-weight: bold;
-    border-bottom: 1px solid $primary-grey;
+    border-bottom: 2px solid #2bb673;
 }
 
 .sidebar {
@@ -27,6 +27,7 @@
 
     li {    line-height: 1.5em;
     margin-bottom: .5em;
+    list-style: none;
     }
 }
 
