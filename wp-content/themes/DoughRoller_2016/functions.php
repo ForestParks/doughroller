@@ -34,6 +34,19 @@ return '...';
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
+/* new thumbnail */
+if ( function_exists( 'add_image_size' ) ) {
+add_image_size( 'new-size', 150, 85, true ); //(cropped)
+}
+add_filter('image_size_names_choose', 'my_image_sizes');
+function my_image_sizes($sizes) {
+$addsizes = array(
+"related-thumb" => __( "Related Thumb")
+);
+$newsizes = array_merge($sizes, $addsizes);
+return $newsizes;
+}
+
 
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );

@@ -21,6 +21,22 @@ get_header(); ?>
 		<div class="entry-content">
 
 		<?php the_content(); ?>
+
+
+		<?php /**
+				 * Detect plugin. For use on Front End only.
+				 */
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+				// check for plugin using plugin name
+				if ( is_plugin_active( ' related-posts-thumbnails/related-posts-thumbnails.php' ) ) {
+				  //plugin is activated
+					?><div class="related_posts"><?php get_related_posts_thumbnails(); ?></div><?php
+				}
+		?>
+
+		
+
 		</div>
 
 		<div class="email_sidebar">
