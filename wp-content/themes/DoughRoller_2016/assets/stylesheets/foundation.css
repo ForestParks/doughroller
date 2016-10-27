@@ -6977,17 +6977,15 @@ body.logged-in {
   margin: 10px 0 10px 0;
   padding: 25px 0 0px 0; }
   .latest-posts .columns .inner {
-    border: 1px solid lightgrey;
-    padding: 10px 10px 0px 10px;
+    /*border: 1px solid lightgrey;*/
     overflow: hidden;
-    transition: all 0.5s ease; }
-    .latest-posts .columns .inner:hover {
-      border: 1px solid #0d72c7;
-      background: #0d72c7; }
+    transition: all 0.5s ease;
+    margin: 0 0 20px 0;
+    /*&:hover {border: 1px solid $primary-blue; background:$primary-blue;}*/ }
     .latest-posts .columns .inner:hover h4 {
-      color: #fff; }
+      color: #0d72c7; }
   .latest-posts .columns h2 {
-    font-size: 2em;
+    font-size: 26px;
     line-height: 2em;
     color: #0d72c7;
     border-bottom: 2px solid #0d72c7;
@@ -6995,14 +6993,21 @@ body.logged-in {
     margin-bottom: 1em;
     text-align: center; }
   .latest-posts .columns h4 {
-    font-size: 1em;
-    margin-top: 10px;
-    min-height: 70px;
-    transition: all 0.5s ease; }
+    /*font-size:1em;*/
+    font-size: 22px;
+    line-height: 22px;
+    margin-top: 5px;
+    transition: all 0.5s ease;
+    font-weight: bold;
+    color: #6d6e72; }
     .latest-posts .columns h4 a {
       color: #6d6e72; }
     .latest-posts .columns h4:hover {
       color: #fff; }
+  .latest-posts .columns p {
+    font-size: 17px;
+    line-height: 18px;
+    color: #6d6e72; }
   .latest-posts .columns p a.button {
     background: #36B348;
     display: block;
@@ -7012,9 +7017,32 @@ body.logged-in {
     position: relative; }
   .latest-posts .columns .home_thumb {
     overflow: hidden;
-    height: 150px; }
+    height: 200px;
+    border: 1px solid lightgrey;
+    border-radius: 1px; }
     .latest-posts .columns .home_thumb img {
       min-height: 100%; }
+  .latest-posts .columns .home_author_image {
+    float: left;
+    margin: 0 10px 0 0;
+    border-radius: 100px;
+    overflow: hidden; }
+  .latest-posts .columns .home_author_time {
+    font-size: .9em; }
+  .latest-posts .columns .author_link {
+    clear: right;
+    display: block;
+    margin: 0 0 0 0;
+    line-height: 1.2em; }
+  .latest-posts .columns .post_time {
+    color: #6d6e72;
+    display: block; }
+
+.latest-posts.popular .home_thumb {
+  height: 150px; }
+
+.latest-posts.popular .author_link {
+  line-height: 36px; }
 
 .blocks a:hover {
   text-decoration: none; }

@@ -19,10 +19,8 @@ get_header(); ?>
 		  <div class="row intro">
 		    <div class="small-centered medium-uncentered medium-7 large-8 columns">
 
-
 				<h1>Make the most of your money</h1>
 				<p>Get my free weekly newsletter to improve your finances.</p>
-
 
 				<a class="large expanded button" data-open="nlmodalhome" aria-controls="nlmodal" id="reveal" aria-haspopup="true" tabindex="0">Get It Now!</a>
 				</div>
@@ -118,7 +116,7 @@ get_header(); ?>
 
         <?php $query = new WP_Query( array(
             'post_type' => 'post',
-            'posts_per_page' => 3
+            'posts_per_page' => 6
         ) );
         while ($query->have_posts()) : $query->the_post(); ?>
         
@@ -126,7 +124,17 @@ get_header(); ?>
         		<a href="<?php the_permalink(); ?>">
         		<div class="inner">
         			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-	        		<h4><?php the_title(); ?></h4>
+		        		<h4><?php the_title(); ?></h4>
+		        		<?php the_excerpt(); ?>
+		        		<div class='home_meta'>
+		        			<div class="home_author_image">
+		        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+		        			</div>
+			        		<div class="home_author_time">
+				        		<span class="author_link"><?php the_author_link(); ?></span>
+				        		<span class="post_time"><?php the_time('F jS, Y'); ?></span>
+			        		</div>
+		        		</div>
 	    		</div>  
 	    		</a>	
         	</div>
@@ -146,22 +154,30 @@ get_header(); ?>
 
 		<div class="small-12 columns"><h2><!--<i class="fa fa-star" aria-hidden="true"></i>-->Most Popular</h2></div>
 
-
-        <?php $query = new WP_Query( array(
-            'post_type' => 'post',
-            'posts_per_page' => 4,
-            'category_name' => 'home-featured'
-        ) );
-        while ($query->have_posts()) : $query->the_post(); ?>
-		    <div class="small-6 medium-3 columns blocks">
-        		<a href="<?php the_permalink(); ?>">
-        		<div class="inner">
-        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-	        		<h4><?php the_title(); ?></h4>
-	    		</div>  
-	    		</a>	
-        	</div>
-        <?php endwhile; ?>
+	        <?php $query = new WP_Query( array(
+	            'post_type' => 'post',
+	            'posts_per_page' => 8,
+	            'category_name' => 'home-featured'
+	        ) );
+	        while ($query->have_posts()) : $query->the_post(); ?>
+			    <div class="small-6 medium-3 columns blocks">
+	        		<a href="<?php the_permalink(); ?>">
+	        		<div class="inner">
+	        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+		        		<h4><?php the_title(); ?></h4>
+		        		<?php the_excerpt(); ?>
+		        		<div class='home_meta'>
+		        			<div class="home_author_image">
+		        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+		        			</div>
+			        		<div class="home_author_time">
+				        		<span class="author_link"><?php the_author_link(); ?></span>
+			        		</div>
+		        		</div>
+		    		</div>  
+		    		</a>	
+	        	</div>
+	        <?php endwhile; ?>
 
  	</div>
 
@@ -176,31 +192,31 @@ get_header(); ?>
 		<div class="small-12 columns"><h2><!--<i class="fa fa-microphone" aria-hidden="true"></i>-->Latest From The Podcast</h2></div>
 
 
-   <?php
+		   <?php
 
-  // The Query
-  $query = new WP_Query( array(
-            'post_type' => 'post',
-            'posts_per_page' => 7,
-            'category_name' => 'podcast'
-        ) );
+		  // The Query
+		  $query = new WP_Query( array(
+		            'post_type' => 'post',
+		            'posts_per_page' => 7,
+		            'category_name' => 'podcast'
+		        ) );
 
-  // The Loop
-  while ($query->have_posts()) : $query->the_post();
+		  // The Loop
+		  while ($query->have_posts()) : $query->the_post();
 
-     if ( $query->current_post == 0 ) {  // first post ?>
+		     if ( $query->current_post == 0 ) {  // first post ?>
 
-        <div class="small-12 medium-6 columns blocks">
-        		<a href="<?php the_permalink(); ?>">
-        		<div class="inner">
-        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-	        		<h4><?php the_title(); ?></h4>
-	    		</div>  
-	    		</a>	
-        </div>
+		        <div class="small-12 medium-6 columns blocks">
+		        		<a href="<?php the_permalink(); ?>">
+		        		<div class="inner">
+		        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+			        		<h4><?php the_title(); ?></h4>
+			    		</div>  
+			    		</a>	
+		        </div>
 
-       <?php 
-     } else { ?>
+		       <?php 
+			} else { ?>
 
 	        <div class="small-12 medium-6 columns blocks podright">
 	        <h4><a href="<?php the_permalink(); ?>"><!--<i class="fa fa-microphone" aria-hidden="true"></i>--><?php the_title(); ?></a></h4>

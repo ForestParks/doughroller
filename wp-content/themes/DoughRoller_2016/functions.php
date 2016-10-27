@@ -21,6 +21,18 @@ function remove_redirect_guess_404_permalink( $redirect_url ) {
 }
 add_filter( 'redirect_canonical', 'remove_redirect_guess_404_permalink' );
 
+// Changing excerpt length
+function new_excerpt_length($length) {
+return 10;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
+// Changing excerpt more
+function new_excerpt_more($more) {
+return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
 
 
 /** Various clean up functions */

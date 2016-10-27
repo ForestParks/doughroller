@@ -328,18 +328,18 @@ body.logged-in {
     .columns {
 
           .inner {
-          border: 1px solid lightgrey;
-          padding: 10px 10px 0px 10px;
+          /*border: 1px solid lightgrey;*/
           overflow: hidden;
           transition: all 0.5s ease;
+          margin: 0 0 20px 0;
 
-            &:hover {border: 1px solid $primary-blue; background:$primary-blue;}
-            &:hover h4{color:#fff;}
+            /*&:hover {border: 1px solid $primary-blue; background:$primary-blue;}*/
+            &:hover h4{color:$primary-blue;}
 
           }
     
           h2{
-            font-size: 2em;
+            font-size: 26px;
             line-height: 2em;
             color: #0d72c7;
             border-bottom: 2px solid #0d72c7;
@@ -349,15 +349,24 @@ body.logged-in {
           }
 
           h4 {
-            font-size:1em;
-            margin-top:10px;
-            min-height: 70px;
+            /*font-size:1em;*/
+            font-size: 22px;
+            line-height:22px;
+            margin-top:5px;
             transition: all 0.5s ease;
+            font-weight: bold;
+            color:$primary-grey;
 
             a {color:$primary-grey;}
 
             &:hover {color:#fff;}
 
+          }
+
+          p {
+            font-size: 17px;
+            line-height:18px;
+            color:$primary-grey;
           }
 
           p a.button{background: #36B348;
@@ -370,12 +379,39 @@ body.logged-in {
 
           .home_thumb {
             overflow: hidden;
-            height: 150px;
+            height: 200px;
+            border: 1px solid lightgrey;
+            border-radius: 1px;
 
-            img {min-height:100%;}
+            img {min-height:100%; }
           }
+
+          .home_meta {}
+          .home_author_image {
+            float: left;
+            margin: 0 10px 0 0;
+            border-radius: 100px;
+            overflow: hidden;
+          }
+          .home_author_time {font-size: .9em;}
+
+          .author_link {
+            clear: right;
+            display: block;
+            margin: 0 0 0 0;
+            line-height: 1.2em;
+          }
+          .post_time {color:$primary-grey; display: block;}
     }
     
+}
+
+.latest-posts.popular {
+
+    .home_thumb {height: 150px;}
+
+    .author_link { line-height: 36px;}
+
 }
 
 .blocks a:hover {
@@ -1123,4 +1159,3 @@ cursor: pointer;
 }
   
 /* ////AMEX DISCLAIMER */             
-
