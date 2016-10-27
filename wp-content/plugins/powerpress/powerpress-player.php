@@ -275,7 +275,7 @@ function powerpress_generate_embed($player, $EpisodeData) // $post_id, $feed_slu
 		$extension = powerpressplayer_get_extension($EpisodeData['url']);
 		if( $extension == 'mp3' || $extension == 'm4a' ) 
 		{
-			return powerpressplayer_build_blubrryaudio($EpisodeData['url']);
+			return powerpressplayer_build_blubrryaudio($EpisodeData['url'], $EpisodeData);
 		}
 		return '';
 	}
@@ -1402,7 +1402,14 @@ function powerpressplayer_build_blubrryaudio($media_url, $EpisodeData=array(), $
 	// media URL is all we need., as long as it's hosted at blubrry.com...
 	if( preg_match('/content\.blubrry\.com/', $media_url) )
 	{
-		return '<iframe src="//player.blubrry.com?media_url='. urlencode($media_url) .'" scrolling="no" width="100%" height="138px" frameborder="0"></iframe>';
+		$url = '//player.blubrry.com?media_url='. urlencode($media_url);
+		if( !empty($EpisodeData['id']) ) {
+			// Get permalink URL
+			$permalink = get_permalink( $EpisodeData['id'] );
+			if( !empty($permalink) )
+				$url.= '&amp;podcast_link='. urlencode($permalink);
+		}
+		return '<iframe src="'. $url .'" scrolling="no" width="100%" height="138px" frameborder="0"></iframe>';
 	}
 	
 	return powerpressplayer_build_mediaelementaudio($media_url, $EpisodeData, $embed);

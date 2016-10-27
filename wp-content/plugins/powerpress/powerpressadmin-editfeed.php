@@ -416,7 +416,7 @@ function powerpressadmin_edit_feed_general($FeedSettings, $General)
 <input type="hidden" name="General[feed_action_hook]" value="0" />
 <p><label><input type="checkbox" name="General[feed_action_hook]" value="1" <?php if( !empty($General['feed_action_hook']) && $General['feed_action_hook'] == 1 ) echo 'checked '; ?>/> <?php echo __('Do not allow other plugins to modify podcast feeds.', 'powerpress'); ?></label></p>
 <input type="hidden" name="General[feed_accel]" value="0" />
-<p><label><input type="checkbox" name="General[feed_accel]" value="1" <?php if( !empty($General['feed_accel']) && $General['feed_accel'] == 1 ) echo 'checked '; ?>/> <?php echo __('Accelerate feed (may conflict with caching plugins)', 'powerpress'); ?></label></p>
+<p><label><input type="checkbox" name="General[feed_accel]" value="1" <?php if( !empty($General['feed_accel']) && $General['feed_accel'] == 1 ) echo 'checked '; ?>/> <?php echo __('Accelerate feed', 'powerpress'); ?></label></p>
 
 </td>
 </tr>

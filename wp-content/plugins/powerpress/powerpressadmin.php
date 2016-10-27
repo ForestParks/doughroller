@@ -1509,6 +1509,8 @@ function powerpress_htmlspecialchars($data)
 	{
 		while( list($key,$value) = each($data) )
 		{
+			if( $key == 'itunes_summary' )
+				continue; // Skip this one as we escape it in the form.
 			if( is_array($value) )
 				$data[$key] = powerpress_htmlspecialchars($value);
 			else

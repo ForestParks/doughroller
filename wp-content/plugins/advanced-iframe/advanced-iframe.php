@@ -2,7 +2,7 @@
 /*
 Plugin Name: Advanced iFrame 
 Plugin URI: http://www.tinywebgallery.com/blog/advanced-iframe
-Version: 7.1.1
+Version: 7.1.3
 Text Domain: advanced-iframe
 Domain Path: /languages
 Author: Michael Dempfle
@@ -26,11 +26,6 @@ if (!class_exists('advancediFrame')) {
         
         var $adminOptionsName = 'advancediFrameAdminOptions';
         var $scriptsNeeded = false;
-        /*
-        * class constructor
-        */
-        function advancediFrame() {
-        }
 
         /**
          *  wp init

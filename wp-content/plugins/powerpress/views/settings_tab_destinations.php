@@ -38,6 +38,8 @@
 		$FeedSettings['blubrry_url'] = '';
 	if( empty($FeedSettings['stitcher_url']) )
 		$FeedSettings['stitcher_url'] = '';
+	if( empty($FeedSettings['tunein_url']) )
+		$FeedSettings['tunein_url'] = '';	
 ?>
 
 
@@ -116,7 +118,10 @@
 <th scope="row"><?php echo __('TuneIn', 'powerpress'); ?></th>
 <td>
 	<p><strong><a href="http://create.blubrry.com/manual/podcast-promotion/publish-podcast-tunein/?podcast-feed=<?php echo urlencode($feed_url); ?>" target="_blank"><?php echo  __('Submit podcast to TuneIn', 'powerpress'); ?></a></strong></p>
-	<p class="description"><?php echo __('TuneIn does not offer listing URLs at this time.', 'powerpress'); ?></p>
+	<label for="tunein_url" style="font-size: 120%; display: block; font-weight: bold;"><?php echo __('TuneIn Listing URL', 'powerpress'); ?></label>
+	<input type="text" class="bpp-input-normal" id="tunein_url" name="Feed[tunein_url]" value="<?php echo esc_attr($FeedSettings['tunein_url']); ?>" maxlength="255" />
+	<p class="description"><?php echo sprintf(__('e.g. %s', 'powerpress'), 'http://tunein.com/radio/your-podcast-p000000/'); ?></p>
+	
 </td>
 </tr>
 </table>

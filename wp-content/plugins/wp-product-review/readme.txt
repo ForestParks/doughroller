@@ -1,9 +1,9 @@
-=== Plugin Name ===
+=== WP Product Review Lite ===
 Contributors: codeinwp,marius2012,marius_codeinwp,hardeepasrani,themeisle,Madalin_ThemeIsle
 Tags:  review, rating, posts, widget, review blogger, review blogging, affiliate, product reviews,plugin,  google rating, product review, rating, review, star rating, user rating, wp rating, wp review,  google, hreview,rich snippets,seo,snippet
 Author URI: http://themeisle.com
 Requires at least: 3.5
-Tested up to: 4.5.2
+Tested up to: 4.6
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -44,11 +44,11 @@ Other notable features :
 
 1. If you want to to edit the colors, enable/disable the affiliate button, change icons go on the plugin options page.
 
-1. All the plugin settings/colors are fully customizable, and you can read more about it <a rel="friend" href="https://themeisle.com/plugins/wp-product-review-lite/?utm_source=wpreadme&utm_medium=readme&utm_campaign=wporg">here</a>
+1. All the plugin settings/colors are fully customizable, and you can read more about it <a rel="nofollow" href="https://themeisle.com/plugins/wp-product-review-lite/?utm_source=wpreadme&utm_medium=readme&utm_campaign=wporg">here</a>
 
 1. For updates follow https://twitter.com/themeisle.
 
-If you wanna learn more about the <a href="http://www.codeinwp.com/blog/fastest-wordpress-hosting/" rel="friend">fastest WordPress hosting</a> or which <a href="http://www.codeinwp.com/blog/15-best-wordpress-review-themes/" rel="friend">review themes</a> are playing nice with WP Product review, checkout our blog.
+If you wanna learn more about the <a href="http://www.codeinwp.com/blog/fastest-wordpress-hosting/" rel="nofollow">fastest WordPress hosting</a> or which <a href="http://www.codeinwp.com/blog/15-best-wordpress-review-themes/" rel="nofollow">review themes</a> are playing nice with WP Product review, checkout our blog.
 
 
 **Fortcoming**
@@ -71,6 +71,36 @@ If you wanna learn more about the <a href="http://www.codeinwp.com/blog/fastest-
 * fr_FR translation by Jacques Soule of http://wordpress-pour-vous.com/
 
 == Changelog ==
+
+**New in 2.9.5**
+
+- Added amazon integration support
+- Fixed some design issue with review
+
+**New in 2.9.3**
+
+- Added dashes for pro/cons list
+- Added filters for nofollow links in widgets area
+
+**New in 2.9.2**
+
+- Fixed shortcode compatibility with pro version
+
+**New in 2.9.1**
+
+- Fixed undefined notice on plugin activation
+- Removed review buttons on links when the values are empty for widgets
+
+**New in 2.9.0**
+
+- Added shortcode support on all review fields
+- Removed addons page
+
+
+**New in 2.8.7**
+
+- Fixed img tag closing tag issue
+- Fixed rich snippet problem when comment influence is off
 
 **New in 2.8.6**
 

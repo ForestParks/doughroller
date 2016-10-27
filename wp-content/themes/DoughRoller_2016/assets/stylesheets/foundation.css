@@ -6740,6 +6740,13 @@ table.hover tr:nth-of-type(even):hover {
   text-decoration: none !important;
   text-align: center !important; }
 
+.related_posts div {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: bold !important; }
+
+.related_posts a {
+  border-right: none !important; }
+
 body {
   padding-top: 30px; }
 
@@ -7055,14 +7062,24 @@ body.logged-in {
   overflow: hidden;
   height: 250px; }
 
+.podcast .columns .author_link {
+  line-height: 36px !important; }
+
 .podcast .columns.blocks.podright h4 {
   border-bottom: 1px dotted lightgrey;
   min-height: 5px;
   /*text-indent: -10px;
     padding: 0 0 5px 20px;*/ }
+  .podcast .columns.blocks.podright h4 a {
+    font-size: .8em !important;
+    font-weight: normal;
+    padding-left: 30px;
+    display: block; }
 
 .podcast .columns.blocks.podright .fa {
-  margin-right: 10px; }
+  margin-right: 5px;
+  display: block;
+  float: left; }
 
 .podcast .columns.blocks.podright a:hover {
   text-decoration: underline; }
@@ -7070,8 +7087,13 @@ body.logged-in {
 .resources-guides .columns.blocks h4 {
   border-bottom: 1px dotted lightgrey;
   min-height: 5px;
-  text-indent: -10px;
-  padding: 5px 0 5px 20px; }
+  /*text-indent: -10px;
+    padding: 0 0 5px 20px;*/ }
+  .resources-guides .columns.blocks h4 a {
+    font-size: .8em !important;
+    font-weight: normal;
+    padding-left: 30px;
+    display: block; }
 
 .home_signup {
   background: #5ca6c6;

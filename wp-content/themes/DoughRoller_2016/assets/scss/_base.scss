@@ -429,16 +429,32 @@ body.logged-in {
           }
 }
 
-.podcast .columns.blocks.podright {
+
+
+.podcast  {
+
+    .columns .author_link {line-height: 36px !important;}
+
+
+    .columns.blocks.podright {
 
     h4 {
       border-bottom: 1px dotted lightgrey;
     min-height: 5px;
     /*text-indent: -10px;
     padding: 0 0 5px 20px;*/
+
+      a {font-size: .8em !important;
+    font-weight: normal;
+    padding-left: 30px;
+    display: block;}
     }
 
-    .fa {margin-right:10px;}
+    .fa {margin-right:5px;    display: block;
+    float: left;}
+
+    }
+
 }
 
 .podcast .columns.blocks.podright a:hover {
@@ -446,12 +462,18 @@ body.logged-in {
 
 }
 
+
 .resources-guides .columns.blocks {
     h4 {
-    border-bottom: 1px dotted lightgrey;
+      border-bottom: 1px dotted lightgrey;
     min-height: 5px;
-    text-indent: -10px;
-    padding: 5px 0 5px 20px;
+    /*text-indent: -10px;
+    padding: 0 0 5px 20px;*/
+
+      a {font-size: .8em !important;
+    font-weight: normal;
+    padding-left: 30px;
+    display: block;}
     }
 }
 
@@ -1062,6 +1084,8 @@ td.ccoffers_fee {
         text-align:left;
 }
 /* END WP-TABLE RELOADED */
+
+
 
 
 

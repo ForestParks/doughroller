@@ -3,11 +3,11 @@
 Plugin Name: Blubrry PowerPress
 Plugin URI: http://create.blubrry.com/resources/powerpress/
 Description: <a href="http://create.blubrry.com/resources/powerpress/" target="_blank">Blubrry PowerPress</a> is the No. 1 Podcasting plugin for WordPress. Developed by podcasters for podcasters; features include Simple and Advanced modes, multiple audio/video player options, subscribe to podcast tools, podcast SEO features, and more! Fully supports iTunes, Google Play, Stitcher, and Blubrry Podcasting directories, as well as all podcast applications and clients.
-Version: 7.0.1
+Version: 7.0.3
 Author: Blubrry
 Author URI: http://www.blubrry.com/
 Requires at least: 3.6
-Tested up to: 4.5.2
+Tested up to: 4.6.1
 Text Domain: powerpress
 Change Log:
 	Please see readme.txt for detailed change log.
@@ -32,7 +32,7 @@ if( !function_exists('add_action') )
 	die("access denied.");
 	
 // WP_PLUGIN_DIR (REMEMBER TO USE THIS DEFINE IF NEEDED)
-define('POWERPRESS_VERSION', '7.0.1' );
+define('POWERPRESS_VERSION', '7.0.3' );
 
 // Translation support:
 if ( !defined('POWERPRESS_ABSPATH') )
@@ -325,10 +325,10 @@ function powerpress_content($content)
 					}
 				}
 				
-				if( !isset($EpisodeData['no_links']) )
+				if( !isset($EpisodeData['no_links']) ) {
 					$new_content .= apply_filters('powerpress_player_links', '',  powerpress_add_flag_to_redirect_url($EpisodeData['url'], 'p'), $EpisodeData );
-					//$new_content .= powerpress_get_player_links($post->ID, $feed_slug, $EpisodeData);
 					$new_content .= apply_filters('powerpress_player_subscribe_links', '',  powerpress_add_flag_to_redirect_url($EpisodeData['url'], 'p'), $EpisodeData );
+				}
 			}
 		}
 	}
@@ -581,11 +581,11 @@ function powerpress_rss2_head()
 		
 	if( !empty($Feed['itunes_image']) )
 	{
-		echo "\t".'<itunes:image href="' . esc_html( str_replace(' ', '+', $Feed['itunes_image']), 'double') . '" />'.PHP_EOL;
+		echo "\t".'<itunes:image href="' . esc_html( powerpress_url_in_feed(str_replace(' ', '+', $Feed['itunes_image'])), 'double') . '" />'.PHP_EOL;
 	}
 	else
 	{
-		echo "\t".'<itunes:image href="' . powerpress_get_root_url() . 'itunes_default.jpg" />'.PHP_EOL;
+		echo "\t".'<itunes:image href="' . powerpress_url_in_feed(powerpress_get_root_url()) . 'itunes_default.jpg" />'.PHP_EOL;
 	}
 	
 	if( !empty($Feed['email']) )
@@ -775,7 +775,7 @@ function powerpress_rss2_head()
 		if( !empty($Feed['donate_link']) && !empty($Feed['donate_url']) )
 			echo "\t<rawvoice:donate href=\"". htmlspecialchars( $Feed['donate_url'] ) ."\">". htmlspecialchars( (empty($Feed['donate_label'])?'':$Feed['donate_label']) ) ."</rawvoice:donate>".PHP_EOL;	
 		
-		if( !empty($Feed['itunes_url']) || !empty($Feed['googleplay_url']) || !empty($Feed['blubrry_url']) || !empty($Feed['stitcher_url']) ) {
+		if( !empty($Feed['itunes_url']) || !empty($Feed['googleplay_url']) || !empty($Feed['blubrry_url']) || !empty($Feed['stitcher_url']) || !empty($Feed['tunein_url']) ) {
 			echo "\t<rawvoice:subscribe feed=\"";
 			self_link();
 			echo '"';
@@ -798,6 +798,8 @@ function powerpress_rss2_head()
 				echo " blubrry=\"". htmlspecialchars( $Feed['blubrry_url'] ) .'"';
 			if( !empty($Feed['stitcher_url']) )
 				echo " stitcher=\"". htmlspecialchars( $Feed['stitcher_url'] ) .'"';
+			if( !empty($Feed['tunein_url']) )
+				echo " tunein=\"". htmlspecialchars( $Feed['tunein_url'] ) .'"';
 			echo "></rawvoice:subscribe>".PHP_EOL;	
 		}
 	}
@@ -856,7 +858,7 @@ function powerpress_rss2_item()
 			$EpisodeData['size'] = 5242880; // Use the dummy 5MB size since we don't have a size to quote
 			
 		echo "\t". sprintf('<enclosure url="%s" length="%d" type="%s" />%s',
-			trim($EpisodeData['url']),
+			powerpress_url_in_feed(trim($EpisodeData['url'])),
 			trim($EpisodeData['size']),
 			trim($EpisodeData['type']),
 			PHP_EOL);
@@ -893,42 +895,44 @@ function powerpress_rss2_item()
 	$summary_cdata = ( !empty( $General['itunes_cdata'] ) ? true : false );
 	
 	if( empty($subtitle) ) {
-		$subtitle = powerpress_get_the_exerpt( false );
+		$subtitle = powerpress_get_the_exerpt( false, !empty($General['feed_action_hook']) );
 	}
 	
 	// If no summary specified and we have enhanced summary enabled...
 	if( empty($summary) && !empty($powerpress_feed['enhance_itunes_summary']) ) {
-		$summary = powerpress_enhanced_itunes_summary();
+		$summary = powerpress_enhanced_itunes_summary( !empty($General['feed_action_hook']) );
 		if( !empty($summary) ) {
 			$summary_cdata = true; // Always use CDATA for enhanced iTunes summary
 		}
 	}
 	
 	if( empty($summary) ) { // Backwards compatbility with PodPress, the excerpt is used as the itunes summary if set
-		$summary = powerpress_get_the_exerpt( true ); // Will call powerpress_get_the_content(true) if the excerpt does not exist
+		$summary = powerpress_get_the_exerpt( true, !empty($General['feed_action_hook']) ); // Will call powerpress_get_the_content(true) if the excerpt does not exist
 	}
 	
 	if( !empty($subtitle) ) {
 		echo "\t<itunes:subtitle>". powerpress_format_itunes_value($subtitle, 'subtitle') .'</itunes:subtitle>'.PHP_EOL;
 	}
 	
-	if( !empty($summary) ) {
-		if( $summary_cdata ) {
-			echo "\t\t<itunes:summary><![CDATA[". powerpress_format_itunes_value($summary, 'summary', true) .']]></itunes:summary>'.PHP_EOL;
-		} else {
-			echo "\t\t<itunes:summary>". powerpress_format_itunes_value($summary, 'summary') .'</itunes:summary>'.PHP_EOL;
+	if( empty($powerpress_feed['feed_maximizer_on']) || defined('POWERPRESS_MAXIMIZER_INCLUDE_ITUNES_SUMMARY') ) {
+		if( !empty($summary) ) {
+			if( $summary_cdata ) {
+				echo "\t\t<itunes:summary><![CDATA[". powerpress_format_itunes_value($summary, 'summary', true) .']]></itunes:summary>'.PHP_EOL;
+			} else {
+				echo "\t\t<itunes:summary>". powerpress_format_itunes_value($summary, 'summary') .'</itunes:summary>'.PHP_EOL;
+			}
 		}
 	}
-	
+		
 	if( !empty($author) ) {
 		echo "\t\t<itunes:author>" . esc_html($author) . '</itunes:author>'.PHP_EOL;
 	}
 	
 	// itunes episode image
 	if( !empty( $EpisodeData['itunes_image']) ) {
-		echo "\t\t".'<itunes:image href="' . esc_html( str_replace(' ', '+', $EpisodeData['itunes_image']), 'double') . '" />'.PHP_EOL;
+		echo "\t\t".'<itunes:image href="' . esc_html( powerpress_url_in_feed(str_replace(' ', '+', $EpisodeData['itunes_image'])), 'double') . '" />'.PHP_EOL;
 	} else if( !empty($powerpress_feed['itunes_image']) ) {
-		echo "\t\t".'<itunes:image href="' . esc_html( str_replace(' ', '+', $powerpress_feed['itunes_image']), 'double') . '" />'.PHP_EOL;
+		echo "\t\t".'<itunes:image href="' . esc_html( powerpress_url_in_feed(str_replace(' ', '+', $powerpress_feed['itunes_image'])), 'double') . '" />'.PHP_EOL;
 	}
 	
 	if( !empty($explicit) && $explicit != 'no' ) {
@@ -1047,7 +1051,7 @@ function powerpress_filter_rss_enclosure($content)
 	$EpisodeData = powerpress_get_enclosure_data($post->ID);
 	
 	// Modified Media URL
-	$ModifiedURL = $EpisodeData['url']; // powerpress_add_redirect_url($OrigURL);
+	$ModifiedURL = powerpress_url_in_feed($EpisodeData['url']); // powerpress_add_redirect_url($OrigURL);
 	
 	// Check that the content type is a valid one...
 	$match_count = preg_match('/\stype="([^"]*)"/', $content, $matches);
@@ -1089,7 +1093,7 @@ function powerpress_bloginfo_rss($content, $field = '')
 		else
 		{
 			global $powerpress_feed;
-			//var_dump($powerpress_feed);
+			
 			if( !empty($powerpress_feed['post_type']) )
 			{
 				$feed_slug = get_query_var('feed');
@@ -1803,7 +1807,7 @@ function powerpress_load_general_feed_settings()
 
 			$feed_slug = get_query_var('feed');
 			// Are we dealing with a custom podcast channel or a custom post type podcast feed...
-			if( !empty($GeneralSettings['posttype_podcasting']) || !empty($GeneralSettings['custom_feeds'][ $feed_slug ]) )
+			if( !empty($GeneralSettings['posttype_podcasting']) || isset($GeneralSettings['custom_feeds'][ $feed_slug ]) )
 			{
 				$Feed = false;
 				if( !empty($GeneralSettings['posttype_podcasting']) )
@@ -1822,7 +1826,7 @@ function powerpress_load_general_feed_settings()
 						}
 					}
 				}
-				if( empty($Feed) && !empty($GeneralSettings['custom_feeds'][ $feed_slug ]) )
+				if( empty($Feed) && isset($GeneralSettings['custom_feeds'][ $feed_slug ]) )
 				{
 					$FeedCustom = get_option('powerpress_feed_'.$feed_slug); // Get custom feed specific settings
 					$Feed = powerpress_merge_empty_feed_settings($FeedCustom, $FeedSettingsBasic, ($feed_slug == 'podcast') );
@@ -2539,31 +2543,71 @@ function powerpress_get_root_url()
 	return $plugin_url . '/';
 }
 
-function powerpress_get_the_exerpt($for_summary = false)
+function powerpress_get_the_exerpt($for_summary = false, $no_filters = false)
 {
-	$subtitle = trim( strip_tags( get_the_excerpt() ) );
+	if( $no_filters ) {
+		global $post;
+		$subtitle = $post->post_excerpt;
+		if ( $subtitle == '') {
+			$subtitle = strip_shortcodes( $post->post_content );
+			$subtitle = str_replace(']]>', ']]&gt;', $subtitle);
+			$subtitle = strip_tags($subtitle);
+		}
+	} else {
+		$subtitle = get_the_excerpt();
+	}
+	
+	$subtitle = trim( strip_tags( $subtitle ) );
 	if( !empty($subtitle) )
 		return $subtitle;
-	return powerpress_get_the_content( $for_summary );
+	return powerpress_get_the_content( $for_summary, $no_filters );
 }
 
-function powerpress_get_the_content($for_summary = true) {
-	$content_no_html = get_the_content();
+function powerpress_get_the_content($for_summary = true, $no_filters = false, $no_strip_tags = false) {
+	if( $no_filters ) {
+		global $post;
+		$content_no_html = $post->post_content;
+		$content_no_html = strip_shortcodes( $content_no_html );
+		$content_no_html = str_replace(']]>', ']]&gt;', $content_no_html);
+		$content_no_html = wp_staticize_emoji( _oembed_filter_feed_content( $content_no_html ) );
+	} else {
+		$content_no_html = get_the_content();
+	}
 	$content_no_html = strip_shortcodes( $content_no_html ); 
+	if( $no_strip_tags )
+		return $content_no_html;
+	
 	if( $for_summary ) {
 		return trim( strip_tags($content_no_html, '<a><p><br>') );
 	}
 	return trim( strip_tags($content_no_html) );
 }
 
-function powerpress_enhanced_itunes_summary()
+function powerpress_enhanced_itunes_summary($no_filters = false)
 {
-	$summary = apply_filters( 'the_content', get_the_content() );
+	if( $no_filters ) {
+		$summary = powerpress_get_the_content(false, true, true);
+	} else {
+		$summary = apply_filters( 'the_content', powerpress_get_the_content(false, $no_filters, true) );
+	}
 	$summary = str_replace("<li>", '<li>* ', $summary);
 	$summary = strip_tags($summary, '<a><br>'); // We can leave a tags for itunes:summary, this will also strip CDATA tags
 	return $summary;
 }
 
+function powerpress_url_in_feed($url) {
+	if( defined('POWERPRESS_FEEDS_FORCE_HTTP') && is_feed() ) {
+		if( preg_match('/^https:\/\/(.*)$/', $url, $matches) ) {
+			return 'http://'.$matches[1];
+		}
+	}
+	else if( defined('POWERPRESS_FEEDS_FORCE_HTTPS') && is_feed() ) {
+		if( preg_match('/^http:\/\/(.*)$/', $url, $matches) ) {
+			return 'https://'.$matches[1];
+		}
+	}
+	return $url;
+}
 
 function powerpress_format_itunes_value($value, $tag, $cdata=false)
 {
@@ -2681,7 +2725,7 @@ function powerpress_add_redirect_url($MediaURL, $EpisodeData = false) // $channe
 	if( empty($EpisodeData['feed']) )
 		$EpisodeData['feed'] = 'podcast';
 		
-	$NewURL = apply_filters('powerpress_redirect_url',  $MediaURL);
+	$NewURL = apply_filters( 'powerpress_redirect_url',  $MediaURL, $EpisodeData );
 	
 	$URLScheme = ( (preg_match('/^https:\/\//i', $NewURL) != 0 ) ? 'https://':'http://');
 	

@@ -2,8 +2,8 @@
 Contributors: amandato, blubrry
 Tags: powerpress, podcasting, podcast, podcaster, itunes, google play music, google play, enclosure, professional, apple, apple tv, ipad, iphone, soundcloud, squarespace, youtube, viddler, ustream, podcasting, audio, video, rss2, feed, player, media, rss, mp3, music, embed, feedburner, statistics, stats, flv, flash, id3, episodes, blubrry, mp4, m4v, wordpressmu, mu, wordpress mu, multisite, multi site, mediacaster, post, plugin, posts, simple, social, dashboard, TSG, Buzzsprout, MTR, WP-boxCast, CastMyBlog, tgs podcasting,  simple podcasting, seriously simple podcasting, seriously-simple-podcasting, serious, seriously, ssp, podlove, podcast.de, clammr, clammr radio, audio player, stitcher, tunein, show, shows, series, docs, documentation, support, free, add-ons, extensions, addons, libsyn, libsyn-podcasting, podbean, podomatic, spreaker
 Requires at least: 3.6
-Tested up to: 4.5.2
-Stable tag: 7.0.1
+Tested up to: 4.6.1
+Stable tag: 7.0.3
 Donate link: https://www.patreon.com/blubrry?ty=h
 License: GPLv2 or later
 
@@ -13,6 +13,7 @@ No. 1 Podcasting plugin for WordPress, with simple & advanced modes, players, su
 
 PowerPress is the No. 1 Podcasting plugin for WordPress. Developed by podcasters for podcasters; features include Simple and Advanced modes, multiple audio/video player options, subscribe to podcast tools, podcast SEO features, and more! Fully supports iTunes, Google Play, Stitcher, TuneIn and Blubrry Podcasting directories, as well as all podcast applications and clients.
 
+[youtube https://www.youtube.com/watch?v=twqKrVehY3o]
 
 = Simple Mode =
 If you are just getting started or feel overwelmed with all the settings and options, switch to Simple mode! PowerPress's Simple Mode will walk you through getting started in 3 easy steps. 
@@ -219,19 +220,44 @@ To install Blubrry PowerPress manually, follow these steps:
 == Changelog ==
 
 = Next Major Release Announcements =
-* PowerPress 7.1 coming early July 2016. Beta testers expect an email mid to late June.
+* Facebook Instant Articles for podcasting coming in PowerPress 7.1 release!
+* PowerPress 7.1 will be released in 1-2 weeks. Beta testers expect an email early next week.
 * We are looking for beta testers! If you would like to beta test future versions of PowerPress, please [contact us](http://www.blubrry.com/contact.php) with your name and email.
 
 = Become a PowerPress Patron! =
 Help support your favorite podcasting plugin via Patreon. [Visit Blubrry's Patreon page](https://www.patreon.com/blubrry?ty=h)
 
+= 7.0.3 =
+* Released 9/13/2016
+* Fixed issue when editing channel/category/post type podcast settings double escaping & character. (Thanks Robin Brinkler for bringing to our attention!)
+* Added checks for OpenSSL and cURL SSL support to the Diagnostics page.
+* PowerPress "Verify" option now works with MemberPress. (Thanks MemberPress for the code!)
+* Added new debugging define `POWERPRESS_DEBUG_QUERIES`, displays SQL queries at the bottom of the feed for diagnostic purposes.
+* Feed option to not allow other plugins from modyfing podcast feeds now bypasses the `the_content` and `the_excerpt` filters.
+* Added 2 new define options for podcast feeds and HTTPS. For example, it is possible to host your website via HTTPS but serve the feed via HTTP. (Thanks @Fastmover for the patch that inspired this option)
+	* `define('POWERPRESS_FEEDS_FORCE_HTTPS', true);` when added to wp-config.php forces all media links and iTunes images to use HTTPS.
+	* `define('POWERPRESS_FEEDS_FORCE_HTTP', true);` when added to wp-config.php forces all media links and iTunes images to use HTTP.
+
+
+= 7.0.2 = 
+* Released on 7/22/2016
+* Fixed bug with new Blubrry Player not displaying show notes button.
+* Added TuneIn subscribe URL option. (Thanks @kgagne for bringing to our attention!)
+* Removed the PHP 5.2 or older error message in the getid3 library. (Thanks davidpmariano for the heads up!)
+* Fixed bug where podcast channels with a blank feed title do not apply specific channel settings like the website link. (Thanks Robin Brinkler for bringing to our attention!)
+* Fixed bug where category episodes were not using the category settings like they used to if only one category is selected. (Thanks Jason Bryant for explaining the situation for us to reproduce the problem!)
+* Added additional logic to better handle category podcasting when strict category podcasting is not enabled.
+* Removed itunes:summary when Feed Maximizer on (this was the behavior before 7.0). iTunes summary is a duplicate of the RSS description. To include itunes summary in maximizer mode, please add `define('POWERPRESS_MAXIMIZER_INCLUDE_ITUNES_SUMMARY', true);` in your wp-config.php.
+
+
 = 7.0.1 =
-* Released on 6/11/2016
-* Fixed bug where verify media could fail with "unable to determine file format" caused by getid3 library update. (Thanks @budgetnerd  for bringing to our attention!)
+* Released on 6/20/2016
+* Fixed bug where verify media could fail with "unable to determine file format" caused by getid3 library update. (Thanks @budgetnerd for bringing to our attention!)
 * Re-added the itpc links for subscribe on iTunes when no iTunes subscribe URL provided. For those who wanted this, please notice itpc does not work on iOS devices.
 * Statistics redirects that do not end with a / will now work. We add a slash if no slash is present.
 * Removed February 2016 iTunes notice message.
 * Subscribe by Email, on Google Play and Stitcher options removed for premium podcast feeds.
+* Subscribe links will no longer appear when episode no links option checked. (Thanks @360woodworking for bringing to our attention)
 
 
 = 7.0 =

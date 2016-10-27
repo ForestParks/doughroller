@@ -1290,9 +1290,12 @@ function powerpressadmin_appearance($General=false, $Feed = false)
 	</p>
 </div>
 
+<p><input type="hidden" name="General[subscribe_feature_gp]" value="0" /><input type="checkbox" id="subscribe_feature_gp" name="General[subscribe_feature_gp]" value="1" <?php if( !empty($General['subscribe_feature_gp']) ) echo 'checked '; ?>/> <label for="subscribe_feature_gp"><?php echo __('Subscribe on Google Play', 'powerpress'); ?></label> <?php echo powerpressadmin_new(); ?></p>
+
 <p><input type="hidden" name="General[subscribe_feature_stitcher]" value="0" /><input type="checkbox" id="subscribe_feature_stitcher" name="General[subscribe_feature_stitcher]" value="1" <?php if( !empty($General['subscribe_feature_stitcher']) ) echo 'checked '; ?>/> <label for="subscribe_feature_stitcher"><?php echo __('Subscribe on Stitcher', 'powerpress'); ?></label> <?php echo powerpressadmin_new(); ?></p>
 
-<p><input type="hidden" name="General[subscribe_feature_gp]" value="0" /><input type="checkbox" id="subscribe_feature_gp" name="General[subscribe_feature_gp]" value="1" <?php if( !empty($General['subscribe_feature_gp']) ) echo 'checked '; ?>/> <label for="subscribe_feature_gp"><?php echo __('Subscribe on Google Play', 'powerpress'); ?></label> <?php echo powerpressadmin_new(); ?></p>
+<p><input type="hidden" name="General[subscribe_feature_tunein]" value="0" /><input type="checkbox" id="subscribe_feature_tunein" name="General[subscribe_feature_tunein]" value="1" <?php if( !empty($General['subscribe_feature_tunein']) ) echo 'checked '; ?>/> <label for="subscribe_feature_tunein"><?php echo __('Subscribe on TuneIn', 'powerpress'); ?></label> <?php echo powerpressadmin_new(); ?></p>
+
 </td>
 </tr>
 </table>

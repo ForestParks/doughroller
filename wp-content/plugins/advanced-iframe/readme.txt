@@ -3,8 +3,8 @@ Contributors: mdempfle, Michael Dempfle
 Donate link: http://www.tinywebgallery.com
 Tags: iframe, embed, resize, zoom, content, advanced, shortcode, modify css, widget 
 Requires at least: 2.8.6
-Tested up to: 4.5.2
-Stable tag: 7.1.1
+Tested up to: 4.6.1
+Stable tag: 7.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -158,6 +158,12 @@ If you have some radio elements empty after the update simply
 select the one you like and save again.
 
 == Changelog ==
+= 7.1.3 =
+- New: Support for Wordpress 4.6.1
+
+= 7.1.2 =
+- Fix: Removed empty constructor to be php 7 compatible.
+
 = 7.1.1 = 
 - New: Improved documentation: New feature overview page http://www.tinywebgallery.com/blog/advanced-iframe/advanced-iframe-features-availability-overview
 

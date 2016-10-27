@@ -1,10 +1,10 @@
 === CoSchedule ===
-Contributors: todaymade
+Contributors: CoSchedule
 Donate link: http://coschedule.com
 Tags: Content marketing calendar, drag and drop editorial calendar plugin, social media scheduling, editorial calendar plugin, content marketing, social automation tool, pinterest integration, schedule facebook posts, schedule to twitter, social media, tumblr, schedule posts to google+, schedule posts to Linkedin, Google Analytics, social media analytics, Google Docs integration, Evernote integration, Click to Tweet
 Requires at least: 3.5
-Tested up to: 4.5.2
-Stable tag: 2.4.10
+Tested up to: 4.6.1
+Stable tag: 2.4.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,15 @@ We charge a monthly fee for CoSchedule because we provide an ongoing service tha
 
 
 == Changelog ==
+
+= 2.4.13 =
+* Improves overall plugin performance
+
+= 2.4.12 =
+* Improved plugin activation
+
+= 2.4.11 =
+* Improved plugin performance
 
 = 2.4.10 =
 * Fixes issue with post name overrides
@@ -300,6 +309,15 @@ We charge a monthly fee for CoSchedule because we provide an ongoing service tha
 * Private beta release
 
 == Upgrade Notice ==
+
+= 2.4.13 =
+* Improves overall plugin performance
+
+= 2.4.12 =
+* This update improves plugin activation
+
+= 2.4.11 =
+* This update improves overall plugin performance
 
 = 2.4.10 =
 * This update fixes issues with post name overrides

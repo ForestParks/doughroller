@@ -1,6 +1,6 @@
-<?php if (current_user_can('manage_options')) { ?>
+<?php if ( current_user_can( 'manage_options' ) ) { ?>
     <script type='text/javascript'>
-        var tm_cos_token = "<?php echo esc_js(get_option('tm_coschedule_token')); ?>";
+        var tm_cos_token = "<?php echo esc_js( get_option( 'tm_coschedule_token' ) ); ?>";
     </script>
     <!--[if IE 9]>
     <style>
@@ -27,8 +27,7 @@
                                     <ul class="text-left">
                                         <li>&bull; Drag-And-Drop Editorial Calendar</li>
                                         <li>&bull; Schedule Social Media While You Blog</li>
-                                        <li>&bull; All-In-One Blog &amp; Social Media Publishing
-                                        </li>
+                                        <li>&bull; All-In-One Blog &amp; Social Media Publishing</li>
                                         <li>&bull; Communicate With Your Team</li>
                                         <li>&bull; 14 Day Free Trial, Cancel Anytime</li>
                                     </ul>
@@ -153,7 +152,7 @@
                             <div class="tm_footer_logos cos-plugin-footer text-center">
                                 <div class="customer-logos">
                                     <img
-                                        src="<?php echo esc_url('http://direct.coschedule.com/img/app-tmp/customer-logos-color.png'); ?>">
+                                        src="<?php echo esc_url( 'http://coschedule.com/img/app-tmp/customer-logos-color.png' ); ?>">
                                     CoSchedule is trusted by WordPress bloggers and content
                                     marketers around the world.
                                 </div>
@@ -167,34 +166,18 @@
 
     <script>
         jQuery(document).ready(function ($) {
-            $('.update-nag').remove();
-            $('#wpfooter').remove();
-            $('#wpwrap #footer').remove();
-            $('#wpbody-content').css('paddingBottom', 0);
-            $('#CoSiFrame').css('min-height', $('#wpbody').height());
-            var resize = function () {
-                var p = $(window).height() - $('#wpadminbar').height() - 4;
-                $('#CoSiFrame').height(p);
-            }
-
-            resize();
-            $(window).resize(function () {
-                resize();
-            });
-
             // add enter key trigger submit action //
             $('input[type=text],input[type=password]').keypress(function (e) {
-                var result = true;
                 if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
                     $(e.target).parents('#tm_form_login, #tm_form_register')
                         .find('button[type=submit].default').click();
-                    result = false;
+                    return false;
                 }
-                return result;
+                return true;
             });
         });
     </script>
     <?php
 } else {
-    include(plugin_dir_path(__FILE__) . '_access-denied.php');
+    include( plugin_dir_path( __FILE__ ) . '_access-denied.php' );
 }

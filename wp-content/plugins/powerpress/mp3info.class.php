@@ -343,6 +343,9 @@
 			curl_setopt($curl, CURLOPT_USERAGENT, $this->m_UserAgent );
 			curl_setopt($curl, CURLOPT_URL, $url);
 			curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+			if( defined('MEPR_PLUGIN_NAME') ) {
+				curl_setopt($curl, CURLOPT_COOKIEFILE, ""); // For MemberPress
+			}
 			curl_setopt($curl, CURLOPT_HEADER, true); // header will be at output
 			curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'HEAD'); // HTTP request 
 			curl_setopt($curl, CURLOPT_NOBODY, true );

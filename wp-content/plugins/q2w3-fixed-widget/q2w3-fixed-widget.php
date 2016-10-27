@@ -3,8 +3,9 @@
 Plugin Name: Q2W3 Fixed Widget
 Plugin URI: http://www.q2w3.ru/q2w3-fixed-widget-wordpress-plugin/
 Description: Fixes positioning of the selected widgets, when the page is scrolled down.
+Text Domain: q2w3-fixed-widget
 Author: Max Bond
-Version: 4.0.6
+Version: 5.0.4
 Author URI: http://www.q2w3.ru/
 */
 
@@ -16,14 +17,13 @@ class q2w3_fixed_widget { // Plugin class
 	
 	const ID = 'q2w3_fixed_widget';
 	
-	const VERSION = '4.0.6';
+	const VERSION = '5.0.4';
 	
 	protected static $sidebars_widgets;
 	
 	protected static $fixed_widgets;
 	
 	protected static $settings_page_hook;
-
 	
 	
 	public static function init() {
@@ -35,31 +35,39 @@ class q2w3_fixed_widget { // Plugin class
 		if ( is_admin() ) {
 			
 			self::load_language();
-		
+			
 			add_action('in_widget_form', array( __CLASS__, 'add_widget_option' ), 10, 3);
 		
 			add_filter('widget_update_callback', array( __CLASS__, 'update_widget_option' ), 10, 3);
 		
 			add_action('admin_init', array( __CLASS__, 'register_settings' ));
 		
-			add_action('admin_menu', array( __CLASS__, 'admin_menu' ));
+			add_action('admin_menu', array( __CLASS__, 'admin_menu' ), 5);
 			
-			add_action( 'admin_enqueue_scripts', array( __CLASS__, 'settings_page_js' ) );
+			add_action('admin_enqueue_scripts', array( __CLASS__, 'settings_page_js' ));
 		
 		} else {
 		
 			if ( $options['fix-widget-id'] ) self::registered_sidebars_filter(); 
-		
+
 			add_filter('widget_display_callback', array( __CLASS__, 'is_widget_fixed' ), $options['widget_display_callback_priority'], 3);
 
 			add_action('wp_loaded', array( __CLASS__, 'custom_ids' ));
 			
-			add_action('wp_footer', array( __CLASS__, 'action_script' ));
-		
-			wp_enqueue_script('q2w3-fixed-widget', plugin_dir_url( __FILE__ ) . 'js/q2w3-fixed-widget.min.js', array('jquery'), self::VERSION);
+			add_action('wp_footer', array( __CLASS__, 'js_settings' ));
+					
+			add_action('wp_enqueue_scripts', array( __CLASS__, 'enqueue_scripts' ));
 			
 		}
 						
+	}
+	
+	public static function enqueue_scripts() {
+		
+		wp_enqueue_script('jquery');
+		
+		wp_enqueue_script(self::ID, plugin_dir_url( __FILE__ ) . 'js/q2w3-fixed-widget.min.js', array('jquery'), self::VERSION, true);
+		
 	}
 		
 	public static function is_widget_fixed($instance, $widget, $args){
@@ -67,6 +75,8 @@ class q2w3_fixed_widget { // Plugin class
 		if ( isset($instance['q2w3_fixed_widget']) && $instance['q2w3_fixed_widget'] ) {
 
 			self::$fixed_widgets[$args['id']][$widget->id] = "'". $widget->id ."'";
+			
+			echo '<!-- fixed widget -->';
 				
 		}
 		
@@ -120,61 +130,59 @@ class q2w3_fixed_widget { // Plugin class
 		
 	}
 		
-	public static function action_script() { 
+	public static function js_settings() { 
 	
 		$options = self::load_options();
+
+		$js = '';
 		
 		if ( is_array(self::$fixed_widgets) && !empty(self::$fixed_widgets) ) {
+			
+			$js .= 'var q2w3_sidebar_options = new Array();'.PHP_EOL;
+			
+			if ( isset($options['window-load-enabled']) && $options['window-load-enabled'] == 'yes' ) $window_load_hook = 'true'; else $window_load_hook = 'false';
+			
+			if ( isset($options['width-inherit']) && $options['width-inherit'] ) $width_inherit = 'true'; else $width_inherit = 'false';
+							
+			if ( isset($options['disable-mo-api']) && $options['disable-mo-api'] ) $disable_mo_api = 'true'; else $disable_mo_api = 'false';
+			
+			if ( $options['refresh-interval'] > 0 ) $refresh_interval = $options['refresh-interval']; else $refresh_interval = 0;
 						
-			echo '<script type="text/javascript">'.PHP_EOL;
-
-			if ( isset($options['window-load-enabled']) && $options['window-load-enabled'] == 'yes' ) {
-				
-				echo 'jQuery(window).load(function(){'.PHP_EOL;
-				
-			} else {
-			
-				echo 'jQuery(document).ready(function(){'.PHP_EOL;
-			
-			}
-			
 			$i = 0;
 			
 			foreach ( self::$fixed_widgets as $sidebar => $widgets ) {
 			
-				$i++;
-				
-				if ( isset($options['width-inherit']) && $options['width-inherit'] ) $width_inherit = 'true'; else $width_inherit = 'false';
-				
 				$widgets_array = implode(',', $widgets);
 				
-				echo '  var q2w3_sidebar_'. $i .'_options = { "sidebar" : "'. $sidebar .'", "margin_top" : '. $options['margin-top'] .', "margin_bottom" : '. $options['margin-bottom'] .', "screen_max_width" : '. $options['screen-max-width'] .', "width_inherit" : '. $width_inherit .', "widgets" : ['. $widgets_array .'] };'.PHP_EOL;
+				$js .= 'q2w3_sidebar_options['. $i .'] = { "sidebar" : "'. $sidebar .'", "margin_top" : '. $options['margin-top'] .', "margin_bottom" : '. $options['margin-bottom'] .', "stop_id" : "' . $options['stop-id'] .'", "screen_max_width" : '. $options['screen-max-width'] .', "screen_max_height" : '. $options['screen-max-height'] .', "width_inherit" : '. $width_inherit .', "refresh_interval" : '. $refresh_interval .', "window_load_hook" : '. $window_load_hook .', "disable_mo_api" : '. $disable_mo_api .', "widgets" : ['. $widgets_array .'] };'.PHP_EOL;
 				
-				echo '  q2w3_sidebar(q2w3_sidebar_'. $i .'_options);'.PHP_EOL;
-				
-				if ( $options['refresh-interval'] > 0 ) {
-	
-					echo '  setInterval(function () { q2w3_sidebar(q2w3_sidebar_'. $i .'_options); }, '. $options['refresh-interval'] .');'.PHP_EOL;
-								
-				} 
+				$i++;
 				
 			}
-			
-			echo '});'.PHP_EOL;
-						
-			echo '</script>'.PHP_EOL;
-			
+				
 		} 
+		
+		if ( $js && function_exists('wp_add_inline_script') && ! class_exists('BWP_MINIFY') ) {
+			
+			wp_add_inline_script(self::ID, $js, 'before'); 
+		
+		} elseif ( $js ) {
+			
+			echo '<script type="text/javascript">'. $js .'</script>';
+			
+		}
 	
 	}
 
 	public static function add_widget_option($widget, $return, $instance) {  
 	
+		if ( isset($instance['q2w3_fixed_widget']) ) $iqfw = $instance['q2w3_fixed_widget']; else $iqfw = 0;
+		
 		echo '<p>'.PHP_EOL;
     	
-		echo '<input type="checkbox" name="'. $widget->get_field_name('q2w3_fixed_widget') .'" value="1" '. checked( $instance['q2w3_fixed_widget'], 1, false ) .'/>'.PHP_EOL;
+		echo '<input type="checkbox" name="'. $widget->get_field_name('q2w3_fixed_widget') .'" value="1" '. checked( $iqfw, 1, false ) .'/>'.PHP_EOL;
     	
-		echo '<label for="'. $widget->get_field_id('q2w3_fixed_widget') .'">'. __('Fixed widget', 'q2w3_fixed_widget') .'</label>'.PHP_EOL;
+		echo '<label for="'. $widget->get_field_id('q2w3_fixed_widget') .'">'. __('Fixed widget', 'q2w3-fixed-widget') .'</label>'.PHP_EOL;
 	
 		echo '</p>'.PHP_EOL;    
 
@@ -198,21 +206,17 @@ class q2w3_fixed_widget { // Plugin class
 	
 	protected static function load_language() {
 	
-		$currentLocale = get_locale();
-	
-		if (!empty($currentLocale)) {
-				
-			$moFile = dirname(__FILE__).'/lang/'.$currentLocale.".mo";
+		$languages_path = plugin_basename( dirname(__FILE__).'/lang' );
 		
-			if (@file_exists($moFile) && is_readable($moFile)) load_textdomain(self::ID, $moFile);
-			
-		}
+		load_plugin_textdomain( 'q2w3-fixed-widget', false, $languages_path );
 	
 	}
 	
 	public static function admin_menu() {
 		
-		self::$settings_page_hook = add_submenu_page( 'themes.php', __('Fixed Widget Options', 'q2w3_fixed_widget'), __('Fixed Widget Options', 'q2w3_fixed_widget'), 'activate_plugins', 'q2w3_fixed_widget', array( __CLASS__, 'settings_page' ) );
+		remove_action('admin_menu', array( 'q2w3_fixed_widget', 'admin_menu' )); // Remove free version plugin
+		
+		self::$settings_page_hook = add_submenu_page( 'themes.php', __('Fixed Widget Options', 'q2w3-fixed-widget'), __('Fixed Widget Options', 'q2w3-fixed-widget'), 'activate_plugins', self::ID, array( __CLASS__, 'settings_page' ) );
 		
 	}
 	
@@ -222,9 +226,13 @@ class q2w3_fixed_widget { // Plugin class
 			
 		$d['margin-bottom'] = 0;
 		
+		$d['stop-id'] = '';
+		
 		$d['refresh-interval'] = 1500;
 		
 		$d['screen-max-width'] = 0;
+		
+		$d['screen-max-height'] = 0;
 		
 		$d['fix-widget-id'] = 'yes';
 		
@@ -236,15 +244,19 @@ class q2w3_fixed_widget { // Plugin class
 		
 		$d['widget_display_callback_priority'] = 30;
 		
+		$d['disable-mo-api'] = false;
+		
 		return $d;
 		
 	}
 	
 	protected static function load_options() {
 		
-		$options = get_option(self::ID);	
+		$options = get_option(self::ID);
+
+		$options_old = get_option('q2w3_fixed_widget');
 		
-		return array_merge(self::defaults(), (array)$options);
+		return array_merge(self::defaults(), (array)$options_old, (array)$options);
 		
 	}
 	
@@ -264,7 +276,11 @@ class q2w3_fixed_widget { // Plugin class
 
 		$input['screen-max-width'] = (int)$input['screen-max-width'];
 		
+		$input['screen-max-height'] = (int)$input['screen-max-height'];
+		
 		$input['custom-ids'] = trim(wp_strip_all_tags($input['custom-ids']));
+		
+		$input['stop-id'] = trim(wp_strip_all_tags($input['stop-id']));
 		
 		if ( !isset($input['fix-widget-id']) ) $input['fix-widget-id'] = false;
 		
@@ -273,6 +289,8 @@ class q2w3_fixed_widget { // Plugin class
 		if ( !isset($input['logged_in_req']) ) $input['logged_in_req'] = false;
 		
 		if ( !isset($input['width-inherit']) ) $input['width-inherit'] = false;
+		
+		if ( !isset($input['disable-mo-api']) ) $input['disable-mo-api'] = false;
 		
 		return $input;
 		
@@ -290,19 +308,19 @@ class q2w3_fixed_widget { // Plugin class
 		
 		$screen = get_current_screen();
 		
-		add_meta_box(self::ID.'-general', __('General Options', 'q2w3_fixed_widget'), array( __CLASS__, 'settings_page_general_box' ), $screen, 'normal');
+		add_meta_box(self::ID.'-general', __('General Options', 'q2w3-fixed-widget'), array( __CLASS__, 'settings_page_general_box' ), $screen, 'normal');
 		
-		add_meta_box(self::ID.'-compatibility', __('Compatibility', 'q2w3_fixed_widget'), array( __CLASS__, 'settings_page_compatibility_box' ), $screen, 'normal');
+		add_meta_box(self::ID.'-compatibility', __('Compatibility', 'q2w3-fixed-widget'), array( __CLASS__, 'settings_page_compatibility_box' ), $screen, 'normal');
 
-		add_meta_box(self::ID.'-custom-ids', __('Custom IDs', 'q2w3_fixed_widget'), array( __CLASS__, 'settings_page_custom_ids_box' ), $screen, 'normal');
+		add_meta_box(self::ID.'-custom-ids', __('Custom IDs', 'q2w3-fixed-widget'), array( __CLASS__, 'settings_page_custom_ids_box' ), $screen, 'normal');
 				
-		add_meta_box(self::ID.'-help', __('Help for users', 'q2w3_fixed_widget'), array( __CLASS__, 'settings_page_help_box' ), $screen, 'side');
+		add_meta_box(self::ID.'-help', __('Help for users', 'q2w3-fixed-widget'), array( __CLASS__, 'settings_page_help_box' ), $screen, 'side');
+
+		add_meta_box(self::ID.'-donate', __('Help for developer', 'q2w3-fixed-widget'), array( __CLASS__, 'settings_page_donate_box' ), $screen, 'side');
 		
-		add_meta_box(self::ID.'-donate', __('Help for developer', 'q2w3_fixed_widget'), array( __CLASS__, 'settings_page_donate_box' ), $screen, 'side');
-				
 		$options = self::load_options();
 						
-		echo '<div class="wrap"><div id="icon-themes" class="icon32"><br /></div><h2>'. __('Fixed Widget Options', 'q2w3_fixed_widget') .'</h2>'.PHP_EOL;
+		echo '<div class="wrap"><div id="icon-themes" class="icon32"><br /></div><h2>'. __('Fixed Widget Options', 'q2w3-fixed-widget') .'</h2>'.PHP_EOL;
 		
 		if ( isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true' ) { 
 		
@@ -331,7 +349,9 @@ class q2w3_fixed_widget { // Plugin class
 		do_meta_boxes( $screen, 'normal', $options );
 		
 		echo '</div>'.PHP_EOL;
-				
+
+		echo '<p><em>'. __("Note for cache plugin users. Don't forget to clear the cache after options change!", 'q2w3-fixed-widget') .'</em></p>'.PHP_EOL;
+		
 		echo '<p class="submit"><input type="submit" class="button-primary" value="'. __('Save Changes') .'" /></p>'.PHP_EOL;
 
 		echo '</div><!-- #poststuff -->'.PHP_EOL;
@@ -346,52 +366,58 @@ class q2w3_fixed_widget { // Plugin class
 	
 	public static function settings_page_general_box($options) {
 		
-		echo '<p><span style="display: inline-block; width: 150px;">'. __('Margin Top:', 'q2w3_fixed_widget') .'</span><input type="text" name="'. self::ID .'[margin-top]" value="'. $options['margin-top'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('px', 'q2w3_fixed_widget') .'</p>'.PHP_EOL;
+		echo '<p><span style="display: inline-block; width: 150px;">'. __('Margin Top:', 'q2w3-fixed-widget') .'</span><input type="text" name="'. self::ID .'[margin-top]" value="'. $options['margin-top'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('px', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
 		
-		echo '<p><span style="display: inline-block; width: 150px;">'. __('Margin Bottom:', 'q2w3_fixed_widget') .'</span><input type="text" name="'. self::ID .'[margin-bottom]" value="'. $options['margin-bottom'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('px', 'q2w3_fixed_widget') .'</p>'.PHP_EOL;
+		echo '<p><span style="display: inline-block; width: 150px;">'. __('Margin Bottom:', 'q2w3-fixed-widget') .'</span><input type="text" name="'. self::ID .'[margin-bottom]" value="'. $options['margin-bottom'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('px', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
 		
-		echo '<p><span style="display: inline-block; width: 150px;">'. __('Refresh interval:', 'q2w3_fixed_widget') .'</span><input type="text" name="'. self::ID .'[refresh-interval]" value="'. $options['refresh-interval'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('milliseconds', 'q2w3_fixed_widget') .' / '. __('Set 0 to disable.', 'q2w3_fixed_widget') .'</p>'.PHP_EOL;
+		echo '<p><span style="display: inline-block; width: 150px;">'. __('Stop ID:', 'q2w3-fixed-widget') .'</span><input type="text" name="'. self::ID .'[stop-id]" value="'. $options['stop-id'] .'" style="width: 150px;">&nbsp;'. __('Here you need to provide html tag id. The position of that html element will determine margin bottom value.', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
+			
+		echo '<p><span style="display: inline-block; width: 150px;">'. __('Refresh interval:', 'q2w3-fixed-widget') .'</span><input type="text" name="'. self::ID .'[refresh-interval]" value="'. $options['refresh-interval'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('milliseconds', 'q2w3-fixed-widget') .' / '. __('Used only for compatibility with browsers without MutationObserver API support! Set 0 to completely disable.', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
 		
-		echo '<p><span style="display: inline-block; width: 150px;">'. __('Screen Max Width:', 'q2w3_fixed_widget') .'</span><input type="text" name="'. self::ID .'[screen-max-width]" value="'. $options['screen-max-width'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('px', 'q2w3_fixed_widget') .' / '. __('Plugin will be disabled when browser window width equals or less then specified value', 'q2w3_fixed_widget') .'</p>'.PHP_EOL;
-				
+		echo '<p><span style="display: inline-block; width: 150px;">'. __('Disable Width:', 'q2w3-fixed-widget') .'</span><input type="text" name="'. self::ID .'[screen-max-width]" value="'. $options['screen-max-width'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('px', 'q2w3-fixed-widget') .' / '. __('Use this option to disable plugin on portable devices. When the browser screen width is less then specified value, the plugin is disabled!', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
+
+		echo '<p><span style="display: inline-block; width: 150px;">'. __('Disable Height:', 'q2w3-fixed-widget') .'</span><input type="text" name="'. self::ID .'[screen-max-height]" value="'. $options['screen-max-height'] .'" style="width: 50px; text-align: center;" />&nbsp;'. __('px', 'q2w3-fixed-widget') .' / '. __('Works the same way as Disable Width option.', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
+		
 	}
 	
 	public static function settings_page_custom_ids_box($options) {
 		
-		echo '<p><span >'. __('Custom HTML IDs (each one on a new line):', 'q2w3_fixed_widget') .'</span><br/><br/><textarea name="'. self::ID .'[custom-ids]" style="width: 320px; height: 120px;">'. $options['custom-ids'] .'</textarea>'.PHP_EOL;
+		echo '<p><span >'. __('Custom HTML IDs (each one on a new line):', 'q2w3-fixed-widget') .'</span><br/><br/><textarea name="'. self::ID .'[custom-ids]" style="width: 320px; height: 120px;">'. $options['custom-ids'] .'</textarea>'.PHP_EOL;
 				
 	}
 	
 	public static function settings_page_compatibility_box($options) {
+			
+		echo '<p><span style="display: inline-block; width: 280px;">'. __('Auto fix widget id:', 'q2w3-fixed-widget') .'</span><input type="checkbox" name="'. self::ID .'[fix-widget-id]" value="yes" '. checked('yes', $options['fix-widget-id'], false) .' /> </p>'.PHP_EOL;
+
+		echo '<p><span style="display: inline-block; width: 280px;">'. __('Disable MutationObserver:', 'q2w3-fixed-widget') .'</span><input type="checkbox" name="'. self::ID .'[disable-mo-api]" value="yes" '. checked('yes', $options['disable-mo-api'], false) .' /> '. __('If MutationObserver disabled, plugin will use Refresh Interval to reflect page changes (version 4 behavior)', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
+				
+		echo '<p><span style="display: inline-block; width: 280px;">'. __('Enable plugin for logged in users only:', 'q2w3-fixed-widget') .'</span><input type="checkbox" name="'. self::ID .'[logged_in_req]" value="yes" '. checked('yes', $options['logged_in_req'], false) .' /> '. __('Enable this option for debug purposes (frontend problems and etc.)', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
+				
+		echo '<p><span style="display: inline-block; width: 280px;">'. __('Inherit widget width from the parent container:', 'q2w3-fixed-widget') .'</span><input type="checkbox" name="'. self::ID .'[width-inherit]" value="yes" '. checked('yes', $options['width-inherit'], false) .' /> '. __('Enable this option for themes with responsive sidebar', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
+				
+		echo '<p><span style="display: inline-block; width: 280px;">'. __('Use jQuery(window).load() hook:', 'q2w3-fixed-widget') .'</span><input type="checkbox" name="'. self::ID .'[window-load-enabled]" value="yes" '. checked('yes', $options['window-load-enabled'], false) .' /> '. __('Enable this option only if you have problems with other scroll oriented javascript code', 'q2w3-fixed-widget') .'</p>'.PHP_EOL;
+				
+		echo '<p><span style="display: inline-block; width: 280px;">'. __('widget_display_callback hook priority:', 'q2w3-fixed-widget') .'</span><select name="'. self::ID .'[widget_display_callback_priority]"><option value="1" '. selected('1', $options['widget_display_callback_priority'], false) .'>1</option><option value="10" '. selected('10', $options['widget_display_callback_priority'], false) .'>10</option><option value="20" '. selected('20', $options['widget_display_callback_priority'], false) .'>20</option><option value="30" '. selected('30', $options['widget_display_callback_priority'], false) .'>30</option><option value="50" '. selected('50', $options['widget_display_callback_priority'], false) .'>50</option><option value="100" '. selected('100', $options['widget_display_callback_priority'], false) .'>100</option></select></p>'.PHP_EOL;
 	
-		echo '<p><span style="display: inline-block; width: 280px;">'. __('Auto fix widget id:', 'q2w3_fixed_widget') .'</span><input type="checkbox" name="'. self::ID .'[fix-widget-id]" value="yes" '. checked('yes', $options['fix-widget-id'], false) .' /> </p>'.PHP_EOL;
-				
-		echo '<p><span style="display: inline-block; width: 280px;">'. __('Enable plugin for logged in users only:', 'q2w3_fixed_widget') .'</span><input type="checkbox" name="'. self::ID .'[logged_in_req]" value="yes" '. checked('yes', $options['logged_in_req'], false) .' /> '. __('Enable this option for debug purposes (frontend problems and etc.)', 'q2w3_fixed_widget') .'</p>'.PHP_EOL;
-				
-		echo '<p><span style="display: inline-block; width: 280px;">'. __('Inherit widget width from the parent container:', 'q2w3_fixed_widget') .'</span><input type="checkbox" name="'. self::ID .'[width-inherit]" value="yes" '. checked('yes', $options['width-inherit'], false) .' /> '. __('Enable this option for themes with responsive sidebar', 'q2w3_fixed_widget') .'</p>'.PHP_EOL;
-				
-		echo '<p><span style="display: inline-block; width: 280px;">'. __('Use jQuery(window).load() hook:', 'q2w3_fixed_widget') .'</span><input type="checkbox" name="'. self::ID .'[window-load-enabled]" value="yes" '. checked('yes', $options['window-load-enabled'], false) .' /> '. __('Enable this option only if you have problems with other scroll oriented javascript code', 'q2w3_fixed_widget') .'</p>'.PHP_EOL;
-				
-		echo '<p><span style="display: inline-block; width: 280px;">'. __('widget_display_callback hook priority:', 'q2w3_fixed_widget') .'</span><select name="'. self::ID .'[widget_display_callback_priority]"><option value="1" '. selected('1', $options['widget_display_callback_priority'], false) .'>1</option><option value="10" '. selected('10', $options['widget_display_callback_priority'], false) .'>10</option><option value="20" '. selected('20', $options['widget_display_callback_priority'], false) .'>20</option><option value="30" '. selected('30', $options['widget_display_callback_priority'], false) .'>30</option><option value="50" '. selected('50', $options['widget_display_callback_priority'], false) .'>50</option><option value="100" '. selected('100', $options['widget_display_callback_priority'], false) .'>100</option></select></p>'.PHP_EOL;
-	
-	}
-	
-	public static function settings_page_donate_box($options) {
-		
-		echo '<p style="text-align: center"><a href="http://wordpress.org/support/view/plugin-reviews/q2w3-fixed-widget/" target="_blank">'. __('RATE THE PLUGIN', 'q2w3_fixed_widget') .'</a></p>';
-		
-		echo '<p style="text-align: center"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q36H2MHNVVP7U" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!" /></a></p>'.PHP_EOL;
-		
 	}
 	
 	public static function settings_page_help_box($options) {
 	
-		echo '<p>'. __('Support forums:', 'q2w3_fixed_widget') .'</p>';
+		echo '<p>'. __('Support forums:', 'q2w3-fixed-widget') .'</p>';
 		
-		echo '<ul><li><a href="http://wordpress.org/support/plugin/q2w3-fixed-widget/" target="_blank">'. __('English (wordpress.org)', 'q2w3_fixed_widget') .'</a></li>'.PHP_EOL;
+		echo '<ul><li><a href="http://wordpress.org/support/plugin/q2w3-fixed-widget/" target="_blank">'. __('English (wordpress.org)', 'q2w3-fixed-widget') .'</a></li>'.PHP_EOL;
 	
-		echo '<li><a href="http://www.q2w3.ru/2012/12/12/4827/" target="_blank">'. __('Russian (www.q2w3.ru)', 'q2w3_fixed_widget') .'</a></li></ul>'.PHP_EOL;
+		echo '<li><a href="http://www.q2w3.ru/2012/12/12/4827/" target="_blank">'. __('Russian (www.q2w3.ru)', 'q2w3-fixed-widget') .'</a></li></ul>'.PHP_EOL;
 		
+	}
+	
+	public static function settings_page_donate_box($options) {
+	
+		echo '<p style="text-align: center"><a href="https://wordpress.org/support/plugin/q2w3-fixed-widget/reviews/?rate=5#new-post" target="_blank">'. __('RATE THE PLUGIN', 'q2w3-fixed-widget') .'</a></p>';
+	
+		echo '<p style="text-align: center"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q36H2MHNVVP7U" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!" /></a></p>'.PHP_EOL;
+	
 	}
 	
 	public static function registered_sidebars_filter() {
@@ -460,4 +486,4 @@ class q2w3_fixed_widget { // Plugin class
 				
 	} // registered_sidebars_filter()
 	
-} // q2w3_fixed_widget class
+} // q2w3_fixed_widget_pro class
