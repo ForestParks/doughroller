@@ -47,8 +47,8 @@
 
     p {color: $primary-blue;}
 
-    .button {background:#0b61a9; font-weight:bold; border: 2px solid $primary-blue;}
-    .button:hover {color:$primary-blue; background:#fff; border: 2px solid $primary-blue;}
+    .button {background-color:#0d72c7; font-weight:bold; border: 2px solid $primary-blue;}
+    a.button:hover {background-color: #0b61a9;color: #fff;     text-decoration: none;}
 }
 
 .main-content .email_sidebar h3 {font-size: 2em; margin: .1em 0em 1em 0em}

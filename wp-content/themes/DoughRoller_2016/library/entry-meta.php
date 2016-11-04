@@ -74,7 +74,7 @@ if ( ! function_exists( 'foundationpress_entry_meta' ) ) :
         </div>
 
 
-        <div class="entry_meta_social floating">
+        <!--<div class="entry_meta_social floating">
 
                 <div class="facebook ems">
                 <a href="http://www.facebook.com/share.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&title=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>

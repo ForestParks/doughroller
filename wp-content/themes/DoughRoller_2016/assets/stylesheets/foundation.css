@@ -6135,13 +6135,13 @@ table.hover tr:nth-of-type(even):hover {
   .email_sidebar p {
     color: #0d72c7; }
   .email_sidebar .button {
-    background: #0b61a9;
+    background-color: #0d72c7;
     font-weight: bold;
     border: 2px solid #0d72c7; }
-  .email_sidebar .button:hover {
-    color: #0d72c7;
-    background: #fff;
-    border: 2px solid #0d72c7; }
+  .email_sidebar a.button:hover {
+    background-color: #0b61a9;
+    color: #fff;
+    text-decoration: none; }
 
 .main-content .email_sidebar h3 {
   font-size: 2em;
@@ -6747,6 +6747,52 @@ table.hover tr:nth-of-type(even):hover {
 .related_posts a {
   border-right: none !important; }
 
+/* TABLE OF CONTENTS IN POSTS*/
+.post_toc {
+  color: #0d72c7;
+  padding: 0 0 00px 0;
+  margin: 0 0 20px 0;
+  border-bottom: 2px solid #0d72c7; }
+  .post_toc a {
+    color: #0d72c7; }
+
+@media only screen and (min-width: 40em) {
+  .post_toc {
+    padding: 0 10px 00px 10px;
+    margin: 0 0 10px 10px;
+    border-bottom: 0px solid #0d72c7;
+    border-left: 2px solid #0d72c7;
+    width: 33%;
+    max-width: 300px;
+    float: right; } }
+
+/* PULL QUOTES */
+span.pulled-right {
+  display: block;
+  float: right;
+  padding: 10px 0 10px 10px;
+  margin: 5px 0 5px 10px;
+  max-width: 170px;
+  width: 33%;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  text-align: right;
+  color: #666;
+  border-left: 3px solid #ccc; }
+
+span.pulled-left {
+  display: block;
+  float: left;
+  padding: 10px 10px 10px 0;
+  margin: 5px 10px 5px 0;
+  max-width: 170px;
+  width: 33%;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  text-align: left;
+  color: #666;
+  border-right: 3px solid #ccc; }
+
 body {
   padding-top: 30px; }
 
@@ -7213,23 +7259,14 @@ body.logged-in {
   display: block;
   clear: left;
   max-width: 660px;
-  margin: 0px auto; }
+  /*margin: 0px auto;*/
+  margin: 0px 0px 0px 62px; }
 
 .post .email_sidebar {
   margin-top: 30px; }
 
 .pagination .current a {
   color: #fff; }
-
-/* TABLE OF CONTENTS IN POSTS*/
-.post_toc {
-  /*background: #5ca6c6;*/
-  color: #0d72c7;
-  padding: 0 0 00px 0;
-  margin: 0 0 20px 0;
-  border-bottom: 2px solid #0d72c7; }
-  .post_toc a {
-    color: #0d72c7; }
 
 /* CREDIT CARD BOXES */
 .card_box {

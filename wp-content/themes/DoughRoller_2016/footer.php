@@ -168,7 +168,7 @@
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
         $(window).scroll(function() {    
             var scroll = $(window).scrollTop();
 
@@ -178,7 +178,28 @@
                 $(".entry_meta_social.floating").removeClass("viewable");
             }
         });
-</script>
+</script>-->
+
+/* PULL QUOTES */
+
+<script type="text/javascript">
+      $(document).ready(function() { 
+        $('span.pull-right').each(function(index) { 
+        var $parentParagraph = $(this).parent('p'); 
+        $parentParagraph.css('position', 'relative'); 
+        $(this).clone() 
+          .addClass('pulled-right') 
+          .prependTo($parentParagraph); 
+        }); 
+      $('span.pull-left').each(function(index) { 
+        var $parentParagraph = $(this).parent('p'); 
+        $parentParagraph.css('position', 'relative'); 
+        $(this).clone() 
+          .addClass('pulled-left') 
+          .prependTo($parentParagraph); 
+        });
+      }); 
+    </script>
 
 
 /* ALLOW SHOW / HIDE on ccbox*/
