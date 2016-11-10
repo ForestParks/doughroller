@@ -6738,7 +6738,12 @@ table.hover tr:nth-of-type(even):hover {
   font-weight: normal !important;
   font-style: italic !important;
   text-decoration: none !important;
-  text-align: center !important; }
+  text-align: center !important;
+  text-indent: 0px !important;
+  margin: 0 0 0 -25px !important; }
+
+li.wf-privacy:before {
+  display: none; }
 
 .related_posts div {
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;

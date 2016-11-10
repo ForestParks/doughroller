@@ -33,7 +33,11 @@
     font-style: italic !important;
     text-decoration: none !important;
     text-align: center !important;
+    text-indent: 0px !important;
+    margin: 0 0 0 -25px !important;
 }
+
+li.wf-privacy:before {display: none;}
 
 
 .related_posts  {

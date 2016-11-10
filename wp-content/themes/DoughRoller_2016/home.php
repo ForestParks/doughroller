@@ -42,7 +42,8 @@ get_header(); ?>
 				            <li>Tools, resources, and guides to improve your finances</li>
 				          </ul>
 
-				          <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+				  <div id="WFItem654886" class="wf-formTpl">
+				          <form action="https://app.getresponse.com/add_subscriber.html?u=S86B" accept-charset="utf-8" method="post">
 
 				            <input type="text" name="name" value="Name"
 				  onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
@@ -55,11 +56,32 @@ get_header(); ?>
 				  onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}"
 				  style="color:#BBB;" /><br/>
 
-				            <input type="hidden" name="campaign_token" value="TAZ6"/>
-
 				            <input type="submit" class="button" value="Let's Roll"/>
+
+				            <input type="hidden" name="webform_id" value="654886" />
+
 				            </form>
-				        </div>
+
+				      <ul>
+				        <li class="wf-captcha" rel="undefined" style="display:  none !important;">
+                        	<div class="wf-contbox wf-captcha-1" id="wf-captcha-1" wf-captchaword="Enter the words above:"
+                        wf-captchasound="Enter the numbers you hear:" wf-captchaerror="Incorrect please try again"></div>
+                    	</li>
+                    	<li class="wf-privacy" rel="undefined" style="display:  block !important;">
+                        	<div class="wf-contbox">
+                            	<div>
+                                	<a class="wf-privacy wf-privacyico" href="https://www.getresponse.com/permission-seal?lang=en"
+                                target="_blank" style="height: 18px !important; display: inline !important;">We respect your privacy<em class="clearfix clearer"></em></a>
+                            	</div>
+                            	<em class="clearfix clearer"></em>
+                        	</div>
+                    	</li>
+                    </ul>
+
+				  </div><!--//WFItem654886-->
+				  <script type="text/javascript" src="http://app.getresponse.com/view_webform.js?wid=654886&mg_param1=1&u=S86B"></script>
+
+	</div>
 
 				          <button class="close-button" data-close aria-label="Close modal" type="button">
 				            <span aria-hidden="true">&times;</span>
@@ -67,37 +89,39 @@ get_header(); ?>
 				          
     </div><!-- // email_popup -->
 
+    
+                 
 
 
 	<section class="key_pages">
 		  <div class="row">
 
-		    <a class="key_link small-4 medium-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="<?php echo site_url(); ?>/credit-cards/">
 			    <span class="key_icon"><i class="fa fa-credit-card" aria-hidden="true"></i></span>
 			    <h3>Credit Cards</h3>
 		    </a>
 
-		    <a class="key_link small-4 medium-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="<?php echo site_url(); ?>/banking/high-yield-online-savings-account/">
 			    <span class="key_icon"><i class="fa fa-money" aria-hidden="true"></i></span>
 			    <h3>Savings Accounts</h3>
 		    </a>
 
-		    <a class="key_link small-4 medium-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="<?php echo site_url(); ?>/banking/the-best-checking-account-promotions-and-deals/">
 			    <span class="key_icon"><i class="fa fa-university" aria-hidden="true"></i></span>
 			    <h3>Checking Accounts</h3>
 		    </a>
 
-		    <a class="key_link small-4 medium-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="<?php echo site_url(); ?>/banking/the-best-checking-account-promotions-and-deals/">
 			    <span class="key_icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
 			    <h3>CDs</h3>
 		    </a>
 
-		    <a class="key_link small-4 medium-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="<?php echo site_url(); ?>/mortgage-rates/">
 			    <span class="key_icon"><i class="fa fa-home" aria-hidden="true"></i></span>
 			    <h3>Mortgages</h3>
 		    </a>
 
-		    <a class="key_link small-4 medium-2 columns" href="#">
+		    <a class="key_link small-4 medium-2 columns" href="<?php echo site_url(); ?>/tools-resources/money-toolbox/">
 			    <span class="key_icon"><i class="fa fa-wrench" aria-hidden="true"></i></span>
 			    <h3>Tools</h3>
 		    </a>
@@ -125,7 +149,7 @@ get_header(); ?>
         		<div class="inner">
         			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
 		        		<h4><?php the_title(); ?></h4>
-		        		<?php the_excerpt(); ?>
+		        		<?php custom_excerpt(12, '') ?>
 		        		<div class='home_meta'>
 		        			<div class="home_author_image">
 		        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>

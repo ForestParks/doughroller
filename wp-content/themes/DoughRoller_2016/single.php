@@ -41,7 +41,8 @@ get_header(); ?>
 				          <h1>Start the 31-day money challenge!</h1>		          
 		
 
-				          <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+				          <div id="WFItem9307001" class="wf-formTpl">
+				          <form action="https://app.getresponse.com/add_contact_webform.html?u=S86B" accept-charset="utf-8" method="post">
 
 				            <input type="text" name="name" value="Name"
 				  onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
@@ -57,7 +58,28 @@ get_header(); ?>
 				            <input type="hidden" name="campaign_token" value="PaQV"/>
 
 				            <input type="submit" class="button" value="Let's Roll"/>
+
+				            <ul>
+				            <li class="wf-captcha" rel="undefined" style="display:  none !important;">
+                        			<div class="wf-contbox wf-captcha-1" id="wf-captcha-1" wf-captchaword="Enter the words above:"
+                        wf-captchasound="Enter the numbers you hear:" wf-captchaerror="Incorrect please try again"></div>
+			                    </li>
+			                    <li class="wf-privacy" rel="undefined" style="display:  block !important;">
+			                        <div class="wf-contbox">
+			                            <div>
+			                                <a class="wf-privacy wf-privacyico" href="https://www.getresponse.com/permission-seal?lang=en"
+			                                target="_blank" style="height: 18px !important; display: inline !important;">We hate spam as much as you do.</a>
+			                            </div>
+			                            <em class="clearfix clearer"></em>
+			                        </div>
+			                    </li>
+			                </ul>
+
+			                <input type="hidden" name="webform_id" value="9307001" />
+
 				            </form>
+				            </div><!--//WFItem9307001-->
+				            <script type="text/javascript" src="http://app.getresponse.com/view_webform.js?wid=9307001&mg_param1=1&u=S86B"></script>
 				        </div>
 
 				          <button class="close-button" data-close aria-label="Close modal" type="button">
