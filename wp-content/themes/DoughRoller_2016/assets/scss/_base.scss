@@ -634,7 +634,11 @@ body.logged-in {
     margin: 0px 0px 0px 62px;
 }
 
-.post .email_sidebar {margin-top:30px;}
+.post .email_sidebar {margin-top:30px;
+    p {color: #0a0a0a;}
+
+    .button.expanded {margin-top: 30px; max-width: 350px; width: 100%}
+}
 
 .pagination .current a {color: #fff;}
 

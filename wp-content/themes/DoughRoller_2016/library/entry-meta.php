@@ -73,6 +73,9 @@ if ( ! function_exists( 'foundationpress_entry_meta' ) ) :
 
         </div>
 
+                <?php edit_post_link('Edit post', '<div style="display:block;clear:both; float:left;width:100%; padding: 0 0 10px 0">', '</div>'); ?>        
+
+
 
         <!--<div class="entry_meta_social floating">
 
