@@ -6806,7 +6806,7 @@ body.home {
 
 /* GENERAL STYLES */
 a:hover, a:focus {
-  text-decoration: underline; }
+  color: #2bb673; }
 
 /* // General styles */
 table tbody {
