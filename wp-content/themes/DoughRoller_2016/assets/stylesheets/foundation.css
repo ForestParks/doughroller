@@ -5938,7 +5938,7 @@ table.hover tr:nth-of-type(even):hover {
   Add your scss files below to structure your project styles
 */
 /*Fix flickering menu */
-.title-bar {
+.top-bar {
   display: none; }
 
 /* Navigation breakpoints */
