@@ -7272,13 +7272,16 @@ body.logged-in {
   margin: 0px 0px 0px 62px; }
 
 .post .email_sidebar {
+  padding: 30px;
   margin-top: 30px; }
+  .post .email_sidebar h3 {
+    text-align: center; }
   .post .email_sidebar p {
     color: #0a0a0a; }
   .post .email_sidebar .button.expanded {
-    margin-top: 30px;
     max-width: 350px;
-    width: 100%; }
+    width: 100%;
+    margin: 20px auto 0px auto; }
 
 .pagination .current a {
   color: #fff; }

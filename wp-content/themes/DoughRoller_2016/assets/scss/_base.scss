@@ -634,10 +634,14 @@ body.logged-in {
     margin: 0px 0px 0px 62px;
 }
 
-.post .email_sidebar {margin-top:30px;
+.post .email_sidebar {
+    padding: 30px;
+    margin-top:30px;
+
+    h3 {text-align:center; }
     p {color: #0a0a0a;}
 
-    .button.expanded {margin-top: 30px; max-width: 350px; width: 100%}
+    .button.expanded {max-width: 350px; width: 100%; margin: 20px auto 0px auto;}
 }
 
 .pagination .current a {color: #fff;}
