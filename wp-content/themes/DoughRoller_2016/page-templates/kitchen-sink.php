@@ -4,6 +4,11 @@ Template Name: Kitchen Sink
 */
 get_header(); ?>
 
+<section class="container">
+<div class="row"><div class="small-12 column">
+
+<?php do_action( 'foundationpress_after_header' ); ?>
+
 
 	<?php /* Start loop */ ?>
 	<?php while ( have_posts() ) : the_post(); ?>

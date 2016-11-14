@@ -67,8 +67,3 @@
 
 	</div></div><!-- row and column ends -->
 	</header>
-
-	<section class="container">
-		<div class="row"><div class="small-12 column">
-
-		<?php do_action( 'foundationpress_after_header' );

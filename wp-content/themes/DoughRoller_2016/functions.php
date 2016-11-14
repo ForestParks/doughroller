@@ -96,6 +96,75 @@ require_once( 'library/sticky-posts.php' );
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
 
+/* ADDING FIELDS TO EDIT CATEGORY */
+
+
+//add extra fields to category edit form hook
+add_action ( 'edit_category_form_fields', 'extra_category_fields');
+//add extra fields to category edit form callback function
+
+function extra_category_fields( $tag ) {    //check for existing featured ID
+    $t_id = $tag->term_id;
+    $cat_meta = get_option( "category_$t_id");
+?>
+
+<tr class="form-field">
+	<th scope="row" valign="top"><label for="cat__bgImage_url"><?php _e('Category Background Image Url'); ?></label></th>
+		<td>
+		<input type="text" name="Cat_meta[img]" id="Cat_meta[img]" size="3" style="width:60%;" value="<?php echo $cat_meta['img'] ? $cat_meta['img'] : ''; ?>"><br />
+            <span class="description"><?php _e('Image for category bg: use full url with '); ?></span>
+        </td>
+</tr>
+
+
+<tr class="form-field">
+<th scope="row" valign="top"><label for="bgColor"><?php _e('BG Color'); ?></label></th>
+<td>
+<input type="text" name="Cat_meta[bgcolor]" id="Cat_meta[bgcolor]" size="25" style="width:60%;" value="<?php echo $cat_meta['bgcolor'] ? $cat_meta['bgcolor'] : ''; ?>"><br />
+            <span class="description"><?php _e('BG color: use hex value eg #777777'); ?></span>
+        </td>
+</tr>
+<tr class="form-field">
+<th scope="row" valign="top"><label for="extra3"><?php _e('extra field'); ?></label></th>
+<td>
+            <textarea name="Cat_meta[extra3]" id="Cat_meta[extra3]" style="width:60%;"><?php echo $cat_meta['extra3'] ? $cat_meta['extra3'] : ''; ?></textarea><br />
+            <span class="description"><?php _e('extra field'); ?></span>
+        </td>
+</tr>
+
+<tr class="form-field">
+<th scope="row" valign="top"><label for="extra5"><?php _e('extra field'); ?></label></th>
+<td>
+            <textarea name="Cat_meta[extra5]" id="Cat_meta[extra5]" style="width:60%;"><?php echo $cat_meta['extra4'] ? $cat_meta['extra5'] : ''; ?></textarea><br />
+            <span class="description"><?php _e('extra field'); ?></span>
+        </td>
+</tr>
+<?php
+}
+
+// save extra category extra fields hook
+add_action ( 'edited_category', 'save_extra_category_fileds');
+   // save extra category extra fields callback function
+
+function save_extra_category_fileds( $term_id ) {
+    if ( isset( $_POST['Cat_meta'] ) ) {
+        $t_id = $term_id;
+        $cat_meta = get_option( "category_$t_id");
+        $cat_keys = array_keys($_POST['Cat_meta']);
+            foreach ($cat_keys as $key){
+            if (isset($_POST['Cat_meta'][$key])){
+                $cat_meta[$key] = $_POST['Cat_meta'][$key];
+            }
+        }
+        //save the option array
+        update_option( "category_$t_id", $cat_meta );
+    }
+}
+/* //////ADDING FIELDS TO EDIT CATEGORY */
+
+
+
+
 /** ROBS FUNCTIONS **/
 
 function qs_deposit_table() {

@@ -4,6 +4,11 @@ Template Name: Front
 */
 get_header(); ?>
 
+<section class="container">
+<div class="row"><div class="small-12 column">
+
+<?php do_action( 'foundationpress_after_header' ); ?>
+
 <header id="front-hero" role="banner">
 	<div class="marketing">
 		<div class="tagline">

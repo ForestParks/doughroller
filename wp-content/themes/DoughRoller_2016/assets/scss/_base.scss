@@ -327,6 +327,8 @@ body.logged-in {
 
     .columns {
 
+
+
           .inner {
           /*border: 1px solid lightgrey;*/
           overflow: hidden;
@@ -403,6 +405,15 @@ body.logged-in {
           }
           .post_time {color:$primary-grey; display: block;}
     }
+
+  .small-12.medium-4.columns.blocks:nth-child(3n+5) {clear:left;}
+
+  .pagination-centered {
+    clear: both;
+    padding: 40px 0px 0px 15px;
+    display: block;
+    overflow: hidden;
+  }
     
 }
 

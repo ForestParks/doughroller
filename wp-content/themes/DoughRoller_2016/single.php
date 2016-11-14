@@ -8,6 +8,11 @@
 
 get_header(); ?>
 
+<section class="container">
+<div class="row"><div class="small-12 column">
+
+<?php do_action( 'foundationpress_after_header' ); ?>
+
 <div id="single-post" <?php if( get_field('remove_sidebar') ){echo 'class="no-sidebar"';} else {}?> role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>

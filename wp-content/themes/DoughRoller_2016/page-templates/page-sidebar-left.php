@@ -4,6 +4,11 @@ Template Name: Left Sidebar
 */
 get_header(); ?>
 
+<section class="container">
+<div class="row"><div class="small-12 column">
+
+<?php do_action( 'foundationpress_after_header' ); ?>
+
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 
 <div id="page-sidebar-left" role="main">

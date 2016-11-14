@@ -7099,6 +7099,13 @@ body.logged-in {
   .latest-posts .columns .post_time {
     color: #6d6e72;
     display: block; }
+  .latest-posts .small-12.medium-4.columns.blocks:nth-child(3n+5) {
+    clear: left; }
+  .latest-posts .pagination-centered {
+    clear: both;
+    padding: 40px 0px 0px 15px;
+    display: block;
+    overflow: hidden; }
 
 .latest-posts.popular .home_thumb {
   height: 150px; }

@@ -15,6 +15,16 @@
 
 get_header(); ?>
 
+<section class="container">
+<div class="row"><div class="small-12 column">
+
+<?php do_action( 'foundationpress_after_header' ); ?>
+
+<section class="container">
+<div class="row"><div class="small-12 column">
+
+<?php do_action( 'foundationpress_after_header' ); ?>
+
 	<section class="hero">
 		  <div class="row intro">
 		    <div class="small-centered medium-uncentered medium-7 large-8 columns">
