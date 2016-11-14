@@ -43,20 +43,20 @@ get_header(); ?>
 				          </ul>
 
 				  <div id="WFItem654886" class="wf-formTpl">
-				          <form action="https://app.getresponse.com/add_subscriber.html?u=S86B" accept-charset="utf-8" method="post">
+				          <form action="https://app.getresponse.com/add_contact_webform.html?u=S86B" accept-charset="utf-8" method="post">
 
-				            <input type="text" name="name" value="Name"
-				  onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
-				  onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}"
-				  style="color:#BBB;" />
+				            <input class="wf-input" type="text" name="name" value="Name"
+				  				onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
+				  				onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}"
+				  				style="color:#BBB;" />
 
 
-				                        <input type="text" name="email" value="Email"
+				                        <input class="wf-input wf-req wf-valid__email" type="text" name="email" value="Email"
 				  onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
 				  onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}"
 				  style="color:#BBB;" /><br/>
 
-				            <input type="submit" class="button" value="Let's Roll"/>
+				            <input type="submit" class="button wf-button"" value="Let's Roll"/>
 
 				            <input type="hidden" name="webform_id" value="654886" />
 
@@ -79,7 +79,6 @@ get_header(); ?>
                     </ul>
 
 				  </div><!--//WFItem654886-->
-				  <script type="text/javascript" src="http://app.getresponse.com/view_webform.js?wid=654886&mg_param1=1&u=S86B"></script>
 
 	</div>
 
@@ -90,8 +89,6 @@ get_header(); ?>
     </div><!-- // email_popup -->
 
     
-                 
-
 
 	<section class="key_pages">
 		  <div class="row">
@@ -213,27 +210,33 @@ get_header(); ?>
 		  <div class="small-8 medium-8 columns center">
 
 		  <h3><strong>Make the most of your money</strong></h3> <h4>Get my free weekly newsletter to improve your finances.</h4>
-		  					<div id="newsletter-form-cont">
-					
+		  					<div id="newsletter-form-cont">					
 
 		  							</br>
-							    	 <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post">
+		  							<div id="WFItem654886" class="wf-formTpl">
+				          <form action="https://app.getresponse.com/add_contact_webform.html?u=S86B" accept-charset="utf-8" method="post">
 
 							    	 	<div class="small-12 medium-4 columns">
-								<input type="text" name="name" value="Name" onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}" onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}" style="color:#BBB;" />
+								<input class="wf-input" type="text" name="name" value="Name"
+				  				onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
+				  				onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}"
+				  				style="color:#BBB;" />
 										</div>
 
 										<div class="small-12 medium-4 columns">
-								<input type="text" name="email" value="Email" onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}" onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}" style="color:#BBB;" />
+								<input class="wf-input wf-req wf-valid__email" type="text" name="email" value="Email"
+				  onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
+				  onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}"
+				  style="color:#BBB;" />
 										</div>
 
-											<input type="hidden" name="campaign_token" value="TAZ6"/>
-
 										<div class="small-12 medium-4 columns">
-								<input type="submit" class="button" value="Let's Roll"/>
+								<input type="submit" class="button wf-button"" value="Let's Roll"/>
+								<input type="hidden" name="webform_id" value="654886" />
 										</div>
 									
 									</form>
+									</div><!--//WFItem654886-->
 
 
 							 </div>
@@ -328,4 +331,4 @@ get_header(); ?>
 
 </div>
 
-<?php get_footer();
+<?php get_footer(); ?>

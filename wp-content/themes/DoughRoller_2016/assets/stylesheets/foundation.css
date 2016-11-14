@@ -6078,6 +6078,10 @@ table.hover tr:nth-of-type(even):hover {
     float: none;
     text-align: left; }
 
+#footer-container input {
+  width: 99%;
+  margin-right: 1%; }
+
 .sidebar {
   padding-left: 0.625rem;
   padding-right: 0.625rem;

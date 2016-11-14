@@ -81,35 +81,39 @@
 
 					<div class="join-newsletter newsletter second"> 
 						<h6>Join Our Newsletter</h6>
-						
+
 						<div id="newsletter-form-cont">
-                <form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" id="subForm">
+             <div id="WFItem654886" class="wf-formTpl">
+                <form action="https://app.getresponse.com/add_contact_webform.html?u=S86B" accept-charset="utf-8" method="post">
 							        <div class="row collapse margintop-20px">
      
 
             <div class="small-12 medium-6 columns">
-            <input style="width:95%"  type="text" name="name" value="Name"
-  onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
-  onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#BBB';}"
-  style="color:#BBB;" />
+               <input class="wf-input" type="text" name="name" value="Name"
+                  onblur="if(this.value==''){ this.value='Name'; this.style.color='#BBB';}"
+                  onfocus="if(this.value=='Name'){ this.value=''; this.style.color='#000';}"
+                  style="color:#BBB;" />
                         </div>
 
                          <div class="small-12 medium-6 columns">
-                        <input type="text" name="email" value="Email"
-  onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
-  onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#BBB';}"
-  style="color:#BBB;" />
-  </div>
+                                <input class="wf-input wf-req wf-valid__email" type="text" name="email" value="Email"
+          onblur="if(this.value==''){ this.value='Email'; this.style.color='#BBB';}"
+          onfocus="if(this.value=='Email'){ this.value=''; this.style.color='#000';}"
+          style="color:#BBB;" />
+                          </div>
 
-            <input type="hidden" name="campaign_token" value="TAZ6"/>
-<div class="small-12 columns">
-            <input type="submit" class="button" style="width:100%" value="Let's Roll"/>
+          <div class="small-12 columns">
+
+            <input type="submit" class="button wf-button"" value="Let's Roll"/>
+
+                    <input type="hidden" name="webform_id" value="654886" />
             </div>
 
 							     
 							        </div>
 							      </form>
 							 </div>
+               </div><!--//WFItem654886-->
 
 				</div>
 
@@ -168,6 +172,9 @@
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
 
+<!-- script for sidebar and standard signup form-->
+<script type="text/javascript" src="http://app.getresponse.com/view_webform.js?wid=654886&mg_param1=1&u=S86B"></script>
+
 <!--<script type="text/javascript">
         $(window).scroll(function() {    
             var scroll = $(window).scrollTop();
@@ -180,7 +187,7 @@
         });
 </script>-->
 
-/* PULL QUOTES */
+<!-- PULL QUOTES -->
 
 <script type="text/javascript">
       $(document).ready(function() { 
@@ -202,7 +209,8 @@
     </script>
 
 
-/* ALLOW SHOW / HIDE on ccbox*/
+<!-- ALLOW SHOW / HIDE on ccbox -->
+
 <script type="text/javascript">
 <!--
     function toggle_visibility(id) {
