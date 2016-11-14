@@ -22,7 +22,7 @@ get_header(); ?>
 <div class="row"><div class="small-12 column">
 
 	<h3><?php single_cat_title(); ?></h3>
-	<div><?php echo category_description(); ?></div> 
+	<div><?php echo category_description(); ?></div>
 
 <?php do_action( 'foundationpress_after_header' ); ?>
 
