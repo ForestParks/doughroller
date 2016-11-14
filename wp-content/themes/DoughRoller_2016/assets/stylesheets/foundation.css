@@ -5937,6 +5937,10 @@ table.hover tr:nth-of-type(even):hover {
   My custom styles:
   Add your scss files below to structure your project styles
 */
+/*Fix flickering menu */
+.title-bar {
+  display: none; }
+
 /* Navigation breakpoints */
 @media screen and (max-width: 63.9375em) {
   .desktop-menu, .top-bar-left {
