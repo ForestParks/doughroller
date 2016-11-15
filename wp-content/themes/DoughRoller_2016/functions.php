@@ -111,24 +111,24 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
 <tr class="form-field">
 	<th scope="row" valign="top"><label for="cat__bgImage_url"><?php _e('Category Background Image Url'); ?></label></th>
 		<td>
-		<input type="text" name="Cat_meta[img]" id="Cat_meta[img]" size="3" style="width:60%;" value="<?php echo $cat_meta['img'] ? $cat_meta['img'] : ''; ?>"><br />
-            <span class="description"><?php _e('Image for category bg: use full url with '); ?></span>
+		<input type="text" name="Cat_meta[bgimg]" id="Cat_meta[bgimg]" size="3" style="width:60%;" value="<?php echo $cat_meta['bgimg'] ? $cat_meta['img'] : ''; ?>"><br />
+            <span class="description"><?php _e('Image for category bg: use full url'); ?></span>
         </td>
 </tr>
 
 
 <tr class="form-field">
-<th scope="row" valign="top"><label for="bgColor"><?php _e('BG Color'); ?></label></th>
-<td>
-<input type="text" name="Cat_meta[bgcolor]" id="Cat_meta[bgcolor]" size="25" style="width:60%;" value="<?php echo $cat_meta['bgcolor'] ? $cat_meta['bgcolor'] : ''; ?>"><br />
+        <th scope="row" valign="top"><label for="bgColor"><?php _e('BG Color'); ?></label></th>
+        <td>
+        <input type="text" name="Cat_meta[bgcolor]" id="Cat_meta[bgcolor]" size="25" style="width:60%;" value="<?php echo $cat_meta['bgcolor'] ? $cat_meta['bgcolor'] : ''; ?>"><br />
             <span class="description"><?php _e('BG color: use hex value eg #777777'); ?></span>
         </td>
 </tr>
 <tr class="form-field">
-<th scope="row" valign="top"><label for="extra3"><?php _e('extra field'); ?></label></th>
+<th scope="row" valign="top"><label for="sec1array"><?php _e('section one array'); ?></label></th>
 <td>
-            <textarea name="Cat_meta[extra3]" id="Cat_meta[extra3]" style="width:60%;"><?php echo $cat_meta['extra3'] ? $cat_meta['extra3'] : ''; ?></textarea><br />
-            <span class="description"><?php _e('extra field'); ?></span>
+            <textarea name="Cat_meta[sec1array]" id="Cat_meta[sec1array]" style="width:60%;"><?php echo $cat_meta['sec1array'] ? $cat_meta['sec1array'] : ''; ?></textarea><br />
+            <span class="description"><?php _e('Section One Array example 1,2,3,4'); ?></span>
         </td>
 </tr>
 

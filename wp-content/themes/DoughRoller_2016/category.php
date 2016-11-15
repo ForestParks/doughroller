@@ -17,33 +17,100 @@
 
 get_header(); ?>
 
-<section class="container cat_top" style="background-color: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo ''.$cat_data['bgcolor'].'';}?> ">
+
+<section class="container">
 
 <div class="row"><div class="small-12 column">
-
-	<h3><?php single_cat_title(); ?></h3>
-	<div><?php echo category_description(); ?></div>
 
 <?php do_action( 'foundationpress_after_header' ); ?>
 
+	<section class="hero_cat" style="background-color: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo ''.$cat_data['bgcolor'].'';}?>; background-image: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgimg'])){ echo ''.$cat_data['bgimg'].'';}?>">
+
+		  <div class="row intro">
+		    <div class="small-centered medium-uncentered medium-7 large-8 columns">
+
+				<h1><?php single_cat_title(); ?></h1>
+				<p><?php echo category_description(); ?></p>
+				
+		  </div>
+	</section>
 </div></div>
-</section>
+	
+
+
+<section class="latest-posts popular">
+
+	<div class="row">
+
+		<div class="small-12 columns"><h2>To Rename To Something Else</h2></div>
+
+	        <?php 
+
+	        $seconearray = explode(',', $cat_data['sec1array']);
+
+			        $args = array( 
+			        	'post__in' => $seconearray
+			        );
+
+			        $query1 = new WP_Query( $args );
+					// The Loop
+					if ( $query1->have_posts() ) :
+					while ( $query1->have_posts() ) : $query1->the_post(); ?>
+
+					    <div class="small-6 medium-3 columns blocks">
+			        		<a href="<?php the_permalink(); ?>">
+			        		<div class="inner">
+			        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+				        		<h4><?php the_title(); ?></h4>
+				        		<?php custom_excerpt(10, '') ?>
+				        		<div class='home_meta'>
+				        			<div class="home_author_image">
+				        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+				        			</div>
+					        		<div class="home_author_time">
+						        		<span class="author_link"><?php the_author_link(); ?></span>
+					        		</div>
+				        		</div>
+				    		</div>  
+				    		</a>	
+			        	</div>
+			        <?php endwhile; ?>
+			        <?php endif;?>
+					<?php wp_reset_postdata(); ?>
+
+
+ 	</div>
+
+</section><!--// latest-posts popular-->
 
 
 
-<section class="container" >
-<div class="row"><div class="small-12 column">
 
-	<section class="container">
-		<div class="row"><div class="small-12 column">
 
-		<?php do_action( 'foundationpress_after_header' ); ?>
 
-<section class="latest-posts">
 
-<?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo '<p>'.$cat_data['bgcolor'].'</p>';}?>
 
-</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,3 +180,34 @@ get_header(); ?>
 </div>
 
 <?php get_footer();
+
+
+
+
+
+//<section class="container cat_top" style="background-color: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo ''.$cat_data['bgcolor'].'';}?> ">
+
+<!--<div class="row"><div class="small-12 column">
+
+
+
+<?php do_action( 'foundationpress_after_header' ); ?>
+
+</div></div>
+</section>
+
+
+
+<section class="container" >
+<div class="row"><div class="small-12 column">
+
+	<section class="container">
+		<div class="row"><div class="small-12 column">
+
+		<?php do_action( 'foundationpress_after_header' ); ?>
+
+<section class="latest-posts">
+
+<?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo '<p>'.$cat_data['bgcolor'].'</p>';}?>
+
+</section>-->
