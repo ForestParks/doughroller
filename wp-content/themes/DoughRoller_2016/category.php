@@ -38,50 +38,56 @@ get_header(); ?>
 	
 
 
-<section class="latest-posts popular">
+				<?php
 
-	<div class="row">
+				if (!empty($cat_data['sec1array'])) {
+				?>
 
-		<div class="small-12 columns"><h2>To Rename To Something Else</h2></div>
+					<section class="latest-posts popular">
 
-	        <?php 
+						<div class="row">
 
-	        $seconearray = explode(',', $cat_data['sec1array']);
+							<div class="small-12 columns"><h2>To Rename To Something Else</h2></div>
 
-			        $args = array( 
-			        	'post__in' => $seconearray
-			        );
+						        <?php 
 
-			        $query1 = new WP_Query( $args );
-					// The Loop
-					if ( $query1->have_posts() ) :
-					while ( $query1->have_posts() ) : $query1->the_post(); ?>
+						    			$seconearray = explode(',', $cat_data['sec1array']);
 
-					    <div class="small-6 medium-3 columns blocks">
-			        		<a href="<?php the_permalink(); ?>">
-			        		<div class="inner">
-			        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-				        		<h4><?php the_title(); ?></h4>
-				        		<?php custom_excerpt(10, '') ?>
-				        		<div class='home_meta'>
-				        			<div class="home_author_image">
-				        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
-				        			</div>
-					        		<div class="home_author_time">
-						        		<span class="author_link"><?php the_author_link(); ?></span>
-					        		</div>
-				        		</div>
-				    		</div>  
-				    		</a>	
-			        	</div>
-			        <?php endwhile; ?>
-			        <?php endif;?>
-					<?php wp_reset_postdata(); ?>
+										$args = array( 
+										'post__in' => $seconearray
+										);
 
+								        $query1 = new WP_Query( $args );
+										// The Loop
+										if ( $query1->have_posts() ) :
+										while ( $query1->have_posts() ) : $query1->the_post(); ?>
 
- 	</div>
+										    <div class="small-6 medium-3 columns blocks">
+								        		<a href="<?php the_permalink(); ?>">
+								        		<div class="inner">
+								        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+									        		<h4><?php the_title(); ?></h4>
+									        		<?php custom_excerpt(10, '') ?>
+									        		<div class='home_meta'>
+									        			<div class="home_author_image">
+									        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+									        			</div>
+										        		<div class="home_author_time">
+											        		<span class="author_link"><?php the_author_link(); ?></span>
+										        		</div>
+									        		</div>
+									    		</div>  
+									    		</a>	
+								        	</div>
+								        <?php endwhile; ?>
+								        <?php endif;?>
+										<?php wp_reset_postdata(); ?>
+					 	</div>
 
-</section><!--// latest-posts popular-->
+					</section><!--// latest-posts popular-->
+
+				<?php
+				} else { } ?>
 
 
 
