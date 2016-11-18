@@ -95,13 +95,13 @@ if ( comments_open() ) :
 			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
 		</p>
 		<p>
-			<label for="url">
+			<!--<label for="url">
 				<?php
-					_e( 'Website', 'foundationpress' );
+					//_e( 'Website', 'foundationpress' );
 				?>
-			</label>
-			<input type="text" class="five" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3">
-		</p>
+			</label>-->
+			<!--<input type="text" class="five" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3">
+			</p>-->
 		<?php endif; ?>
 		<p>
 			<label for="comment">
