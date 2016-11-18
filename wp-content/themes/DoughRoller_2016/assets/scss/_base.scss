@@ -1,5 +1,5 @@
 body {padding-top:30px;}
-body.home {padding-top:85px;}
+body.home, body.category {padding-top:85px;}
 
 /* GENERAL STYLES */
 
@@ -430,7 +430,7 @@ body.logged-in {
 
 }
 
-.podcast .columns.blocks {
+.podcast .columns.blocks, .cat_pop .columns.blocks {
 
       h4 {min-height: 5px; padding-bottom:5px;}
 
@@ -442,7 +442,7 @@ body.logged-in {
 
 
 
-.podcast  {
+.podcast, .cat_pop  {
 
     .columns .author_link {line-height: 36px !important;}
 
@@ -468,7 +468,7 @@ body.logged-in {
 
 }
 
-.podcast .columns.blocks.podright a:hover {
+.podcast .columns.blocks.podright a:hover, .cat_pop .columns.blocks.podright a:hover {
     text-decoration:underline
 
 }
@@ -516,6 +516,109 @@ body.logged-in {
   }
 
 
+/* CATEGORY PAGES */
+
+.hero_cat {
+
+    background-color: #fff;
+    overflow: hidden;
+    background-size: cover;
+ 
+    .intro {
+      padding: 3rem 3rem 3rem 3rem;
+      position: relative;
+    }
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      line-height: 1em;
+      letter-spacing: -0.025em;
+      font-weight: 800;
+      text-align: center;
+    }
+    p {
+      color: #fff;
+      line-height: 1.5em;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1em;
+    }
+}
+ 
+
+@media only screen and (min-width: 40.063em) {
+
+  .hero {
+
+  .small-centered.medium-uncentered.medium-7.large-8.columns {float:right;}
+
+  h1 {
+      font-size: 4.5rem;
+      line-height: 1em;
+      text-shadow: 3px 3px 4px #888888;
+    }
+  
+  p {text-shadow: 1px 1px 2px #888888;}
+  }
+
+  .button {border-bottom:1px solid #000;}
+}
+
+
+.cat_pop  {
+
+    .columns.blocks.cat_popright {
+
+      border-bottom: 1px dotted lightgrey;
+      padding: 0 0 10px 0;
+
+      h4 {
+      min-height: 5px;
+      padding: 0 0 5px 0px;
+      }
+
+      a {
+      font-size: .8em !important;
+      display: block;
+      }
+      a:hover {
+      color: #0d72c7;
+      }
+    }
+}
+
+
+.category .cat_late, .category .cat_review {
+
+  .blocks {
+
+    margin-top:20px;
+    border-bottom: 1px dotted lightgrey;
+
+    h4 {
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: 0px;
+    color: #6d6e72;
+    }
+
+    .home_thumb {
+      float:left;
+      clear:none;
+      width: 150px;
+      height: 85px;
+      margin-right: 10px;
+
+      img {width:100%}
+
+    }
+
+  }
+
+}
+
+.category .cat_review {max-width: 800px; display: block; margin: 0px auto}
 
 
 

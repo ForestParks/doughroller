@@ -27,7 +27,7 @@ get_header(); ?>
 	<section class="hero_cat" style="background-color: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo ''.$cat_data['bgcolor'].'';}?>; background-image: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgimg'])){ echo ''.$cat_data['bgimg'].'';}?>">
 
 		  <div class="row intro">
-		    <div class="small-centered medium-uncentered medium-7 large-8 columns">
+		    <div class="small-12 columns">
 
 				<h1><?php single_cat_title(); ?></h1>
 				<p><?php echo category_description(); ?></p>
@@ -92,47 +92,78 @@ get_header(); ?>
 
 
 
+	<section class="latest-posts cat_pop">
+
+
+		<div class="row">
+
+			<div class="small-12 columns"><h2>Most Popular</h2></div>
+
+
+			   <?php
+
+			  // The Query
+			  $query = new WP_Query( array(
+			            'post_type' => 'post',
+			            'posts_per_page' => 5,
+			            'category_name' => 'podcast'
+			        ) );
+
+			  // The Loop
+			  while ($query->have_posts()) : $query->the_post();
+
+			     if ( $query->current_post == 0 ) {  // first post ?>
+
+			        <div class="small-12 medium-6 columns blocks">
+			        		<a href="<?php the_permalink(); ?>">
+			        		<div class="inner">
+		        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+			        		<h4><?php the_title(); ?></h4>
+			        		<?php the_excerpt(); ?>
+			        		<div class='home_meta'>
+			        			<div class="home_author_image">
+			        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+			        			</div>
+				        		<div class="home_author_time">
+					        		<span class="author_link"><?php the_author_link(); ?></span>
+				        		</div>
+			        		</div>
+			    		</div>    
+				    		</a>	
+			        </div>
+
+			       <?php } else { ?>
+
+		        <div class="small-12 medium-6 columns blocks cat_popright">
+		        <h4><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h4>
+		        <div class='home_meta'>
+			        			<div class="home_author_image">
+			        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+			        			</div>
+				        		<div class="home_author_time">
+					        		<span class="author_link"><?php the_author_link(); ?></span>
+				        		</div>
+			        		</div>
+		        </div>
+
+		       <?php } endwhile;?>
+
+		 	</div>
+
+	</section>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="latest-posts">
+<section class="latest-posts cat_late">
 
 	<div class="row">
 
 		<div class="small-12 columns"><h2><!--<i class="fa fa-pencil" aria-hidden="true"></i>-->Latest Articles</h2></div>
 
-
-   
-
 		<?php 
 			// the query
-			$the_query = new WP_Query( array( 'posts_per_page' => 6, 'paged'=>$paged, 'cat' => get_query_var('cat') ) ); ?>
+			$the_query = new WP_Query( array( 'posts_per_page' => 10, 'paged'=>$paged, 'cat' => get_query_var('cat') ) ); ?>
 
 			<?php if ( $the_query->have_posts() ) : ?>
 
@@ -140,12 +171,11 @@ get_header(); ?>
 
 				<!-- the loop -->
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="small-12 medium-4 columns blocks">
+					<div class="small-12 medium-6 columns blocks">
 			        		<a href="<?php the_permalink(); ?>">
 			        		<div class="inner">
-			        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+			        			<div class="home_thumb"><?php the_post_thumbnail( 'related-thumb' ); ?></div>
 					        		<h4><?php the_title(); ?></h4>
-					        		<?php custom_excerpt(12, '') ?>
 					        		<div class='home_meta'>
 					        			<div class="home_author_image">
 					        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
@@ -169,6 +199,55 @@ get_header(); ?>
 						<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
 					</nav>
 				<?php } ?>
+
+				<?php wp_reset_postdata(); ?>
+
+			<?php else : ?>
+				<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+			<?php endif; ?>
+
+ 	</div>
+
+
+</section>
+
+
+
+<section class="latest-posts cat_review">
+
+	<div class="row">
+
+		<div class="small-12 columns"><h2>Reviews</h2></div>
+
+		<?php 
+			// the query
+			$the_query = new WP_Query( array( 'posts_per_page' => 5, 'paged'=>$paged, 'cat' => get_query_var('cat') ) ); ?>
+
+			<?php if ( $the_query->have_posts() ) : ?>
+
+				<!-- pagination here -->
+
+				<!-- the loop -->
+				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<div class="small-12 columns blocks">
+			        		<a href="<?php the_permalink(); ?>">
+			        		<div class="inner">
+			        			<div class="home_thumb"><?php the_post_thumbnail( 'related-thumb' ); ?></div>
+					        		<h4><?php the_title(); ?></h4>
+					        		<div class='home_meta'>
+					        			<div class="home_author_image">
+					        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+					        			</div>
+						        		<div class="home_author_time">
+							        		<span class="author_link"><?php the_author_link(); ?></span>
+							        		<span class="post_time"><?php the_time('F jS, Y'); ?></span>
+						        		</div>
+					        		</div>
+				    		</div>  
+				    		</a>	
+			        	</div>
+				<?php endwhile; ?>
+				<!-- end of the loop -->
 
 				<?php wp_reset_postdata(); ?>
 
