@@ -24,7 +24,7 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_after_header' ); ?>
 
-	<section class="hero_cat" style="background-color: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo ''.$cat_data['bgcolor'].'';}?>; background-image: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgimg'])){ echo ''.$cat_data['bgimg'].'';}?>">
+	<section class="hero_cat" style="background-color: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo ''.$cat_data['bgcolor'].'';}?>; background-image: url(<?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgimg'])){ echo ''.$cat_data['bgimg'].'';}?>)">
 
 		  <div class="row intro">
 		    <div class="small-12 columns">
