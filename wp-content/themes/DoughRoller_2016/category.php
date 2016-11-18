@@ -165,6 +165,63 @@ get_header(); ?>
 
 
 
+				<?php
+
+				if (!empty($cat_data['reviewarray'])) {
+				?>
+						<section class="latest-posts cat_review">
+
+							<div class="row">
+
+								<div class="small-12 columns"><h2>Reviews</h2></div>
+
+								<?php 
+
+						    			$reviewarray = explode(',', $cat_data['reviewarray']);
+
+										$args3 = array( 
+										'post__in' => $reviewarray,
+										'orderby'   => 'post__in',
+										);
+
+								        $query3 = new WP_Query( $args3 );
+										// The Loop
+										if ( $query3->have_posts() ) :
+										while ( $query3->have_posts() ) : $query3->the_post(); ?>
+											<div class="small-12 columns blocks">
+									        		<a href="<?php the_permalink(); ?>">
+									        		<div class="inner">
+									        			<div class="home_thumb"><?php the_post_thumbnail( 'related-thumb' ); ?></div>
+											        		<h4><?php the_title(); ?></h4>
+											        		<div class='home_meta'>
+											        			<div class="home_author_image">
+											        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+											        			</div>
+												        		<div class="home_author_time">
+													        		<span class="author_link"><?php the_author_link(); ?></span>
+													        		<span class="post_time"><?php the_time('F jS, Y'); ?></span>
+												        		</div>
+											        		</div>
+										    		</div>  
+										    		</a>	
+									        	</div>
+										<?php endwhile; ?>
+								        <?php endif;?>
+										<?php wp_reset_postdata(); ?>
+
+						 	</div>
+
+
+						</section>
+
+				<?php
+				} else { } ?>
+
+
+
+</div>
+
+
 
 <section class="latest-posts cat_late">
 
@@ -223,63 +280,5 @@ get_header(); ?>
 </section>
 
 
-
-
-
-				<?php
-
-				if (!empty($cat_data['reviewarray'])) {
-				?>
-						<section class="latest-posts cat_review">
-
-							<div class="row">
-
-								<div class="small-12 columns"><h2>Reviews</h2></div>
-
-								<?php 
-
-						    			$reviewarray = explode(',', $cat_data['reviewarray']);
-
-										$args3 = array( 
-										'post__in' => $reviewarray,
-										'orderby'   => 'post__in',
-										);
-
-								        $query3 = new WP_Query( $args3 );
-										// The Loop
-										if ( $query3->have_posts() ) :
-										while ( $query3->have_posts() ) : $query3->the_post(); ?>
-											<div class="small-12 columns blocks">
-									        		<a href="<?php the_permalink(); ?>">
-									        		<div class="inner">
-									        			<div class="home_thumb"><?php the_post_thumbnail( 'related-thumb' ); ?></div>
-											        		<h4><?php the_title(); ?></h4>
-											        		<div class='home_meta'>
-											        			<div class="home_author_image">
-											        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
-											        			</div>
-												        		<div class="home_author_time">
-													        		<span class="author_link"><?php the_author_link(); ?></span>
-													        		<span class="post_time"><?php the_time('F jS, Y'); ?></span>
-												        		</div>
-											        		</div>
-										    		</div>  
-										    		</a>	
-									        	</div>
-										<?php endwhile; ?>
-								        <?php endif;?>
-										<?php wp_reset_postdata(); ?>
-
-						 	</div>
-
-
-						</section>
-
-				<?php
-				} else { } ?>
-
-
-
-</div>
 
 <?php get_footer();
