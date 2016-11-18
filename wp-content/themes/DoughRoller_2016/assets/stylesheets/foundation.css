@@ -7182,7 +7182,7 @@ body.logged-in {
 
 /* CATEGORY PAGES */
 .hero_cat {
-  background-color: #fff;
+  background: #5ca6c6;
   overflow: hidden;
   background-size: cover; }
   .hero_cat .intro {
@@ -7204,14 +7204,12 @@ body.logged-in {
     font-size: 1em; }
 
 @media only screen and (min-width: 40.063em) {
-  .hero .small-centered.medium-uncentered.medium-7.large-8.columns {
-    float: right; }
-  .hero h1 {
-    font-size: 4.5rem;
+  .hero_cat h1 {
+    font-size: 3rem;
     line-height: 1em;
-    text-shadow: 3px 3px 4px #888888; }
-  .hero p {
-    text-shadow: 1px 1px 2px #888888; }
+    /*text-shadow: 3px 3px 4px #888888;*/ }
+  .hero_cat p {
+    /*text-shadow: 1px 1px 2px #888888;*/ }
   .button {
     border-bottom: 1px solid #000; } }
 
