@@ -111,7 +111,7 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
 <tr class="form-field">
 	<th scope="row" valign="top"><label for="cat__bgImage_url"><?php _e('Category Background Image Url'); ?></label></th>
 		<td>
-		<input type="text" name="Cat_meta[bgimg]" id="Cat_meta[bgimg]" size="3" style="width:60%;" value="<?php echo $cat_meta['bgimg'] ? $cat_meta['img'] : ''; ?>"><br />
+		<input type="text" name="Cat_meta[bgimg]" id="Cat_meta[bgimg]" size="3" style="width:60%;" value="<?php echo $cat_meta['bgimg'] ? $cat_meta['bgimg'] : ''; ?>"><br />
             <span class="description"><?php _e('Image for category bg: use full url'); ?></span>
         </td>
 </tr>
