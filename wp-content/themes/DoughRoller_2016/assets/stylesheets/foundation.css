@@ -7215,7 +7215,7 @@ body.logged-in {
 
 .cat_pop .columns.blocks.cat_popright {
   border-bottom: 1px dotted lightgrey;
-  padding: 0 0 10px 0; }
+  padding: 0 0.625rem 10px 0.625rem; }
   .cat_pop .columns.blocks.cat_popright h4 {
     min-height: 5px;
     padding: 0 0 5px 0px; }
