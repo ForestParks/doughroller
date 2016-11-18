@@ -54,7 +54,8 @@ get_header(); ?>
 						    			$seconearray = explode(',', $cat_data['sec1array']);
 
 										$args = array( 
-										'post__in' => $seconearray
+										'post__in' => $seconearray,
+										'orderby'   => 'post__in',
 										);
 
 								        $query1 = new WP_Query( $args );
@@ -91,66 +92,76 @@ get_header(); ?>
 
 
 
+				<?php
 
-	<section class="latest-posts cat_pop">
+				if (!empty($cat_data['mostpoparray'])) {
+				?>
+
+							<section class="latest-posts cat_pop">
 
 
-		<div class="row">
+								<div class="row">
 
-			<div class="small-12 columns"><h2>Most Popular</h2></div>
+									<div class="small-12 columns"><h2>Most Popular</h2></div>
 
 
-			   <?php
+									   <?php
 
-			  // The Query
-			  $query = new WP_Query( array(
-			            'post_type' => 'post',
-			            'posts_per_page' => 5,
-			            'category_name' => 'podcast'
-			        ) );
+									   	$mostpoparray = explode(',', $cat_data['mostpoparray']);
 
-			  // The Loop
-			  while ($query->have_posts()) : $query->the_post();
+									  	$args2 = array( 
+										'post__in' => $mostpoparray,
+										'orderby'   => 'post__in',
+										);
 
-			     if ( $query->current_post == 0 ) {  // first post ?>
+								        $query2 = new WP_Query( $args2 );
+										// The Loop
+										if ( $query2->have_posts() ) :
+										while ( $query2->have_posts() ) : $query2->the_post();
 
-			        <div class="small-12 medium-6 columns blocks">
-			        		<a href="<?php the_permalink(); ?>">
-			        		<div class="inner">
-		        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-			        		<h4><?php the_title(); ?></h4>
-			        		<?php the_excerpt(); ?>
-			        		<div class='home_meta'>
-			        			<div class="home_author_image">
-			        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
-			        			</div>
-				        		<div class="home_author_time">
-					        		<span class="author_link"><?php the_author_link(); ?></span>
-				        		</div>
-			        		</div>
-			    		</div>    
-				    		</a>	
-			        </div>
+									     if ( $query2->current_post == 0 ) {  // first post ?>
 
-			       <?php } else { ?>
+									        <div class="small-12 medium-6 columns blocks">
+									        		<a href="<?php the_permalink(); ?>">
+									        		<div class="inner">
+								        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
+									        		<h4><?php the_title(); ?></h4>
+									        		<?php the_excerpt(); ?>
+									        		<div class='home_meta'>
+									        			<div class="home_author_image">
+									        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+									        			</div>
+										        		<div class="home_author_time">
+											        		<span class="author_link"><?php the_author_link(); ?></span>
+										        		</div>
+									        		</div>
+									    		</div>    
+										    		</a>	
+									        </div>
 
-		        <div class="small-12 medium-6 columns blocks cat_popright">
-		        <h4><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h4>
-		        <div class='home_meta'>
-			        			<div class="home_author_image">
-			        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
-			        			</div>
-				        		<div class="home_author_time">
-					        		<span class="author_link"><?php the_author_link(); ?></span>
-				        		</div>
-			        		</div>
-		        </div>
+									       <?php } else { ?>
 
-		       <?php } endwhile;?>
+								        <div class="small-12 medium-6 columns blocks cat_popright">
+								        <h4><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h4>
+								        <div class='home_meta'>
+									        			<div class="home_author_image">
+									        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+									        			</div>
+										        		<div class="home_author_time">
+											        		<span class="author_link"><?php the_author_link(); ?></span>
+										        		</div>
+									        		</div>
+								        </div>
 
-		 	</div>
+								       <?php } endwhile; ?>
+								        <?php endif;?>
+										<?php wp_reset_postdata(); ?>
+					 	</div>
 
-	</section>
+					</section>
+
+				<?php
+				} else { } ?>
 
 
 
@@ -213,86 +224,62 @@ get_header(); ?>
 
 
 
-<section class="latest-posts cat_review">
-
-	<div class="row">
-
-		<div class="small-12 columns"><h2>Reviews</h2></div>
-
-		<?php 
-			// the query
-			$the_query = new WP_Query( array( 'posts_per_page' => 5, 'paged'=>$paged, 'cat' => get_query_var('cat') ) ); ?>
-
-			<?php if ( $the_query->have_posts() ) : ?>
-
-				<!-- pagination here -->
-
-				<!-- the loop -->
-				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="small-12 columns blocks">
-			        		<a href="<?php the_permalink(); ?>">
-			        		<div class="inner">
-			        			<div class="home_thumb"><?php the_post_thumbnail( 'related-thumb' ); ?></div>
-					        		<h4><?php the_title(); ?></h4>
-					        		<div class='home_meta'>
-					        			<div class="home_author_image">
-					        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
-					        			</div>
-						        		<div class="home_author_time">
-							        		<span class="author_link"><?php the_author_link(); ?></span>
-							        		<span class="post_time"><?php the_time('F jS, Y'); ?></span>
-						        		</div>
-					        		</div>
-				    		</div>  
-				    		</a>	
-			        	</div>
-				<?php endwhile; ?>
-				<!-- end of the loop -->
-
-				<?php wp_reset_postdata(); ?>
-
-			<?php else : ?>
-				<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-			<?php endif; ?>
-
- 	</div>
 
 
-</section>
+				<?php
+
+				if (!empty($cat_data['reviewarray'])) {
+				?>
+						<section class="latest-posts cat_review">
+
+							<div class="row">
+
+								<div class="small-12 columns"><h2>Reviews</h2></div>
+
+								<?php 
+
+						    			$reviewarray = explode(',', $cat_data['reviewarray']);
+
+										$args3 = array( 
+										'post__in' => $reviewarray,
+										'orderby'   => 'post__in',
+										);
+
+								        $query3 = new WP_Query( $args3 );
+										// The Loop
+										if ( $query3->have_posts() ) :
+										while ( $query3->have_posts() ) : $query3->the_post(); ?>
+											<div class="small-12 columns blocks">
+									        		<a href="<?php the_permalink(); ?>">
+									        		<div class="inner">
+									        			<div class="home_thumb"><?php the_post_thumbnail( 'related-thumb' ); ?></div>
+											        		<h4><?php the_title(); ?></h4>
+											        		<div class='home_meta'>
+											        			<div class="home_author_image">
+											        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
+											        			</div>
+												        		<div class="home_author_time">
+													        		<span class="author_link"><?php the_author_link(); ?></span>
+													        		<span class="post_time"><?php the_time('F jS, Y'); ?></span>
+												        		</div>
+											        		</div>
+										    		</div>  
+										    		</a>	
+									        	</div>
+										<?php endwhile; ?>
+								        <?php endif;?>
+										<?php wp_reset_postdata(); ?>
+
+						 	</div>
+
+
+						</section>
+
+				<?php
+				} else { } ?>
 
 
 
 </div>
 
 <?php get_footer();
-
-
-
-
-
-//<section class="container cat_top" style="background-color: <?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo ''.$cat_data['bgcolor'].'';}?> ">
-
-<!--<div class="row"><div class="small-12 column">
-
-
-
-<?php do_action( 'foundationpress_after_header' ); ?>
-
-</div></div>
-</section>
-
-
-
-<section class="container" >
-<div class="row"><div class="small-12 column">
-
-	<section class="container">
-		<div class="row"><div class="small-12 column">
-
-		<?php do_action( 'foundationpress_after_header' ); ?>
-
-<section class="latest-posts">
-
-<?php $cat_id = get_query_var('cat'); $cat_data = get_option("category_$cat_id"); if (isset($cat_data['bgcolor'])){ echo '<p>'.$cat_data['bgcolor'].'</p>';}?>
-
-</section>-->

@@ -128,17 +128,26 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
 <th scope="row" valign="top"><label for="sec1array"><?php _e('section one array'); ?></label></th>
 <td>
             <textarea name="Cat_meta[sec1array]" id="Cat_meta[sec1array]" style="width:60%;"><?php echo $cat_meta['sec1array'] ? $cat_meta['sec1array'] : ''; ?></textarea><br />
-            <span class="description"><?php _e('Section One Array example 1,2,3,4'); ?></span>
+            <span class="description"><?php _e('Section One Array, example 1,2,3,4'); ?></span>
         </td>
 </tr>
 
 <tr class="form-field">
-<th scope="row" valign="top"><label for="extra5"><?php _e('extra field'); ?></label></th>
+<th scope="row" valign="top"><label for="mostpoparray"><?php _e('most pop array'); ?></label></th>
 <td>
-            <textarea name="Cat_meta[extra5]" id="Cat_meta[extra5]" style="width:60%;"><?php echo $cat_meta['extra4'] ? $cat_meta['extra5'] : ''; ?></textarea><br />
-            <span class="description"><?php _e('extra field'); ?></span>
+            <textarea name="Cat_meta[mostpoparray]" id="Cat_meta[mostpoparray]" style="width:60%;"><?php echo $cat_meta['mostpoparray'] ? $cat_meta['mostpoparray'] : ''; ?></textarea><br />
+            <span class="description"><?php _e('Most Popular Section Array, example 1,2,3,4'); ?></span>
         </td>
 </tr>
+
+<tr class="form-field">
+<th scope="row" valign="top"><label for="reviewarray"><?php _e('review array'); ?></label></th>
+<td>
+            <textarea name="Cat_meta[reviewarray]" id="Cat_meta[reviewarray]" style="width:60%;"><?php echo $cat_meta['reviewarray'] ? $cat_meta['reviewarray'] : ''; ?></textarea><br />
+            <span class="description"><?php _e('Review Section Array, example 1,2,3,4'); ?></span>
+        </td>
+</tr>
+
 <?php
 }
 
