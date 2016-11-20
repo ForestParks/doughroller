@@ -99,57 +99,6 @@ require_once( 'library/sticky-posts.php' );
 /* ADDING FIELDS TO EDIT CATEGORY */
 
 
-//add extra fields to category edit form hook
-add_action ( 'edit_category_form_fields', 'extra_category_fields');
-//add extra fields to category edit form callback function
-
-function extra_category_fields( $tag ) {    //check for existing featured ID
-    $t_id = $tag->term_id;
-    $cat_meta = get_option( "category_$t_id");
-?>
-
-<tr class="form-field">
-	<th scope="row" valign="top"><label for="cat__bgImage_url"><?php _e('Category Background Image Url'); ?></label></th>
-		<td>
-		<input type="text" name="Cat_meta[bgimg]" id="Cat_meta[bgimg]" size="3" style="width:60%;" value="<?php echo $cat_meta['bgimg'] ? $cat_meta['bgimg'] : ''; ?>"><br />
-            <span class="description"><?php _e('Image for category bg: use full url'); ?></span>
-        </td>
-</tr>
-
-
-<tr class="form-field">
-        <th scope="row" valign="top"><label for="bgColor"><?php _e('BG Color'); ?></label></th>
-        <td>
-        <input type="text" name="Cat_meta[bgcolor]" id="Cat_meta[bgcolor]" size="25" style="width:60%;" value="<?php echo $cat_meta['bgcolor'] ? $cat_meta['bgcolor'] : ''; ?>"><br />
-            <span class="description"><?php _e('BG color: use hex value eg #777777'); ?></span>
-        </td>
-</tr>
-<tr class="form-field">
-<th scope="row" valign="top"><label for="sec1array"><?php _e('section one array'); ?></label></th>
-<td>
-            <textarea name="Cat_meta[sec1array]" id="Cat_meta[sec1array]" style="width:60%;"><?php echo $cat_meta['sec1array'] ? $cat_meta['sec1array'] : ''; ?></textarea><br />
-            <span class="description"><?php _e('Section One Array, example 1,2,3,4'); ?></span>
-        </td>
-</tr>
-
-<tr class="form-field">
-<th scope="row" valign="top"><label for="mostpoparray"><?php _e('most pop array'); ?></label></th>
-<td>
-            <textarea name="Cat_meta[mostpoparray]" id="Cat_meta[mostpoparray]" style="width:60%;"><?php echo $cat_meta['mostpoparray'] ? $cat_meta['mostpoparray'] : ''; ?></textarea><br />
-            <span class="description"><?php _e('Most Popular Section Array, example 1,2,3,4'); ?></span>
-        </td>
-</tr>
-
-<tr class="form-field">
-<th scope="row" valign="top"><label for="reviewarray"><?php _e('review array'); ?></label></th>
-<td>
-            <textarea name="Cat_meta[reviewarray]" id="Cat_meta[reviewarray]" style="width:60%;"><?php echo $cat_meta['reviewarray'] ? $cat_meta['reviewarray'] : ''; ?></textarea><br />
-            <span class="description"><?php _e('Review Section Array, example 1,2,3,4'); ?></span>
-        </td>
-</tr>
-
-<?php
-}
 
 // save extra category extra fields hook
 add_action ( 'edited_category', 'save_extra_category_fileds');
