@@ -172,6 +172,32 @@ function save_extra_category_fileds( $term_id ) {
 /* //////ADDING FIELDS TO EDIT CATEGORY */
 
 
+add_action('admin_menu', 'add_home_pop_array_input');
+
+function add_home_pop_array_input()  
+{  
+    add_options_page('Home Popular Posts', 'Home Popular Posts', 'manage_options', 'functions','home_pop_array_input');  
+}
+
+function home_pop_array_input()
+{
+?>
+    <div class="wrap">
+        <h2>Home Page Popular Array Of Posts</h2>
+        <form method="post" action="options.php">
+            <?php wp_nonce_field('update-options') ?>
+            <p><strong>POST IDs</strong><br />
+                <input type="text" name="homepop" size="45" value="<?php echo get_option('homepop'); ?>" />
+            </p>
+            <p><input type="submit" name="Submit" value="Store Options" /></p>
+            <input type="hidden" name="action" value="update" />
+            <input type="hidden" name="page_options" value="homepop" />
+        </form>
+    </div>
+<?php
+}
+
+
 
 /** ROBS FUNCTIONS **/
 

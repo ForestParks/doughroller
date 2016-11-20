@@ -47,8 +47,6 @@ get_header(); ?>
 
 						<div class="row">
 
-							<div class="small-12 columns"><h2>To Rename To Something Else</h2></div>
-
 						        <?php 
 
 						    			$seconearray = explode(',', $cat_data['sec1array']);
