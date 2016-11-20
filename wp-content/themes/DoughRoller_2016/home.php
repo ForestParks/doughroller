@@ -25,7 +25,7 @@ get_header(); ?>
 		    <div class="small-centered medium-uncentered medium-7 large-8 columns">
 
 				<h1>Make the most of your money</h1>
-				<p>Get my free weekly newsletter to improve your finances.</p>
+				<p>Get our free weekly newsletter to improve your finances.</p>
 
 				<a class="large expanded button" data-open="nlmodalhome" aria-controls="nlmodal" id="reveal" aria-haspopup="true" tabindex="0">Get It Now!</a>
 				</div>
@@ -214,7 +214,7 @@ get_header(); ?>
 		  <div class="row">
 		  <div class="small-8 medium-8 columns center">
 
-		  <h3><strong>Make the most of your money</strong></h3> <h4>Get my free weekly newsletter to improve your finances.</h4>
+		  <h3><strong>Make the most of your money</strong></h3> <h4>Get our free weekly newsletter to improve your finances.</h4>
 		  					<div id="newsletter-form-cont">					
 
 		  							</br>

@@ -7179,6 +7179,17 @@ body.logged-in.admin-bar {
   .home_signup input[type="submit"] {
     width: 100%; }
 
+/* FIX THANK YOU ON SIGNUO */
+input[value='Thank You!'] {
+  background: none;
+  border: none;
+  font-weight: bold;
+  display: none !important; }
+
+input[value='Thank You!']:first-of-type {
+  display: block !important;
+  line-height: 30px; }
+
 @media only screen and (max-width: 40em) {
   .latest-posts.popular .columns.blocks {
     margin-bottom: 10px !important; }
