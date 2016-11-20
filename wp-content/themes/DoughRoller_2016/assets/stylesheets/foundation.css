@@ -7243,7 +7243,8 @@ input[value='Thank You!']:first-of-type {
 
 .category .cat_late .blocks, .category .cat_review .blocks {
   margin-top: 20px;
-  border-bottom: 1px dotted lightgrey; }
+  border-bottom: 1px dotted lightgrey;
+  min-height: 108px; }
   .category .cat_late .blocks h4, .category .cat_review .blocks h4 {
     font-size: 18px;
     line-height: 18px;

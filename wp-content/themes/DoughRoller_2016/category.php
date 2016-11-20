@@ -18,6 +18,23 @@
 get_header(); ?>
 
 
+
+<?php
+	if ( is_paged() ) {
+  // first page of pagination
+	?>
+	<script type="text/javascript">
+		    $(document).ready(function () {
+		    // Handler for .ready() called.
+		    $('html, body').animate({
+		        scrollTop: $('#latestcat').offset().top-100
+		    }, 'slow');
+		});
+	</script>
+	<?php
+}?>
+
+
 <section class="container">
 
 <div class="row"><div class="small-12 column">
@@ -197,7 +214,7 @@ get_header(); ?>
 											        			</div>
 												        		<div class="home_author_time">
 													        		<span class="author_link"><?php the_author_link(); ?></span>
-													        		<span class="post_time"><?php the_time('F jS, Y'); ?></span>
+													        		<span class="post_time"><?php the_modified_time('F jS, Y'); ?></span>
 												        		</div>
 											        		</div>
 										    		</div>  
@@ -221,7 +238,7 @@ get_header(); ?>
 
 
 
-<section class="latest-posts cat_late">
+<section class="latest-posts cat_late" id="latestcat">
 
 	<div class="row">
 
