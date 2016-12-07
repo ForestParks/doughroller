@@ -6820,9 +6820,7 @@ a:hover, a:focus {
   color: #2bb673; }
 
 /* // General styles */
-/*table tbody{
-    border: 0px
-}*/
+/*table tbody{ border: 0px }*/
 .tablepress th {
   border: 0px solid #FFF; }
 
