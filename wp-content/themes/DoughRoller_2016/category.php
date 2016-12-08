@@ -89,7 +89,7 @@ get_header(); ?>
 									        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
 									        			</div>
 										        		<div class="home_author_time">
-											        		<span class="author_link"><?php the_author_link(); ?></span>
+											        		<span class="author_link"><?php the_author_posts_link(); ?></span>
 										        		</div>
 									        		</div>
 									    		</div>  
@@ -147,7 +147,7 @@ get_header(); ?>
 									        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
 									        			</div>
 										        		<div class="home_author_time">
-											        		<span class="author_link"><?php the_author_link(); ?></span>
+											        		<span class="author_link"><?php the_author_posts_link(); ?></span>
 										        		</div>
 									        		</div>
 									    		</div>    
@@ -163,7 +163,7 @@ get_header(); ?>
 									        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
 									        			</div>
 										        		<div class="home_author_time">
-											        		<span class="author_link"><?php the_author_link(); ?></span>
+											        		<span class="author_link"><?php the_author_posts_link(); ?></span>
 										        		</div>
 									        		</div>
 								        </div>
@@ -213,7 +213,7 @@ get_header(); ?>
 											        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
 											        			</div>
 												        		<div class="home_author_time">
-													        		<span class="author_link"><?php the_author_link(); ?></span>
+													        		<span class="author_link"><?php the_author_posts_link(); ?></span>
 													        		<span class="post_time"><?php the_modified_time('F jS, Y'); ?></span>
 												        		</div>
 											        		</div>
@@ -264,7 +264,7 @@ get_header(); ?>
 					        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
 					        			</div>
 						        		<div class="home_author_time">
-							        		<span class="author_link"><?php the_author_link(); ?></span>
+							        		<span class="author_link"><?php the_author_posts_link(); ?></span>
 							        		<span class="post_time"><?php the_time('F jS, Y'); ?></span>
 						        		</div>
 					        		</div>
