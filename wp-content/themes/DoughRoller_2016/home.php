@@ -283,65 +283,6 @@ get_header(); ?>
 
 						</section>
 
-					<section class="latest-posts podcast">
-
-
-						<div class="row">
-
-							<div class="small-12 columns"><h2><!--<i class="fa fa-microphone" aria-hidden="true"></i>-->Latest From The Podcast</h2></div>
-
-
-							   <?php
-
-							  // The Query
-							  $query = new WP_Query( array(
-							            'post_type' => 'post',
-							            'posts_per_page' => 10,
-							            'category_name' => 'podcast'
-							        ) );
-
-							  // The Loop
-							  while ($query->have_posts()) : $query->the_post();
-
-							     if ( $query->current_post == 0 ) {  // first post ?>
-
-							        <div class="small-12 medium-6 columns blocks">
-							        		<a href="<?php the_permalink(); ?>">
-							        		<div class="inner">
-						        			<div class="home_thumb"><?php the_post_thumbnail( 'large' ); ?></div>
-							        		<h4><?php the_title(); ?></h4>
-							        		<?php the_excerpt(); ?>
-							        		<div class='home_meta'>
-							        			<div class="home_author_image">
-							        				<?php echo get_avatar( get_the_author_meta( 'ID' ), 36 ); ?>
-							        			</div>
-								        		<div class="home_author_time">
-									        		<span class="author_link"><?php the_author_link(); ?></span>
-								        		</div>
-							        		</div>
-							    		</div>    
-								    		</a>	
-							        </div>
-
-							       <?php 
-								} else { ?>
-
-						        <div class="small-12 medium-6 columns blocks podright">
-						        <h4><i class="fa fa-microphone" aria-hidden="true"></i> <a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h4>
-					        </div>
-
-					       <?php 
-					     }
-
-					     endwhile;
-
-					  	 ?>
-
-					 	</div>
-
-
-					</section>
-
 
 					<section class="latest-posts resources-guides">
 
