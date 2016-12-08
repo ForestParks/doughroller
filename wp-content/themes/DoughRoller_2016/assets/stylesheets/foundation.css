@@ -6163,7 +6163,7 @@ table.hover tr:nth-of-type(even):hover {
   border-radius: 3px;
   border: none; }
 
-.button a {
+.button a, .button a:hover {
   color: #fff; }
 
 #featured-hero {
