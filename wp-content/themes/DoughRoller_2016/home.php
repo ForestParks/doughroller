@@ -30,7 +30,7 @@ get_header(); ?>
 						<h1>Make the most of your money</h1>
 						<p>Get our free weekly newsletter to improve your finances.</p>
 
-						<a class="large expanded button" data-open="nlmodalhome" aria-controls="nlmodal" id="reveal" aria-haspopup="true" tabindex="0">Get It Now!</a>
+						<a class="large expanded button" data-open="nlmodalhome" aria-controls="nlmodal" id="reveal" aria-haspopup="true" tabindex="0">Let’s Roll!</a>
 						</div>
 
 
