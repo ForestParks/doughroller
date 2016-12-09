@@ -7123,6 +7123,7 @@ body.logged-in.admin-bar {
 .latest-posts.popular .author_link {
   line-height: 36px; }
 
+.latest-posts.popular
 .blocks a:hover {
   text-decoration: none; }
 
@@ -7180,7 +7181,7 @@ body.logged-in.admin-bar {
   .home_signup input[type="submit"] {
     width: 100%; }
 
-/* FIX THANK YOU ON SIGNUO */
+/* FIX THANK YOU ON SIGNUP */
 input[value='Thank You!'] {
   background: none;
   border: none;
@@ -7195,6 +7196,10 @@ input[value='Thank You!']:first-of-type {
   .latest-posts.popular .columns.blocks {
     margin-bottom: 10px !important; }
   .latest-posts.popular .columns.blocks:nth-child(4) {
+    clear: left; } }
+
+@media only screen and (min-width: 40em) {
+  .latest-posts.popular .columns.blocks:nth-child(4n+6) {
     clear: left; } }
 
 /* CATEGORY PAGES */
