@@ -116,7 +116,7 @@ get_header(); ?>
 					    <h3>Checking Accounts</h3>
 				    </a>
 
-				    <a class="key_link small-4 medium-2 columns" href="<?php echo site_url(); ?>/banking/the-best-checking-account-promotions-and-deals/">
+				    <a class="key_link small-4 medium-2 columns" href="<?php echo site_url(); ?>/banking/best-bank-cd-rates/">
 					    <span class="key_icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>
 					    <h3>CDs</h3>
 				    </a>
