@@ -7369,8 +7369,11 @@ input[value='Thank You!']:first-of-type {
   display: block;
   clear: left;
   max-width: 660px;
-  /*margin: 0px auto;*/
-  margin: 0px 0px 0px 62px; }
+  /*margin: 0px auto;*/ }
+
+@media only screen and (min-width: 782px) {
+  .entry-content {
+    margin: 0px 0px 0px 62px; } }
 
 .post .email_sidebar {
   padding: 30px;
